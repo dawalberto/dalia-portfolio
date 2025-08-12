@@ -1,5 +1,11 @@
 @import "tailwindcss";
+@import "./fonts.css";
 
 @theme {
   --color-main-0: #222222;
+  --spacing-full-without-menu: calc(100dvh - 12 * var(--spacing));
+  --font-playfair: "Playfair", sans-serif;
+  --font-inter: "Inter", sans-serif;
+  --font-roboto: "Roboto", sans-serif;
+  --font-roboto-condensed: "Roboto Condensed", sans-serif;
 }

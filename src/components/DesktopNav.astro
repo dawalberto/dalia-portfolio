@@ -9,7 +9,7 @@ const navItemClass = 'text-main-0 hover:font-bold transform duration-200'
 ---
 
 <!-- 48px height of menu -->
-<nav class="min-h-12 flex items-center fixed left-0 w-dvw">
+<nav class="min-h-12 flex items-center fixed left-0 w-dvw z-10 bg-white">
     <ul class="flex space-x-4 w-fit mx-auto">
         {navLinks.map(({ href, label }) => (
             <li class="min-w-32 px-5 py-3 text-center"><a href={href} class={navItemClass}>{label}</a></li>

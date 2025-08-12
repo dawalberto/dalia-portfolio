@@ -1,3 +1,8 @@
+---
+import DesktopNav from "../components/DesktopNav.astro";
+import "../styles/global.css";
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -9,7 +14,10 @@
 	</head>
 	<body>
 		<main class="max-w-7xl mx-auto">
-			<slot />
+			<DesktopNav />
+			<div class="bg-red-500 inline-block mt-12 w-full">
+				<slot />
+			</div>
 		</main>
 	</body>
 </html>
