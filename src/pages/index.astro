@@ -1,10 +1,59 @@
 ---
+import daliaImage from '../assets/dalia-inicio.jpg';
+import signatureImage from '../assets/signature.png';
 import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
 	<article class="test">
-		<section class="h-full-without-menu">Presentation</section>
+		<!-- Desktop version -->
+		<section class="hidden h-full-without-menu antialiased sm:grid grid-cols-3 content-center xl:content-end gap-y-12 text-main-0">
+			<h1 class="col-span-2 self-end tracking-wider font-inter leading-20 md:leading-24 lg:leading-28 xl:leading-32">Product Designer</h1>
+			<img class="h-auto max-w-80 justify-self-end rounded-2xl object-cover" src={daliaImage.src} alt="Dalia">
+			<img class="col-span-2 h-auto max-w-52 justify-self-center rotate-30" src={signatureImage.src} alt="Dalia's signature">
+			<p class="font-roboto text-pretty center leading-10">Diseñadora de productos digitales con superpoder para contar historias épicas — aquellas que conectan. Detecto tus dolores de cabeza, los convierto en creatividad y diseño soluciones que cambian las reglas del juego. Porque el buen diseño no es sólo estético: transforma, emociona y hace tu día (y tu trabajo) más humano y chispeante.</p>
+		</section>
+		<!-- Mobile version -->
+
+		<section>TODO: Component -> Triología de diseño</section>
+		<section>TODO: Component -> Preview proyectos Mi Viaje Creativo: Una Instantánea de Evolución y Aprendizaje</section>
+		<section>TODO: Component -> Ilustraciones</section>
 	</article>
 </Layout>
 
+<style>
+	h1 {
+		display: inline-block;
+		position: relative;
+		font-size: clamp(6rem, 6vw + 2rem, 10rem);
+		padding-bottom: 1rem;
+		font-weight: 400;
+		-webkit-text-stroke-width: 1px;
+		-webkit-text-stroke-color: var(--color-main-0);
+		transition: font-weight 0.5s, -webkit-text-stroke-width 0.5s;
+	}
+
+	h1::before {
+		content: "Product Designer";
+		position: absolute;
+		left: 0;
+		top: 0;
+		background: url(../assets/ceramica.gif) 0 0 / cover no-repeat;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		opacity: 0;
+		transition: opacity 1s ease;
+	}
+
+	h1:hover {
+		overflow: visible;
+		font-weight: 900;
+		-webkit-text-stroke-width: 3px;
+	}
+
+	h1:hover::before {
+		opacity: 1;
+	}
+
+
+</style>
