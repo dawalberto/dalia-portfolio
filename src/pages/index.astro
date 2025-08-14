@@ -7,11 +7,11 @@ import Layout from '../layouts/Layout.astro';
 <Layout>
 	<article class="test">
 		<!-- Desktop version -->
-		<section class="hidden h-full-without-menu antialiased sm:grid grid-cols-3 content-center xl:content-end gap-y-12 text-main-0">
-			<h1 class="col-span-2 self-end tracking-wider font-inter leading-20 md:leading-24 lg:leading-28 xl:leading-32">Product Designer</h1>
-			<img class="h-auto max-w-80 justify-self-end rounded-2xl object-cover" src={daliaImage.src} alt="Dalia">
-			<img class="col-span-2 h-auto max-w-52 justify-self-center rotate-30" src={signatureImage.src} alt="Dalia's signature">
-			<p class="font-roboto text-pretty center leading-10">Diseñadora de productos digitales con superpoder para contar historias épicas — aquellas que conectan. Detecto tus dolores de cabeza, los convierto en creatividad y diseño soluciones que cambian las reglas del juego. Porque el buen diseño no es sólo estético: transforma, emociona y hace tu día (y tu trabajo) más humano y chispeante.</p>
+		<section class="hidden h-full-without-menu antialiased sm:grid grid-cols-5 content-center xl:content-end gap-y-12 text-main-0">
+			<h1 class="col-span-3 self-end tracking-wider font-inter leading-20 md:leading-24 lg:leading-28 xl:leading-40">Product Designer</h1>
+			<img class="col-span-2 h-auto max-w-80 justify-self-end rounded-2xl object-cover" src={daliaImage.src} alt="Dalia">
+			<img class="col-span-3 h-auto max-w-52 justify-self-center rotate-30" src={signatureImage.src} alt="Dalia's signature">
+			<p class="col-span-2 font-roboto text-pretty center leading-10">Diseñadora de productos digitales con superpoder para contar historias épicas — aquellas que conectan. Detecto tus dolores de cabeza, los convierto en creatividad y diseño soluciones que cambian las reglas del juego. Porque el buen diseño no es sólo estético: transforma, emociona y hace tu día (y tu trabajo) más humano y chispeante.</p>
 		</section>
 		<!-- Mobile version -->
 
@@ -25,7 +25,7 @@ import Layout from '../layouts/Layout.astro';
 	h1 {
 		display: inline-block;
 		position: relative;
-		font-size: clamp(6rem, 6vw + 2rem, 10rem);
+		font-size: clamp(6rem, 7vw + 2rem, 10rem);
 		padding-bottom: 1rem;
 		font-weight: 400;
 		-webkit-text-stroke-width: 1px;
