@@ -5,6 +5,7 @@ const navLinks = [
     { href: "/about", label: "Sobre mi" },
     { href: "/contact", label: "Contacto" },
 ];
+const { pathname } = Astro.url;
 const navItemClass = 'text-main-0 hover:font-bold transform duration-200'
 ---
 
@@ -12,7 +13,7 @@ const navItemClass = 'text-main-0 hover:font-bold transform duration-200'
 <nav class="min-h-12 font-inter flex items-center fixed left-0 w-dvw z-10 bg-white">
     <ul class="flex space-x-4 w-fit mx-auto">
         {navLinks.map(({ href, label }) => (
-            <li class="min-w-32 px-5 py-3 text-center"><a href={href} class={navItemClass}>{label}</a></li>
+            <li class="min-w-32 px-5 py-3 text-center"><a href={href} class:list={pathname === href ? 'font-bold' : ''} class={navItemClass}>{label}</a></li>
         ))}
     </ul>
 </nav>
