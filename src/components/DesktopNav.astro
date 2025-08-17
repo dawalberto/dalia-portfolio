@@ -16,7 +16,7 @@ const { pathname } = Astro.url;
 ---
 
 <!-- 48px height of menu -->
-<nav class="min-h-12 font-inter flex items-center fixed left-0 w-dvw z-10 bg-white">
+<nav class="hidden sm:flex min-h-12 font-inter items-center fixed left-0 w-dvw z-10 bg-white">
     <ul class="flex space-x-4 w-fit mx-auto relative">
         {navLinks.map((navItem) => (
                 <li class="min-w-36 px-5 py-3 text-center group" class:list={navItem.children && 'dropdown'}>
