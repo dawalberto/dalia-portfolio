@@ -1,97 +1,16 @@
 ---
-import daliaImage from '../assets/dalia-inicio.jpg';
-import signatureImage from '../assets/signature.png';
-import MyCreativeTrip from '../components/MyCreativeTrip.astro';
+import DesignTrilogy from '@components/home/DesignTrilogy.astro';
+import Front from '@components/home/Front.astro';
+import MyCreativeTrip from '@components/home/MyCreativeTrip.astro';
 import Layout from '../layouts/Layout.astro';
-
-const designTrilogyBoxClass = "rounded-xl flex flex-col bg-[#F1F1F1] px-5 pt-4 pb-6 sm:px-10 sm:pt-10 sm:pb-16 w-full sm:max-w-sm";
-const designTrilogyBarClass = "border-[#7E7E7E] border-b-2 w-1/4 inline-block";
-const designTrilogyTitleClass = "text-main-0 font-playfair font-bold text-2xl mt-4";
-const designTrilogyDescriptionClass = "font-roboto mt-4 text-pretty";
 ---
 
 <Layout>
 	<article>
-		<!-- Front -->
-		<!-- Desktop version -->
-		 <section class="hidden sm:grid h-full-without-menu content-end fhd:content-center">
-			 <div class="grid grid-cols-5 h-fit antialiased gap-y-12 ">
-				 <h1 class="desktop col-span-3 self-end tracking-wider font-inter leading-20 md:leading-24 lg:leading-28 xl:leading-40 text-[#514E4E]">Product Designer</h1>
-				 <img class="col-span-2 h-auto max-w-80 justify-self-end rounded-2xl self-end object-cover" src={daliaImage.src} alt="Dalia">
-				 <img class="col-span-3 bg-transparent -mt-8 -ml-16 h-auto max-w-52 justify-self-center rotate-25" src={signatureImage.src} alt="Dalia's signature">
-				 <p class="col-span-2 font-roboto text-pretty leading-10 text-main-0">Diseñadora de productos digitales con superpoder para contar historias épicas — aquellas que conectan. Detecto tus dolores de cabeza, los convierto en creatividad y diseño soluciones que cambian las reglas del juego. Porque el buen diseño no es sólo estético: transforma, emociona y hace tu día (y tu trabajo) más humano y chispeante.</p>
-			 </div>
-		 </section>
-		<!-- Mobile version -->
-		<section class="block sm:hidden">
-			<div class="flex gap-1">
-				<div class="flex flex-col flex-1">
-					<h1 class="font-inter flex-1 text-4xl sm:text-5xl leading-12 tracking-wider text-[#514E4E]">Product Designer</h1>
-					<img class="h-auto w-2/5 rotate-30 self-center mt-2" src={signatureImage.src} alt="Dalia's signature">
-				</div>
-				<img class="h-auto w-1/2 rounded-2xl object-cover" src={daliaImage.src} alt="Dalia">
-			</div>
-			<p class="font-roboto text-pretty leading-7 text-sm mt-4 text-main-0">Diseñadora de productos digitales con superpoder para contar historias épicas — aquellas que conectan. Detecto tus dolores de cabeza, los convierto en creatividad y diseño soluciones que cambian las reglas del juego. Porque el buen diseño no es sólo estético: transforma, emociona y hace tu día (y tu trabajo) más humano y chispeante.</p>
-		</section>
-
-		<!-- Design trilogy -->
-		<section class="mt-10 sm:mt-44">
-			<h1 class="font-roboto font-bold text-xl sm:text-4xl">Triología de diseño</h1>
-			<div class="flex flex-col sm:flex-row gap-y-2 justify-between mt-4 gap-x-16">
-				<div class={designTrilogyBoxClass}>
-					<span class={designTrilogyBarClass} />
-					<h2 class={designTrilogyTitleClass}>UX/UI Design</h2>
-					<p class={designTrilogyDescriptionClass}>Diseño interfaces que no solo se ven bien, se sienten bien. Experiencias digitales pensadas para fluir, conectar y dejar al usuario con ganas de volver.</p>
-				</div>
-				<div class={designTrilogyBoxClass}>
-					<span class={designTrilogyBarClass} />
-					<h2 class={designTrilogyTitleClass}>Graphic Design</h2>
-					<p class={designTrilogyDescriptionClass}>Transformo ideas en imágenes que hablan. Ya sea una marca, un póster o una campaña, cada pieza gráfica cuenta una historia visual con personalidad y propósito.</p>
-				</div>
-				<div class={designTrilogyBoxClass}>
-					<span class={designTrilogyBarClass} />
-					<h2 class={designTrilogyTitleClass}>Illustrations</h2>
-					<p class={designTrilogyDescriptionClass}>Ilustro mundos, emociones y conceptos con estilo propio. Cada trazo aporta carácter, cada color suma voz: una forma única de decir lo que las palabras no alcanzan.</p>
-				</div>
-			</div>
-		</section>
-
-		 <MyCreativeTrip />
+		<Front />
+		<DesignTrilogy />
+		<MyCreativeTrip />
 		<section>TODO: Component -> Ilustraciones</section>
 	</article>
 </Layout>
 
-<style>
-	h1.desktop {
-		display: inline-block;
-		position: relative;
-		font-size: clamp(6rem, 8vw + 2rem, 10rem);
-		padding-bottom: 1rem;
-		font-weight: 400;
-		-webkit-text-stroke-width: 1px;
-		-webkit-text-stroke-color: #514E4E;
-		transition: font-weight 0.5s, -webkit-text-stroke-width 0.5s;
-	}
-
-	h1.desktop::before {
-		content: "Product Designer";
-		position: absolute;
-		left: 0;
-		top: 0;
-		background: url(../assets/ceramica.gif) 0 0 / cover no-repeat;
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		opacity: 0;
-		transition: opacity 1s ease;
-	}
-
-	h1.desktop:hover {
-		overflow: visible;
-		font-weight: 900;
-		-webkit-text-stroke-width: 3px;
-	}
-
-	h1.desktop:hover::before {
-		opacity: 1;
-	}
-</style>
