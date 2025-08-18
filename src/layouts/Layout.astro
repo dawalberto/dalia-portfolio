@@ -1,24 +1,23 @@
 ---
-import DesktopNav from "../components/DesktopNav.astro";
-import "../styles/global.css";
+import DesktopNav from "../components/DesktopNav.astro"
+import "../styles/global.css"
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
-		<meta name="generator" content={Astro.generator} />
-		<title>Dalia's portfolio</title>
-	</head>
-	<body>
-		<main class="max-w-7xl mx-auto px-4 2xl:px-0">
-			<DesktopNav />
-			<div class="inline-block mt-12 w-full">
-				<slot />
-			</div>
-		</main>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
+    <meta name="generator" content={Astro.generator} />
+    <title>Dalia's portfolio</title>
+  </head>
+  <body>
+    <main class="max-w-7xl mx-auto px-4 2xl:px-0">
+      <DesktopNav />
+      <div class="inline-block mt-12 w-full">
+        <slot />
+      </div>
+    </main>
+  </body>
 </html>
-

@@ -1,98 +1,105 @@
 ---
-import Layout from "./Layout.astro";
+import type { IconName } from "@/components/Icon.astro"
+import Layout from "./Layout.astro"
+import Icon from "@/components/Icon.astro"
 
-type ProjectProps = {title: string, rol: string, duration: string, typeOfProject: string, tools: string[]};
-const { title, rol, duration, typeOfProject, tools } = Astro.props as ProjectProps;
+type ProjectProps = {
+  title: string
+  rol: string
+  duration: string
+  typeOfProject: string
+  tools: string[]
+  navItems: { title: string; anchor: string; icon: IconName }[]
+}
+const { title, rol, duration, typeOfProject, tools, navItems } = Astro.props as ProjectProps
 ---
 
 <Layout>
-    <!-- <article class="h-full-without-menu bg-green-200">
-        <section class="bg-red-100 pt-20">
-            <h1>{title}</h1>
-            <h2>Rol: {rol}</h2>
-            <h2>Duración: {duration}</h2>
-            <h2>Tipo de proyecto: {typeOfProject}</h2>
-            <h2>Herramientas: {tools?.join(", ")}</h2>
-        </section>
-        <section class="flex mt-20 items-stretch">
-            <nav class="max-w-44 bg-amber-100 self-stretch">
-                <ul>
-                    <li><a href="#overview">Resumen</a></li>
-                    <li><a href="#process">Proceso de diseño</a></li>
-                    <li><a href="#outcomes">Resultados</a></li>
-                </ul>
-            </nav>
-            <div class="flex-1 px-36 overflow-auto self-stretch">
-                <slot />
-            </div>
-        </section>
-    </article> -->
-    <article>
-        <header class="flex flex-col">
-            <h1>{title}</h1>
-            <div project-info class="flex flex-col text-red-500 max-h-52 transform transition-all duration-300 ease-in-out">
-                <h2>Rol: {rol}</h2>
-                <h2>Duración: {duration}</h2>
-                <h2>Tipo de proyecto: {typeOfProject}</h2>
-                <h2>Herramientas: {tools?.join(", ")}</h2>
-            </div>
-        </header>
-        <aside>
-            <nav class="bg-amber-100">
-                <ul>
-                    <li><a href="#overview">Resumen</a></li>
-                    <li><a href="#process">Proceso de diseño</a></li>
-                    <li><a href="#outcomes">Resultados</a></li>
-                </ul>
-            </nav>
-        </aside>
-        <main project-content>
-            <slot />
-        </main>
-    </article>
+  <article>
+    <header class="flex flex-col">
+      <h1>{title}</h1>
+      <div
+        project-info
+        class="flex flex-col text-red-500 max-h-52 transform transition-all duration-300 ease-in-out"
+      >
+        <h2>Rol: {rol}</h2>
+        <h2>Duración: {duration}</h2>
+        <h2>Tipo de proyecto: {typeOfProject}</h2>
+        <h2>Herramientas: {tools?.join(", ")}</h2>
+      </div>
+    </header>
+    <aside project-aside class="mt-16 transform transition-all duration-300 ease-in-out">
+      <nav class="px-4 py-2">
+        <ul class="flex flex-col gap-y-4">
+          {
+            navItems?.map((item) => (
+              <li>
+                <a href={`#${item.anchor}`} class="flex gap-2 items-center">
+                  <span class="flex-none">
+                    <Icon icon={item.icon} />
+                  </span>
+                  {item.title}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+    </aside>
+    <main project-content class="mt-16 transform transition-all duration-300 ease-in-out">
+      <slot />
+    </main>
+  </article>
 </Layout>
 
 <script>
-    const projectContentContainer = document.querySelector('[project-content]') as HTMLElement | null;
-    const projectInfoContainer = document.querySelector('[project-info]') as HTMLElement | null;
+  const projectContentContainer = document.querySelector("[project-content]") as HTMLElement | null
+  const projectInfoContainer = document.querySelector("[project-info]") as HTMLElement | null
+  const projectAsideContainer = document.querySelector("[project-aside]") as HTMLElement | null
 
-    projectContentContainer?.addEventListener('scroll', () => {
-        if (!projectContentContainer || !projectInfoContainer) return;
-        const { scrollTop } = projectContentContainer;
+  projectContentContainer?.addEventListener("scroll", () => {
+    if (!projectContentContainer || !projectInfoContainer || !projectAsideContainer) return
+    const { scrollTop } = projectContentContainer
 
-        if (scrollTop > 125) {
-            projectInfoContainer.classList.replace("max-h-52", "max-h-0")
-            projectInfoContainer.classList.replace("text-red-500", "text-white")
-        } else {
-            projectInfoContainer.classList.replace("max-h-0", "max-h-52")
-            projectInfoContainer.classList.replace("text-white", "text-red-500")
-        }
-    });
+    if (scrollTop > 125) {
+      projectInfoContainer.classList.replace("max-h-52", "max-h-0")
+      projectInfoContainer.classList.replace("text-red-500", "text-white")
+      projectContentContainer.classList.replace("mt-16", "mt-0")
+      projectAsideContainer.classList.replace("mt-16", "mt-0")
+    } else {
+      projectInfoContainer.classList.replace("max-h-0", "max-h-52")
+      projectInfoContainer.classList.replace("text-white", "text-red-500")
+      projectContentContainer.classList.replace("mt-0", "mt-16")
+      projectAsideContainer.classList.replace("mt-0", "mt-16")
+    }
+  })
 </script>
 
 <style>
-    article {
-      margin: 0;
-      height: var(--spacing-full-without-menu); /* Toda la ventana */
-      display: grid;
-      grid-template-rows: auto 1fr;
-      grid-template-columns: 200px 1fr; /* Sidebar 200px + body resto */
-      grid-template-areas: 
-        "header header"
-        "sidebar body";
-    }
+  article {
+    margin: 0;
+    height: var(--spacing-full-without-menu); /* Toda la ventana */
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 200px 1fr; /* Sidebar 200px + body resto */
+    grid-template-areas:
+      "header header"
+      "sidebar body";
+  }
 
-    header {
-      grid-area: header;
-    }
+  header {
+    grid-area: header;
+  }
 
-    aside {
-      grid-area: sidebar;
-      overflow-y: auto; /* Scroll independiente */
-    }
+  aside {
+    grid-area: sidebar;
+    overflow-y: auto; /* Scroll independiente */
+  }
 
-    main {
-      grid-area: body;
-      overflow-y: auto; /* Scroll independiente */
-    }
+  main {
+    grid-area: body;
+    overflow-y: auto; /* Scroll independiente */
+    scroll-behavior: smooth;
+    padding-inline: min(20em, 10%);
+  }
 </style>
