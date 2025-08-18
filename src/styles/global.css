@@ -3,6 +3,7 @@
 
 @theme {
   --color-main-0: #222222;
+  --color-main-17: #514e4e;
   --spacing-full-without-menu: calc(100dvh - 12 * var(--spacing));
   --font-playfair: "Playfair", sans-serif;
   --font-inter: "Inter", sans-serif;

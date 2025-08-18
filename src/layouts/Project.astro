@@ -5,27 +5,42 @@ import Icon from "@/components/Icon.astro"
 
 type ProjectProps = {
   title: string
+  titleIcon: IconName
   rol: string
   duration: string
   typeOfProject: string
   tools: string[]
   navItems: { title: string; anchor: string; icon: IconName }[]
 }
-const { title, rol, duration, typeOfProject, tools, navItems } = Astro.props as ProjectProps
+
+const { title, titleIcon, rol, duration, typeOfProject, tools, navItems } =
+  Astro.props as ProjectProps
 ---
 
 <Layout>
   <article>
-    <header class="flex flex-col">
-      <h1>{title}</h1>
+    <header class="flex flex-col font-roboto text-3xl">
+      <h1 class="flex gap-4 4k:-ml-12 items-center mt-16 pb-6 font-bold">
+        <span><Icon icon={titleIcon} /></span>
+        <span>{title}</span>
+      </h1>
       <div
         project-info
-        class="flex flex-col text-red-500 max-h-52 transform transition-all duration-300 ease-in-out"
+        class="flex flex-col text-main-0 visible text-xl max-h-52 transform transition-all duration-300 ease-in-out"
       >
-        <h2>Rol: {rol}</h2>
-        <h2>Duración: {duration}</h2>
-        <h2>Tipo de proyecto: {typeOfProject}</h2>
-        <h2>Herramientas: {tools?.join(", ")}</h2>
+        <h2><span class="font-bold">Rol:</span> <span class="opacity-85">{rol}</span></h2>
+        <h2>
+          <span class="font-bold">Duración:</span>
+          <span class="opacity-85">{duration}</span>
+        </h2>
+        <h2>
+          <span class="font-bold">Tipo de proyecto:</span>
+          <span class="opacity-85">{typeOfProject}</span>
+        </h2>
+        <h2>
+          <span class="font-bold">Herramientas:</span>
+          <span class="opacity-85">{tools?.join(", ")}</span>
+        </h2>
       </div>
     </header>
     <aside project-aside class="mt-16 transform transition-all duration-300 ease-in-out">
@@ -63,12 +78,14 @@ const { title, rol, duration, typeOfProject, tools, navItems } = Astro.props as 
 
     if (scrollTop > 125) {
       projectInfoContainer.classList.replace("max-h-52", "max-h-0")
-      projectInfoContainer.classList.replace("text-red-500", "text-white")
+      projectInfoContainer.classList.replace("text-main-0", "text-white")
+      projectInfoContainer.classList.replace("visible", "invisible")
       projectContentContainer.classList.replace("mt-16", "mt-0")
       projectAsideContainer.classList.replace("mt-16", "mt-0")
     } else {
       projectInfoContainer.classList.replace("max-h-0", "max-h-52")
-      projectInfoContainer.classList.replace("text-white", "text-red-500")
+      projectInfoContainer.classList.replace("text-white", "text-main-0")
+      projectInfoContainer.classList.replace("invisible", "visible")
       projectContentContainer.classList.replace("mt-0", "mt-16")
       projectAsideContainer.classList.replace("mt-0", "mt-16")
     }
