@@ -43,13 +43,19 @@ const { title, titleIcon, rol, duration, typeOfProject, tools, navItems } =
         </h2>
       </div>
     </header>
-    <aside project-aside class="mt-16 transform transition-all duration-300 ease-in-out">
+    <aside
+      project-aside
+      class="font-roboto text-base mt-16 transform transition-all duration-300 ease-in-out"
+    >
       <nav class="px-4 py-2">
         <ul class="flex flex-col gap-y-4">
           {
             navItems?.map((item) => (
-              <li>
-                <a href={`#${item.anchor}`} class="flex gap-2 items-center">
+              <li class="group">
+                <a
+                  href={`#${item.anchor}`}
+                  class="flex gap-2 items-center opacity-40 group-hover:opacity-100 group-hover:font-bold"
+                >
                   <span class="flex-none">
                     <Icon icon={item.icon} />
                   </span>
@@ -90,6 +96,31 @@ const { title, titleIcon, rol, duration, typeOfProject, tools, navItems } =
       projectAsideContainer.classList.replace("mt-0", "mt-16")
     }
   })
+
+  // Active navItem 👇
+  const sections = document.querySelectorAll("main[project-content] section[id]")
+  const navLinks = document.querySelectorAll("aside[project-aside] nav a")
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Quitamos "active" de todos
+          navLinks.forEach((link) => link.classList.remove("active"))
+          // Buscamos el link que apunta a la sección visible
+          const id = entry.target.getAttribute("id")
+          const activeLink = document.querySelector(`aside[project-aside] nav a[href="#${id}"]`)
+          if (activeLink) activeLink.classList.add("active")
+        }
+      })
+    },
+    {
+      root: document.querySelector("main[project-content]"), // scroll container
+      threshold: 0.6, // 60% de visibilidad
+    }
+  )
+
+  sections.forEach((section) => observer.observe(section))
 </script>
 
 <style>
@@ -118,5 +149,14 @@ const { title, titleIcon, rol, duration, typeOfProject, tools, navItems } =
     overflow-y: auto; /* Scroll independiente */
     scroll-behavior: smooth;
     padding-inline: min(20em, 10%);
+  }
+
+  :global(section) {
+    scroll-margin-top: 0; /* Ajusta este valor para que coincida con el offset del scroll */
+  }
+
+  :global(nav a.active) {
+    opacity: 1;
+    font-weight: bold;
   }
 </style>
