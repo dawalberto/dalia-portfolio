@@ -10,7 +10,7 @@ type ProjectProps = {
   duration: string
   typeOfProject: string
   tools: string[]
-  navItems: { title: string; anchor: string; icon: IconName }[]
+  navItems: Map<string, { title: string; icon: IconName }>
 }
 
 const { title, titleIcon, rol, duration, typeOfProject, tools, navItems } =
@@ -19,7 +19,7 @@ const { title, titleIcon, rol, duration, typeOfProject, tools, navItems } =
 
 <Layout>
   <article>
-    <header class="flex flex-col font-roboto text-3xl">
+    <header class="flex flex-col font-roboto text-4xl">
       <h1 class="flex gap-4 4k:-ml-12 items-center mt-16 pb-6 font-bold">
         <span><Icon icon={titleIcon} /></span>
         <span>{title}</span>
@@ -50,19 +50,20 @@ const { title, titleIcon, rol, duration, typeOfProject, tools, navItems } =
       <nav class="px-4 py-2">
         <ul class="flex flex-col gap-y-4">
           {
-            navItems?.map((item) => (
-              <li class="group">
-                <a
-                  href={`#${item.anchor}`}
-                  class="flex gap-2 items-center opacity-40 group-hover:opacity-100 group-hover:font-bold"
-                >
-                  <span class="flex-none">
-                    <Icon icon={item.icon} />
-                  </span>
-                  {item.title}
-                </a>
-              </li>
-            ))
+            navItems &&
+              Array.from(navItems.entries()).map(([key, item]) => (
+                <li class="group">
+                  <a
+                    href={`#${key}`}
+                    class="flex gap-2 items-center opacity-40 group-hover:opacity-100 group-hover:font-bold"
+                  >
+                    <span class="flex-none">
+                      <Icon icon={item.icon} />
+                    </span>
+                    {item.title}
+                  </a>
+                </li>
+              ))
           }
         </ul>
       </nav>

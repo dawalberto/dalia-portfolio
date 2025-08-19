@@ -1,193 +1,102 @@
 ---
+import Icon from "@/components/Icon.astro"
+import { CIPHER_PROJECT, CipherNavSections } from "@/constants"
 import Project from "@/layouts/Project.astro"
+import processImage from "@assets/images/process.jpg"
 
-// NAVITEMS
-// El reto
-// El proceso
-// Desk research
-// Il Benchmark
-// Arquitectura de la información
-// Wireframes
-// Pantallas finales + Design System + Dark Mode
-// Conclusiones y futuribles
-// Aprendizaje
+const SECTION_1_ICON = CIPHER_PROJECT.navItems.get(CipherNavSections.SECTION_1)?.icon
+const SECTION_2_ICON = CIPHER_PROJECT.navItems.get(CipherNavSections.SECTION_2)?.icon
 ---
 
 <Project
-  title="Rediseño integral de Plataforma de Ciberseguridad ( Cipher )"
-  titleIcon="fingerprint-simple"
-  rol="Product Designer"
-  duration="2 años"
-  typeOfProject="Rediseño completo de producto digital B2B"
-  tools={["Figma", "Miro", "Storybook"]}
-  navItems={[
-    { title: "El reto", anchor: "challenge", icon: "puzzle-piece" },
-    { title: "El proceso", anchor: "process", icon: "magnifying-glass" },
-    { title: "Desk research", anchor: "desk-research", icon: "arrows-counter-clockwise" },
-    { title: "Il Benchmark", anchor: "benchmark", icon: "chart-bar" },
-    {
-      title: "Arquitectura de la información",
-      anchor: "information-architecture",
-      icon: "chart-polar",
-    },
-    { title: "Wireframes", anchor: "wireframes", icon: "pencil-line" },
-    {
-      title: "Pantallas finales + Design System + Dark Mode",
-      anchor: "final-screens",
-      icon: "palette",
-    },
-    { title: "Conclusiones y futuribles", anchor: "conclusions", icon: "rocket-launch" },
-    { title: "Aprendizaje personal", anchor: "learning", icon: "brain" },
-  ]}
+  title={CIPHER_PROJECT.title}
+  titleIcon={CIPHER_PROJECT.titleIcon}
+  rol={CIPHER_PROJECT.rol}
+  duration={CIPHER_PROJECT.duration}
+  typeOfProject={CIPHER_PROJECT.typeOfProject}
+  tools={CIPHER_PROJECT.tools}
+  navItems={CIPHER_PROJECT.navItems}
 >
-  <div>
-    <section id="challenge" class="bg-amber-200">EL RETO</section>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Error atque sapiente exercitationem facilis,
-    eius quaerat impedit tempore, officiis, laudantium minima vitae alias voluptas nostrum in odit ratione
-    porro sunt similique? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio doloremque,
-    accusamus similique non eveniet culpa natus animi ipsum cumque accusantium vero cum eius consequuntur
-    inventore voluptatem enim reiciendis iste saepe? Lorem ipsum dolor sit amet consectetur adipisicing
-    elit. Iure ipsum non laborum voluptatum autem consequuntur, temporibus possimus eum iusto eveniet
-    suscipit nisi aliquam nihil omnis delectus consequatur harum facere similique? Lorem ipsum dolor
-    sit amet, consectetur adipisicing elit. Optio doloremque, accusamus similique non eveniet culpa natus
-    animi ipsum cumque accusantium vero cum eius consequuntur inventore voluptatem enim reiciendis iste
-    saepe? Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsum non laborum voluptatum
-    autem consequuntur, temporibus possimus eum iusto eveniet suscipit nisi aliquam nihil omnis delectus
-    consequatur harum facere similique? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio
-    doloremque, accusamus similique non eveniet culpa natus animi ipsum cumque accusantium vero cum eius
-    consequuntur inventore voluptatem enim reiciendis iste saepe? Lorem ipsum dolor sit amet consectetur
-    adipisicing elit. Iure ipsum non laborum voluptatum autem consequuntur, temporibus possimus eum iusto
-    eveniet suscipit nisi aliquam nihil omnis delectus consequatur harum facere similique? Lorem ipsum
-    dolor sit amet, consectetur adipisicing elit. Optio doloremque, accusamus similique non eveniet culpa
-    natus animi ipsum cumque accusantium vero cum eius consequuntur inventore voluptatem enim reiciendis
-    iste saepe? Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsum non laborum voluptatum
-    autem consequuntur, temporibus possimus eum iusto eveniet suscipit nisi aliquam nihil omnis delectus
-    consequatur harum facere similique? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio
-    doloremque, accusamus similique non eveniet culpa natus animi ipsum cumque accusantium vero cum eius
-    consequuntur inventore voluptatem enim reiciendis iste saepe? Lorem ipsum dolor sit amet consectetur
-    adipisicing elit. Iure ipsum non laborum voluptatum autem consequuntur, temporibus possimus eum iusto
-    eveniet suscipit nisi aliquam nihil omnis delectus consequatur harum facere similique? Lorem ipsum
-    dolor sit amet, consectetur adipisicing elit. Optio doloremque, accusamus similique non eveniet culpa
-    natus animi ipsum cumque accusantium vero cum eius consequuntur inventore voluptatem enim reiciendis
-    iste saepe? Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsum non laborum voluptatum
-    autem consequuntur, temporibus possimus eum iusto eveniet suscipit nisi aliquam nihil omnis delectus
-    consequatur harum facere similique? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio
-    doloremque, accusamus similique non eveniet culpa natus animi ipsum cumque accusantium vero cum eius
-    consequuntur inventore voluptatem enim reiciendis iste saepe? Lorem ipsum dolor sit amet consectetur
-    adipisicing elit. Iure ipsum non laborum voluptatum autem consequuntur, temporibus possimus eum iusto
-    eveniet suscipit nisi aliquam nihil omnis delectus consequatur harum facere similique? Lorem ipsum
-    dolor sit amet consectetur adipisicing elit. Iure ipsum non laborum voluptatum autem consequuntur,
-    temporibus possimus eum iusto eveniet suscipit nisi aliquam nihil omnis delectus consequatur harum
-    facere similique? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio doloremque, accusamus
-    similique non eveniet culpa natus animi ipsum cumque accusantium vero cum eius consequuntur inventore
-    voluptatem enim reiciendis iste saepe? Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-    ipsum non laborum voluptatum autem consequuntur, temporibus possimus eum iusto eveniet suscipit nisi
-    aliquam nihil omnis delectus consequatur harum facere similique? Lorem ipsum dolor sit amet, consectetur
-    adipisicing elit. Optio doloremque, accusamus similique non eveniet culpa natus animi ipsum cumque
-    accusantium vero cum eius consequuntur inventore voluptatem enim reiciendis iste saepe? Lorem ipsum
-    dolor sit amet consectetur adipisicing elit. Iure ipsum non laborum voluptatum autem consequuntur,
-    temporibus possimus eum iusto eveniet suscipit nisi aliquam nihil omnis delectus consequatur harum
-    facere similique? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio doloremque, accusamus
-    similique non eveniet culpa natus animi ipsum cumque accusantium vero cum eius consequuntur inventore
-    voluptatem enim reiciendis iste saepe? Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-    ipsum non laborum voluptatum autem consequuntur, temporibus possimus eum iusto eveniet suscipit nisi
-    aliquam nihil omnis delectus consequatur harum facere similique? Lorem ipsum dolor sit amet consectetur
-    adipisicing elit. Iure ipsum non laborum voluptatum autem consequuntur, temporibus possimus eum iusto
-    eveniet suscipit nisi aliquam nihil omnis delectus consequatur harum facere similique? Lorem ipsum
-    dolor sit amet, consectetur adipisicing elit. Optio doloremque, accusamus similique non eveniet culpa
-    natus animi ipsum cumque accusantium vero cum eius consequuntur inventore voluptatem enim reiciendis
-    iste saepe? Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsum non laborum voluptatum
-    autem consequuntur, temporibus possimus eum iusto eveniet suscipit nisi aliquam nihil omnis delectus
-    consequatur harum facere similique? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio
-    doloremque, accusamus similique non eveniet culpa natus animi ipsum cumque accusantium vero cum eius
-    consequuntur inventore voluptatem enim reiciendis iste saepe? Lorem ipsum dolor sit amet consectetur
-    adipisicing elit. Iure ipsum non laborum voluptatum autem consequuntur, temporibus possimus eum iusto
-    eveniet suscipit nisi aliquam nihil omnis delectus consequatur harum facere similique? Lorem ipsum
-    <section id="process" class="bg-amber-200">EL PROCESO</section>
-    dolor sit amet, consectetur adipisicing elit. Optio doloremque, accusamus similique non eveniet culpa
-    natus animi ipsum cumque accusantium vero cum eius consequuntur inventore voluptatem enim reiciendis
-    iste saepe? Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsum non laborum voluptatum
-    autem consequuntur, temporibus possimus eum iusto eveniet suscipit nisi aliquam nihil omnis delectus
-    consequatur harum facere similique? voluptatem enim reiciendis iste saepe? Lorem ipsum dolor sit
-    amet consectetur adipisicing elit. Iure ipsum non laborum voluptatum autem consequuntur, temporibus
-    possimus eum iusto eveniet suscipit nisi aliquam nihil omnis delectus consequatur harum facere similique?
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio doloremque, accusamus similique non
-    eveniet culpa natus animi ipsum cumque accusantium vero cum eius consequuntur inventore voluptatem
-    enim reiciendis iste saepe? Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsum non
-    laborum voluptatum autem consequuntur, temporibus possimus eum iusto eveniet suscipit nisi aliquam
-    nihil omnis delectus consequatur harum facere similique? Lorem ipsum dolor sit amet, consectetur
-    adipisicing elit. Optio doloremque, accusamus similique non eveniet culpa natus animi ipsum cumque
-    accusantium vero cum eius consequuntur inventore voluptatem enim reiciendis iste saepe? Lorem ipsum
-    dolor sit amet consectetur adipisicing elit. Iure ipsum non laborum voluptatum autem consequuntur,
-    temporibus possimus eum iusto eveniet suscipit nisi aliquam nihil omnis delectus consequatur harum
-    facere similique? Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsum non laborum
-    voluptatum autem consequuntur, temporibus possimus eum iusto eveniet suscipit nisi aliquam nihil
-    omnis delectus consequatur harum facere similique? Lorem ipsum dolor sit amet, consectetur adipisicing
-    elit. Optio doloremque, accusamus similique non eveniet culpa natus animi ipsum cumque accusantium
-    vero cum eius consequuntur inventore voluptatem enim reiciendis iste saepe? Lorem ipsum dolor sit
-    amet consectetur adipisicing elit. Iure ipsum non laborum voluptatum autem consequuntur, temporibus
-    possimus eum iusto eveniet suscipit nisi aliquam nihil omnis delectus consequatur harum facere similique?
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio doloremque, accusamus similique non
-    eveniet culpa natus animi ipsum cumque accusantium vero cum eius consequuntur inventore voluptatem
-    enim reiciendis iste saepe? Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsum non
-    laborum voluptatum autem consequuntur, temporibus possimus eum iusto eveniet suscipit nisi aliquam
-    nihil omnis delectus consequatur harum facere similique? Lorem ipsum dolor sit amet, consectetur
-    adipisicing elit. Optio doloremque, accusamus similique non eveniet culpa natus animi ipsum cumque
-    accusantium vero cum eius consequuntur inventore voluptatem enim reiciendis iste saepe? Lorem ipsum
-    dolor sit amet consectetur adipisicing elit. Iure ipsum non laborum voluptatum autem consequuntur,
-    temporibus possimus eum iusto eveniet suscipit nisi aliquam nihil omnis delectus consequatur harum
-    facere similique?
-    <section id="conclusions" class="bg-amber-200">CONCLUSIONES</section>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio doloremque, accusamus similique non
-    eveniet culpa natus animi ipsum cumque accusantium vero cum eius consequuntur inventore voluptatem
-    enim reiciendis iste saepe? Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsum non
-    laborum voluptatum autem consequuntur, temporibus possimus eum iusto eveniet suscipit nisi aliquam
-    nihil omnis delectus consequatur harum facere similique? Lorem ipsum dolor sit amet, consectetur
-    adipisicing elit. Optio doloremque, accusamus similique non eveniet culpa natus animi ipsum cumque
-    accusantium vero cum eius consequuntur inventore voluptatem enim reiciendis iste saepe? Lorem ipsum
-    dolor sit amet consectetur adipisicing elit. Iure ipsum non laborum voluptatum autem consequuntur,
-    temporibus possimus eum iusto eveniet suscipit nisi aliquam nihil omnis delectus consequatur harum
-    facere similique? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio doloremque, accusamus
-    similique non eveniet culpa natus animi ipsum cumque accusantium vero cum eius consequuntur inventore
-    voluptatem enim reiciendis iste saepe? Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-    ipsum non laborum voluptatum autem consequuntur, temporibus possimus eum iusto eveniet suscipit nisi
-    aliquam nihil omnis delectus consequatur harum facere similique? Lorem ipsum dolor sit amet, consectetur
-    adipisicing elit. Optio doloremque, accusamus similique non eveniet culpa natus animi ipsum cumque
-    accusantium vero cum eius consequuntur inventore voluptatem enim reiciendis iste saepe? Lorem ipsum
-    dolor sit amet consectetur adipisicing elit. Iure ipsum non laborum voluptatum autem consequuntur,
-    temporibus possimus eum iusto eveniet suscipit nisi aliquam nihil omnis delectus consequatur harum
-    facere similique? Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsum non laborum
-    voluptatum autem consequuntur, temporibus possimus eum iusto eveniet suscipit nisi aliquam nihil
-    omnis delectus consequatur harum facere similique? Lorem ipsum dolor sit amet, consectetur adipisicing
-    elit. Optio doloremque, accusamus similique non eveniet culpa natus animi ipsum cumque accusantium
-    vero cum eius consequuntur inventore voluptatem enim reiciendis iste saepe? Lorem ipsum dolor sit
-    amet consectetur adipisicing elit. Iure ipsum non laborum voluptatum autem consequuntur, temporibus
-    possimus eum iusto eveniet suscipit nisi aliquam nihil omnis delectus consequatur harum facere similique?
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio doloremque, accusamus similique non
-    eveniet culpa natus animi ipsum cumque accusantium vero cum eius consequuntur inventore voluptatem
-    enim reiciendis iste saepe? Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsum non
-    laborum voluptatum autem consequuntur, temporibus possimus eum iusto eveniet suscipit nisi aliquam
-    nihil omnis delectus consequatur harum facere similique? Lorem ipsum dolor sit amet, consectetur
-    adipisicing elit. Optio doloremque, accusamus similique non eveniet culpa natus animi ipsum cumque
-    accusantium vero cum eius consequuntur inventore voluptatem enim reiciendis iste saepe? Lorem ipsum
-    dolor sit amet consectetur adipisicing elit. Iure ipsum non laborum voluptatum autem consequuntur,
-    temporibus possimus eum iusto eveniet suscipit nisi aliquam nihil omnis delectus consequatur harum
-    facere similique? Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsum non laborum
-    voluptatum autem consequuntur, temporibus possimus eum iusto eveniet suscipit nisi aliquam nihil
-    omnis delectus consequatur harum facere similique? Lorem ipsum dolor sit amet, consectetur adipisicing
-    elit. Optio doloremque, accusamus similique non eveniet culpa natus animi ipsum cumque accusantium
-    vero cum eius consequuntur inventore voluptatem enim reiciendis iste saepe? Lorem ipsum dolor sit
-    amet consectetur adipisicing elit. Iure ipsum non laborum voluptatum autem consequuntur, temporibus
-    possimus eum iusto eveniet suscipit nisi aliquam nihil omnis delectus consequatur harum facere similique?
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio doloremque, accusamus similique non
-    eveniet culpa natus animi ipsum cumque accusantium vero cum eius consequuntur inventore voluptatem
-    enim reiciendis iste saepe? Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsum non
-    laborum voluptatum autem consequuntur, temporibus possimus eum iusto eveniet suscipit nisi aliquam
-    nihil omnis delectus consequatur harum facere similique? Lorem ipsum dolor sit amet, consectetur
-    adipisicing elit. Optio doloremque, accusamus similique non eveniet culpa natus animi ipsum cumque
-    accusantium vero cum eius consequuntur inventore voluptatem enim reiciendis iste saepe? Lorem ipsum
-    dolor sit amet consectetur adipisicing elit. Iure ipsum non laborum voluptatum autem consequuntur,
-    temporibus possimus eum iusto eveniet suscipit nisi aliquam nihil omnis delectus consequatur harum
-    facere similique?
+  <div class="flex flex-col gap-20 text-xl font-roboto text-pretty text-main-0 leading-7">
+    <section id={CipherNavSections.SECTION_1} class="flex flex-col gap-6">
+      <h2 class="flex items-center gap-1.5 text-3xl font-bold">
+        {SECTION_1_ICON && <Icon icon={SECTION_1_ICON} />}
+        <span>El reto</span>
+      </h2>
+      <p>
+        Cuando me uní al equipo de Cipher, la plataforma ya contaba con un gran potencial técnico,
+        utilizada por organizaciones para la gestión de amenazas y orquestación de respuestas. Sin
+        embargo, presentaba múltiples retos de diseño:
+      </p>
+      <ul class="list-disc list-outside ml-6">
+        <li>Interfaz visualmente desactualizada.</li>
+        <li>Estructura poco intuitiva para perfiles técnicos y no técnicos.</li>
+        <li>Inconsistencias visuales y funcionales entre módulos.</li>
+        <li>Ausencia de Design System.</li>
+        <li>Falta de escalabilidad y flexibilidad (sin soporte para modo oscuro, por ejemplo).</li>
+      </ul>
+      <p>
+        El objetivo fue liderar un rediseño integral de la plataforma, con un enfoque centrado en el
+        usuario, el negocio y la escalabilidad del producto
+      </p>
+      <h3 class="flex items-center gap-1.5 text-2xl font-bold">
+        <Icon icon="brain" />
+        <span>Para alcanzar este objetivo, consideré los siguientes conceptos clave:</span>
+      </h3>
+      <ul class="list-disc list-outside ml-6">
+        <li>
+          <strong>Usabilidad para entornos complejos</strong>
+          <br />
+          Interfaces claras y funcionales para usuarios técnicos con necesidades avanzadas.
+        </li>
+        <li>
+          <strong>Escalabilidad visual y de componentes</strong>
+          <br />
+          Diseño preparado para crecer con nuevas funcionalidades sin romper consistencia.
+        </li>
+        <li>
+          <strong>Consistencia transversal</strong>
+          <br />
+          Desde la navegación hasta la interacción, el sistema debía comportarse de forma uniforme.
+        </li>
+        <li>
+          <strong>Accesibilidad visual y confort de uso</strong>
+          <br />
+          Pensado también para profesionales que pasan horas frente a la herramienta (modo oscuro, densidad,
+          contrastes, etc.).
+        </li>
+        <li>
+          <strong>Diseño sistémico, no solo estético</strong>
+          <br />
+          Construcción de una lógica de diseño base aplicable a toda la plataforma.
+        </li>
+      </ul>
+    </section>
+    <section id={CipherNavSections.SECTION_2} class="flex flex-col gap-6">
+      <h2 class="flex items-center gap-1.5 text-3xl font-bold">
+        {SECTION_2_ICON && <Icon icon={SECTION_2_ICON} />}
+        <span>El proceso</span>
+      </h2>
+      <p>
+        Me gusta empezar cualquier reto con una buena cantidad de possits y mi cuaderno encima de la
+        mesa, para empezar a apuntar todo lo que encuentre que me sirva de ayuda
+      </p>
+      <p>El proceso de rediseño se estructuró en <strong>7 fases estratégicas:</strong></p>
+      <ul class="list-disc list-outside ml-6">
+        <li>Auditoría UX y entrevistas internas.</li>
+        <li>Investigación competitiva y de usuarios.</li>
+        <li>Rediseño de arquitectura de la información.</li>
+        <li>Wireframes, UI y testeo iterativo.</li>
+        <li>Diseño del Design System desde cero.</li>
+        <li>Desarrollo intencional del modo oscuro.</li>
+        <li>Optimización del equipo y procesos de diseño.</li>
+        <li>Conclusión y futuribles.</li>
+      </ul>
+      <img
+        class="h-auto sm:max-h-[500px] w-full sm:w-3/5 object-cover"
+        src={processImage.src}
+        alt="Notebook with posit"
+      />
+    </section>
   </div>
 </Project>
