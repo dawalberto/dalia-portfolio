@@ -68,7 +68,10 @@ const { title, titleIcon, rol, duration, typeOfProject, tools, navItems } =
         </ul>
       </nav>
     </aside>
-    <main project-content class="mt-16 transform transition-all duration-300 ease-in-out">
+    <main
+      project-content
+      class="project-content mt-16 transform transition-all duration-300 ease-in-out"
+    >
       <slot />
     </main>
   </article>
@@ -125,6 +128,8 @@ const { title, titleIcon, rol, duration, typeOfProject, tools, navItems } =
 </script>
 
 <style>
+  @reference '../styles/global.css';
+
   article {
     margin: 0;
     height: var(--spacing-full-without-menu); /* Toda la ventana */
@@ -159,5 +164,25 @@ const { title, titleIcon, rol, duration, typeOfProject, tools, navItems } =
   :global(nav a.active) {
     opacity: 1;
     font-weight: bold;
+  }
+
+  :global(main.project-content > div) {
+    @apply flex flex-col gap-20 text-xl font-roboto text-pretty text-main-0 leading-7;
+  }
+
+  :global(main.project-content section) {
+    @apply flex flex-col gap-6;
+  }
+
+  :global(main.project-content section h2) {
+    @apply flex items-center gap-1.5 text-3xl font-bold;
+  }
+
+  :global(main.project-content section h3) {
+    @apply flex items-center gap-1.5 text-2xl font-bold;
+  }
+
+  :global(main.project-content section ul) {
+    @apply list-disc list-outside ml-6;
   }
 </style>

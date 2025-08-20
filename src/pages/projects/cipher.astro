@@ -17,9 +17,9 @@ const SECTION_2_ICON = CIPHER_PROJECT.navItems.get(CipherNavSections.SECTION_2)?
   tools={CIPHER_PROJECT.tools}
   navItems={CIPHER_PROJECT.navItems}
 >
-  <div class="flex flex-col gap-20 text-xl font-roboto text-pretty text-main-0 leading-7">
-    <section id={CipherNavSections.SECTION_1} class="flex flex-col gap-6">
-      <h2 class="flex items-center gap-1.5 text-3xl font-bold">
+  <div>
+    <section id={CipherNavSections.SECTION_1}>
+      <h2>
         {SECTION_1_ICON && <Icon icon={SECTION_1_ICON} />}
         <span>El reto</span>
       </h2>
@@ -28,7 +28,7 @@ const SECTION_2_ICON = CIPHER_PROJECT.navItems.get(CipherNavSections.SECTION_2)?
         utilizada por organizaciones para la gestión de amenazas y orquestación de respuestas. Sin
         embargo, presentaba múltiples retos de diseño:
       </p>
-      <ul class="list-disc list-outside ml-6">
+      <ul>
         <li>Interfaz visualmente desactualizada.</li>
         <li>Estructura poco intuitiva para perfiles técnicos y no técnicos.</li>
         <li>Inconsistencias visuales y funcionales entre módulos.</li>
@@ -39,11 +39,11 @@ const SECTION_2_ICON = CIPHER_PROJECT.navItems.get(CipherNavSections.SECTION_2)?
         El objetivo fue liderar un rediseño integral de la plataforma, con un enfoque centrado en el
         usuario, el negocio y la escalabilidad del producto
       </p>
-      <h3 class="flex items-center gap-1.5 text-2xl font-bold">
+      <h3>
         <Icon icon="brain" />
         <span>Para alcanzar este objetivo, consideré los siguientes conceptos clave:</span>
       </h3>
-      <ul class="list-disc list-outside ml-6">
+      <ul>
         <li>
           <strong>Usabilidad para entornos complejos</strong>
           <br />
@@ -72,8 +72,8 @@ const SECTION_2_ICON = CIPHER_PROJECT.navItems.get(CipherNavSections.SECTION_2)?
         </li>
       </ul>
     </section>
-    <section id={CipherNavSections.SECTION_2} class="flex flex-col gap-6">
-      <h2 class="flex items-center gap-1.5 text-3xl font-bold">
+    <section id={CipherNavSections.SECTION_2}>
+      <h2>
         {SECTION_2_ICON && <Icon icon={SECTION_2_ICON} />}
         <span>El proceso</span>
       </h2>
@@ -82,7 +82,7 @@ const SECTION_2_ICON = CIPHER_PROJECT.navItems.get(CipherNavSections.SECTION_2)?
         mesa, para empezar a apuntar todo lo que encuentre que me sirva de ayuda
       </p>
       <p>El proceso de rediseño se estructuró en <strong>7 fases estratégicas:</strong></p>
-      <ul class="list-disc list-outside ml-6">
+      <ul>
         <li>Auditoría UX y entrevistas internas.</li>
         <li>Investigación competitiva y de usuarios.</li>
         <li>Rediseño de arquitectura de la información.</li>

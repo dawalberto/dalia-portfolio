@@ -31,7 +31,9 @@ const { pathname } = Astro.url
           <a
             href={navItem.href}
             class:list={[
-              pathname === navItem.href ? "font-bold" : "",
+              pathname === navItem.href || (navItem.href !== "/" && pathname.includes(navItem.href))
+                ? "font-bold"
+                : "",
               navItem.children && "flex justify-between items-center",
             ]}
             class="text-main-0 items-center group-hover:font-bold transform duration-200"
