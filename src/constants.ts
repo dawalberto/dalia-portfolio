@@ -55,7 +55,7 @@ export const FAS_PROJECT = {
   duration: "1 año",
   typeOfProject: "Rediseño web y estrategia digital para la Federación de Artesanos de Sevilla",
   tools: ["Figma", "Miro"],
-  links: "🔗 www.artesaniasevillana.es",
+  link: "www.artesaniasevillana.es",
   navItems: new Map<FasNavSections, { title: string; icon: IconName }>([
     [FasNavSections.SECTION_1, { title: "El reto", icon: "puzzle-piece" }],
     [FasNavSections.SECTION_2, { title: "El proceso", icon: "magnifying-glass" }],
@@ -123,7 +123,7 @@ export enum BancSabadellNavSections {
   SECTION_9 = "learning",
 }
 
-export const BACNC_SABADELL_PROJECT = {
+export const BANC_SABADELL_PROJECT = {
   title: "Solicitar un Préstamo Online - Banc Sabadell",
   titleIcon: "bank",
   rol: "UX Designer",

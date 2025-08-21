@@ -27,7 +27,7 @@ const { title, titleIcon, rol, duration, typeOfProject, tools, link, navItems } 
       </h1>
       <div
         project-info
-        class="flex flex-col text-main-0 visible text-xl max-h-52 transform transition-all duration-300 ease-in-out"
+        class="flex flex-col gap-y-2 text-main-0 visible text-xl max-h-52 transform transition-all duration-300 ease-in-out"
       >
         <h2><span class="font-bold">Rol:</span> <span class="opacity-85">{rol}</span></h2>
         <h2>
@@ -44,9 +44,17 @@ const { title, titleIcon, rol, duration, typeOfProject, tools, link, navItems } 
         </h2>
         {
           link && (
-            <h2 class="flex gap-2">
-              <Icon icon="link" />
-              <a class="opacity-85">{link}</a>
+            <h2 class="flex gap-2 items-center w-fit group">
+              <span class="group-hover:rotate-180 transform transition-transform duration-300 ease-in-out">
+                <Icon icon="link" />
+              </span>
+              <a
+                class="opacity-85 group-hover:text-indigo-800"
+                href={`https://${link}`}
+                target="_blank"
+              >
+                {link}
+              </a>
             </h2>
           )
         }

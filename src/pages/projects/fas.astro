@@ -1,0 +1,100 @@
+---
+import Icon from "@/components/Icon.astro"
+import { FAS_PROJECT, FasNavSections } from "@/constants"
+import Project from "@/layouts/Project.astro"
+
+const SECTION_1 = FAS_PROJECT.navItems.get(FasNavSections.SECTION_1)
+const SECTION_2 = FAS_PROJECT.navItems.get(FasNavSections.SECTION_2)
+const SECTION_3 = FAS_PROJECT.navItems.get(FasNavSections.SECTION_3)
+const SECTION_4 = FAS_PROJECT.navItems.get(FasNavSections.SECTION_4)
+const SECTION_5 = FAS_PROJECT.navItems.get(FasNavSections.SECTION_5)
+const SECTION_6 = FAS_PROJECT.navItems.get(FasNavSections.SECTION_6)
+const SECTION_7 = FAS_PROJECT.navItems.get(FasNavSections.SECTION_7)
+const SECTION_8 = FAS_PROJECT.navItems.get(FasNavSections.SECTION_8)
+const SECTION_9 = FAS_PROJECT.navItems.get(FasNavSections.SECTION_9)
+const SECTION_10 = FAS_PROJECT.navItems.get(FasNavSections.SECTION_10)
+---
+
+<Project
+  title={FAS_PROJECT.title}
+  titleIcon={FAS_PROJECT.titleIcon}
+  rol={FAS_PROJECT.rol}
+  duration={FAS_PROJECT.duration}
+  typeOfProject={FAS_PROJECT.typeOfProject}
+  tools={FAS_PROJECT.tools}
+  navItems={FAS_PROJECT.navItems}
+  link={FAS_PROJECT.link}
+>
+  <div>
+    <section id={FasNavSections.SECTION_1}>
+      <h2>
+        {SECTION_1?.icon && <Icon icon={SECTION_1.icon} />}
+        <span>{SECTION_1?.title}</span>
+      </h2>
+      CONTENT SECTION 1 HERE
+    </section>
+    <section id={FasNavSections.SECTION_2}>
+      <h2>
+        {SECTION_2?.icon && <Icon icon={SECTION_2.icon} />}
+        <span>{SECTION_2?.title}</span>
+      </h2>
+      CONTENT SECTION 2 HERE
+    </section>
+    <section id={FasNavSections.SECTION_3}>
+      <h2>
+        {SECTION_3?.icon && <Icon icon={SECTION_3.icon} />}
+        <span>{SECTION_3?.title}</span>
+      </h2>
+      CONTENT SECTION 3 HERE
+    </section>
+    <section id={FasNavSections.SECTION_4}>
+      <h2>
+        {SECTION_4?.icon && <Icon icon={SECTION_4.icon} />}
+        <span>{SECTION_4?.title}</span>
+      </h2>
+      CONTENT SECTION 4 HERE
+    </section>
+    <section id={FasNavSections.SECTION_5}>
+      <h2>
+        {SECTION_5?.icon && <Icon icon={SECTION_5.icon} />}
+        <span>{SECTION_5?.title}</span>
+      </h2>
+      CONTENT SECTION 5 HERE
+    </section>
+    <section id={FasNavSections.SECTION_6}>
+      <h2>
+        {SECTION_6?.icon && <Icon icon={SECTION_6.icon} />}
+        <span>{SECTION_6?.title}</span>
+      </h2>
+      CONTENT SECTION 6 HERE
+    </section>
+    <section id={FasNavSections.SECTION_7}>
+      <h2>
+        {SECTION_7?.icon && <Icon icon={SECTION_7.icon} />}
+        <span>{SECTION_7?.title}</span>
+      </h2>
+      CONTENT SECTION 7 HERE
+    </section>
+    <section id={FasNavSections.SECTION_8}>
+      <h2>
+        {SECTION_8?.icon && <Icon icon={SECTION_8.icon} />}
+        <span>{SECTION_8?.title}</span>
+      </h2>
+      CONTENT SECTION 8 HERE
+    </section>
+    <section id={FasNavSections.SECTION_9}>
+      <h2>
+        {SECTION_9?.icon && <Icon icon={SECTION_9.icon} />}
+        <span>{SECTION_9?.title}</span>
+      </h2>
+      CONTENT SECTION 9 HERE
+    </section>
+    <section id={FasNavSections.SECTION_10}>
+      <h2>
+        {SECTION_10?.icon && <Icon icon={SECTION_10.icon} />}
+        <span>{SECTION_10?.title}</span>
+      </h2>
+      CONTENT SECTION 10 HERE
+    </section>
+  </div>
+</Project>
