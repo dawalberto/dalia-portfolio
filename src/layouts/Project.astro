@@ -2,6 +2,7 @@
 import type { IconName } from "@/components/Icon.astro"
 import Layout from "./Layout.astro"
 import Icon from "@/components/Icon.astro"
+import { slide } from "astro:transitions"
 
 type ProjectProps = {
   title: string
@@ -21,7 +22,12 @@ const { title, titleIcon, rol, duration, typeOfProject, tools, link, navItems } 
 <Layout>
   <article>
     <header class="flex flex-col font-roboto text-4xl">
-      <h1 class="flex gap-4 4k:-ml-12 items-center mt-16 pb-6 font-bold">
+      <h1
+        transition:animate={slide({
+          duration: 500,
+        })}
+        class="flex gap-4 4k:-ml-12 items-center mt-16 pb-6 font-bold"
+      >
         <span><Icon icon={titleIcon} /></span>
         <span>{title}</span>
       </h1>
