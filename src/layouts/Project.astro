@@ -10,10 +10,11 @@ type ProjectProps = {
   duration: string
   typeOfProject: string
   tools: string[]
+  link?: string
   navItems: Map<string, { title: string; icon: IconName }>
 }
 
-const { title, titleIcon, rol, duration, typeOfProject, tools, navItems } =
+const { title, titleIcon, rol, duration, typeOfProject, tools, link, navItems } =
   Astro.props as ProjectProps
 ---
 
@@ -41,6 +42,14 @@ const { title, titleIcon, rol, duration, typeOfProject, tools, navItems } =
           <span class="font-bold">Herramientas:</span>
           <span class="opacity-85">{tools?.join(", ")}</span>
         </h2>
+        {
+          link && (
+            <h2 class="flex gap-2">
+              <Icon icon="link" />
+              <a class="opacity-85">{link}</a>
+            </h2>
+          )
+        }
       </div>
     </header>
     <aside
