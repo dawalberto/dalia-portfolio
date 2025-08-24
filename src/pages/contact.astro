@@ -1,7 +1,40 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from "../layouts/Layout.astro"
 ---
 
 <Layout>
-	<h1>Contact</h1>
+  <section class="h-full-without-menu w-full font-sans">
+    <div
+      class="sm:absolute sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 flex flex-col gap-8"
+    >
+      <h1 class="text-4xl sm:text-5xl font-bold font-playfair text-main-0">
+        ¿Listo para crear algo original juntos?
+      </h1>
+      <p class="text-xl text-main-0">Sin formularios. Solo creatividad en bandeja de entrada.</p>
+      <ul class="list-disc list-outside ml-6 flex flex-col gap-4 sm:mt-4">
+        <li class="text-[#514E4E]">
+          <strong class="text-black">Teléfono:</strong><a
+            class="text-pink-400"
+            href="tel:659020036"
+          >
+            659020036</a
+          >
+        </li>
+        <li class="text-[#514E4E]">
+          <strong class="text-black">Email:</strong>
+          <a class="text-pink-400" href="mailto:dalialopezrubio@gmail.com" target="_blank"
+            >dalialopezrubio@gmail.com</a
+          >
+        </li>
+        <li class="text-[#514E4E]">
+          <strong class="text-black">LinkedIn:</strong>
+          <a
+            href="https://www.linkedin.com/in/dalia-rubio-829b0616b"
+            target="_blank"
+            class="text-pink-400">www.linkedin.com/in/dalia-rubio-829b0616b</a
+          >
+        </li>
+      </ul>
+    </div>
+  </section>
 </Layout>
