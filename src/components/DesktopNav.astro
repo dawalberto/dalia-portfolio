@@ -1,10 +1,20 @@
 ---
+import type { IconName } from "@components/Icon.astro"
 import Icon from "@components/Icon.astro"
-const navLinks = [
-  { href: "/", label: "Home" },
+
+export type NavLink = {
+  href: string
+  label: string
+  icon?: IconName
+  children?: NavLink[]
+}
+
+export const NAV_LINKS: NavLink[] = [
+  { href: "/", label: "Home", icon: "house-simple" },
   {
     href: "/projects",
     label: "Proyectos",
+    icon: "kanban",
     children: [
       { href: "/projects/cipher", label: "Cipher" },
       { href: "/projects/fas", label: "Fas" },
@@ -13,8 +23,8 @@ const navLinks = [
       { href: "/projects/atid", label: "Atid" },
     ],
   },
-  { href: "/about", label: "Sobre mi" },
-  { href: "/contact", label: "Contacto" },
+  { href: "/about", label: "Sobre mi", icon: "user" },
+  { href: "/contact", label: "Contacto", icon: "paper-plane-tilt" },
 ]
 const { pathname } = Astro.url
 ---
@@ -23,7 +33,7 @@ const { pathname } = Astro.url
 <nav class="hidden sm:flex min-h-12 font-inter items-center fixed left-0 w-dvw z-10 bg-white">
   <ul class="flex space-x-4 w-fit mx-auto relative">
     {
-      navLinks.map((navItem) => (
+      NAV_LINKS.map((navItem) => (
         <li
           class="min-w-36 px-5 py-3 text-center group"
           class:list={navItem.children && "dropdown"}
@@ -34,7 +44,7 @@ const { pathname } = Astro.url
               pathname === navItem.href || (navItem.href !== "/" && pathname.includes(navItem.href))
                 ? "font-bold"
                 : "",
-              navItem.children && "flex justify-between items-center",
+              navItem.children && "flex justify-between items-center pointer-events-none",
             ]}
             class="text-main-0 items-center group-hover:font-bold transform duration-200"
           >
@@ -53,7 +63,7 @@ const { pathname } = Astro.url
                 <li
                   class="px-6 py-1"
                   class:list={
-                    i !== 0 && i !== navItem.children.length ? "border-t border-gray-300" : ""
+                    i !== 0 && i !== navItem?.children?.length ? "border-t border-gray-300" : ""
                   }
                 >
                   <a
