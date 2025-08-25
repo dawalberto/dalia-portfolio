@@ -1,17 +1,35 @@
 ---
-import Icon from "@/components/Icon.astro"
-import { BANC_SABADELL_PROJECT, BancSabadellNavSections } from "@/constants"
-import Project from "@/layouts/Project.astro"
+import Icon from "@/components/Icon.astro";
+import { BANC_SABADELL_PROJECT, BancSabadellNavSections } from "@/constants";
+import Project from "@/layouts/Project.astro";
 
-const SECTION_1 = BANC_SABADELL_PROJECT.navItems.get(BancSabadellNavSections.SECTION_1)
-const SECTION_2 = BANC_SABADELL_PROJECT.navItems.get(BancSabadellNavSections.SECTION_2)
-const SECTION_3 = BANC_SABADELL_PROJECT.navItems.get(BancSabadellNavSections.SECTION_3)
-const SECTION_4 = BANC_SABADELL_PROJECT.navItems.get(BancSabadellNavSections.SECTION_4)
-const SECTION_5 = BANC_SABADELL_PROJECT.navItems.get(BancSabadellNavSections.SECTION_5)
-const SECTION_6 = BANC_SABADELL_PROJECT.navItems.get(BancSabadellNavSections.SECTION_6)
-const SECTION_7 = BANC_SABADELL_PROJECT.navItems.get(BancSabadellNavSections.SECTION_7)
-const SECTION_8 = BANC_SABADELL_PROJECT.navItems.get(BancSabadellNavSections.SECTION_8)
-const SECTION_9 = BANC_SABADELL_PROJECT.navItems.get(BancSabadellNavSections.SECTION_9)
+const SECTION_1 = BANC_SABADELL_PROJECT.navItems.get(
+  BancSabadellNavSections.SECTION_1,
+);
+const SECTION_2 = BANC_SABADELL_PROJECT.navItems.get(
+  BancSabadellNavSections.SECTION_2,
+);
+const SECTION_3 = BANC_SABADELL_PROJECT.navItems.get(
+  BancSabadellNavSections.SECTION_3,
+);
+const SECTION_4 = BANC_SABADELL_PROJECT.navItems.get(
+  BancSabadellNavSections.SECTION_4,
+);
+const SECTION_5 = BANC_SABADELL_PROJECT.navItems.get(
+  BancSabadellNavSections.SECTION_5,
+);
+const SECTION_6 = BANC_SABADELL_PROJECT.navItems.get(
+  BancSabadellNavSections.SECTION_6,
+);
+const SECTION_7 = BANC_SABADELL_PROJECT.navItems.get(
+  BancSabadellNavSections.SECTION_7,
+);
+const SECTION_8 = BANC_SABADELL_PROJECT.navItems.get(
+  BancSabadellNavSections.SECTION_8,
+);
+const SECTION_9 = BANC_SABADELL_PROJECT.navItems.get(
+  BancSabadellNavSections.SECTION_9,
+);
 ---
 
 <Project
@@ -29,63 +47,272 @@ const SECTION_9 = BANC_SABADELL_PROJECT.navItems.get(BancSabadellNavSections.SEC
         {SECTION_1?.icon && <Icon icon={SECTION_1.icon} />}
         <span>{SECTION_1?.title}</span>
       </h2>
-      CONTENT SECTION 1 HERE
+      <p>
+        Cuando llegué al proyecto, no existía un equipo formalmente establecido
+        ni una estrategia digital definida para este servicio. El flujo de
+        solicitud de préstamos personales era exclusivamente presencial, lo que
+        generaba fricciones para los clientes y limitaba las oportunidades de
+        negocio en un contexto donde la banca online ya estaba en crecimiento.
+      </p>
+      <p>
+        El desafío consistía en trasladar un proceso complejo, con implicaciones
+        legales y financieras, al entorno digital, asegurando que resultara
+        comprensible, confiable y eficiente tanto para el usuario como para el
+        banco. Esto implicaba diseñar desde cero la experiencia completa,
+        creando cada paso del recorrido del cliente, desde la simulación de la
+        oferta hasta la confirmación final, y desarrollando prototipos
+        interactivos que sirvieran tanto para las pruebas de usuario como para
+        guiar el trabajo del equipo de desarrollo.
+      </p>
+      <p>
+        Además, debía realizar testeos continuos de usabilidad y funcionalidad
+        en todas las fases del proyecto, tanto en UX como en UI, utilizando
+        UserZoom para obtener datos cualitativos y cuantitativos.
+        Posteriormente, elaboraba informes detallados que yo misma presentaba a
+        las áreas de negocio, justificando con evidencias cada ajuste propuesto
+        y facilitando la toma de decisiones.
+      </p>
+      <h3>
+        <Icon icon="brain" />
+        <span>Conceptos clave para alcanzar el objetivo:</span>
+      </h3>
+      <ul>
+        <li>
+          Transformar un servicio presencial en un producto digital sin pérdida
+          de claridad ni confianza.
+        </li>
+        <li>
+          Diseñar una experiencia que equilibre simplicidad de uso con
+          cumplimiento normativo.
+        </li>
+        <li>
+          Minimizar el esfuerzo cognitivo en cada paso para reducir abandonos.
+        </li>
+        <li>
+          Garantizar accesibilidad y consistencia visual en todos los
+          dispositivos.
+        </li>
+        <li>
+          Facilitar la comprensión de términos y condiciones sin sobrecargar al
+          usuario.
+        </li>
+        <li>
+          Crear prototipos de alta fidelidad que sirvieran como referencia
+          directa para desarrollo.
+        </li>
+      </ul>
     </section>
     <section id={BancSabadellNavSections.SECTION_2}>
       <h2>
         {SECTION_2?.icon && <Icon icon={SECTION_2.icon} />}
         <span>{SECTION_2?.title}</span>
       </h2>
-      CONTENT SECTION 2 HERE
+      <ul>
+        <li>
+          Análisis profundo de las condiciones del producto y requisitos
+          regulatorios.
+        </li>
+        <li>
+          Definición de arquitectura de información para un recorrido lógico y
+          libre de obstáculos.
+        </li>
+        <li>Diseño de flujos y wireframes desde cero para desktop y mobile.</li>
+        <li>
+          Creación de prototipos navegables para testeo con usuarios y entrega a
+          desarrollo.
+        </li>
+        <li>Testeo iterativo con UserZoom.</li>
+        <li>Generación de informes accionables con datos cruzados.</li>
+        <li>Presentación y validación con stakeholders de negocio.</li>
+        <li>Implementación gradual de mejoras validadas.</li>
+      </ul>
     </section>
     <section id={BancSabadellNavSections.SECTION_3}>
       <h2>
         {SECTION_3?.icon && <Icon icon={SECTION_3.icon} />}
         <span>{SECTION_3?.title}</span>
       </h2>
-      CONTENT SECTION 3 HERE
+      <ul>
+        <li>
+          Estudio del comportamiento de usuarios en entornos financieros
+          digitales.
+        </li>
+        <li>Análisis de prácticas comunes en banca online y fintechs.</li>
+        <li>
+          Evaluación del flujo presencial existente para identificar barreras a
+          digitalizar.
+        </li>
+      </ul>
     </section>
     <section id={BancSabadellNavSections.SECTION_4}>
       <h2>
         {SECTION_4?.icon && <Icon icon={SECTION_4.icon} />}
         <span>{SECTION_4?.title}</span>
       </h2>
-      CONTENT SECTION 4 HERE
+      <p>Comparativa de flujos con competidores y referentes:</p>
+      <ul>
+        <li>
+          <strong>BBVA, ING, Openbank:</strong>
+          procesos simplificados con simuladores claros y feedback inmediato.
+        </li>
+        <li>
+          <strong>Fintonic, Bnext :</strong>
+          enfoque mobile-first, pasos mínimos y comunicación directa.
+        </li>
+        <li>
+          <strong>Banc Sabadell (estado inicial):</strong>
+          ausencia de canal online para préstamos personales.
+        </li>
+      </ul>
     </section>
     <section id={BancSabadellNavSections.SECTION_5}>
       <h2>
         {SECTION_5?.icon && <Icon icon={SECTION_5.icon} />}
         <span>{SECTION_5?.title}</span>
       </h2>
-      CONTENT SECTION 5 HERE
+      <p>
+        El diseño de la arquitectura de información buscó minimizar el número de
+        pasos sin sacrificar claridad ni cumplimiento legal, dividiendo el flujo
+        en bloques lógicos que facilitaran la comprensión y el avance del
+        usuario.
+      </p>
+      <p>Estructura detallada del flujo:</p>
+      <ul>
+        <li>
+          <strong>Pantalla de bienvenida</strong>
+          <br />
+          DESCRIPCION
+        </li>
+        <li>
+          <strong>ITEM 1 EN NEGRITA</strong>
+          <br />
+          DESCRIPCION
+        </li>
+        <li>
+          <strong>ITEM 1 EN NEGRITA</strong>
+          <br />
+          DESCRIPCION
+        </li>
+        <li>
+          <strong>ITEM 1 EN NEGRITA</strong>
+          <br />
+          DESCRIPCION
+        </li>
+        <li>
+          <strong>ITEM 1 EN NEGRITA</strong>
+          <br />
+          DESCRIPCION
+        </li>
+        <li>
+          <strong>ITEM 1 EN NEGRITA</strong>
+          <br />
+          DESCRIPCION
+        </li>
+        <li>
+          <strong>ITEM 1 EN NEGRITA</strong>
+          <br />
+          DESCRIPCION
+        </li>
+      </ul>
+      TODO FOTO
     </section>
     <section id={BancSabadellNavSections.SECTION_6}>
       <h2>
         {SECTION_6?.icon && <Icon icon={SECTION_6.icon} />}
         <span>{SECTION_6?.title}</span>
       </h2>
-      CONTENT SECTION 6 HERE
+      <ul>
+        <li>
+          Desarrollo de wireframes de baja y media fidelidad para validar la
+          jerarquía visual y el recorrido del usuario.
+        </li>
+        <li>
+          Gracias a la existencia del sistema de diseño Galatea, incluso en la
+          fase de wireframes de UX se trabajaba directamente con los componentes
+          finales del sistema, lo que permitía:
+          <br />
+          <li>
+            DENTRO Asegurar consistencia visual desde las primeras etapas.
+          </li>
+          <li>
+            DENTRO Reducir el trabajo posterior del equipo de UI, ya que muchos
+            elementos quedaban prácticamente listos para la fase visual.
+          </li>
+          <li>
+            DENTRO Acelerar la validación con negocio y usuarios, al mostrar
+            prototipos más cercanos al producto final.
+          </li>
+        </li>
+        <li>Versiones adaptadas a desktop y responsive.</li>
+        <li>
+          Componentes flexibles para iteraciones rápidas sin romper la
+          coherencia del diseño.
+        </li>
+      </ul>
+      TODO FOTOS
     </section>
     <section id={BancSabadellNavSections.SECTION_7}>
       <h2>
         {SECTION_7?.icon && <Icon icon={SECTION_7.icon} />}
         <span>{SECTION_7?.title}</span>
       </h2>
-      CONTENT SECTION 7 HERE
+      <p>
+        El flujo de trabajo incluía varias iteraciones controladas para
+        garantizar que cada fase del diseño cumpliera los objetivos de
+        usabilidad y negocio:
+      </p>
     </section>
     <section id={BancSabadellNavSections.SECTION_8}>
       <h2>
         {SECTION_8?.icon && <Icon icon={SECTION_8.icon} />}
         <span>{SECTION_8?.title}</span>
       </h2>
-      CONTENT SECTION 8 HERE
+      <ul>
+        <li>Creación de un flujo digital desde cero que antes no existía.</li>
+        <li>
+          Diseño adaptado a diferentes dispositivos y validado con datos reales.
+        </li>
+        <li>
+          Prototipos funcionales que sirvieron como documento de referencia para
+          el equipo de desarrollo.
+        </li>
+        <li>
+          Integración de insights en cada iteración para minimizar riesgos de
+          lanzamiento.
+        </li>
+      </ul>
     </section>
     <section id={BancSabadellNavSections.SECTION_9}>
       <h2>
         {SECTION_9?.icon && <Icon icon={SECTION_9.icon} />}
         <span>{SECTION_9?.title}</span>
       </h2>
-      CONTENT SECTION 9 HERE
+      <p>
+        Este proyecto me permitió afrontar el reto de construir un producto
+        digital sin estructura previa, aprendiendo a traducir un proceso físico
+        a un entorno online de manera clara, segura y eficiente.
+      </p>
+      <p>
+        TODO ICONO Fortalecí mi habilidad para analizar y testear tanto UX como
+        UI, interpretando datos para tomar decisiones fundamentadas.
+      </p>
+      <p>
+        TODO ICNO Mejoré mi capacidad de crear prototipos que aceleraran la
+        validación y la implementación técnica.
+      </p>
+      <p>
+        TODO ICONO Desarrollé experiencia al presentar hallazgos complejos a
+        áreas de negocio de forma comprensible y orientada a resultados.
+      </p>
+      <p>TODO ICONO Adversidades:</p>
+      <ul>
+        <li>Ausencia inicial de equipo y referentes digitales.</li>
+        <li>Limitaciones legales que condicionaban la experiencia.</li>
+        <li>
+          Necesidad de equilibrar rapidez de entrega con rigurosidad en la
+          validación.
+        </li>
+      </ul>
     </section>
   </div>
 </Project>
