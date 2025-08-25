@@ -4,7 +4,8 @@
 @theme {
   --color-main-0: #222222;
   --color-main-17: #514e4e;
-  --spacing-full-without-menu: calc(100dvh - 12 * var(--spacing));
+  /* 12 from menu heigh + 12 from layout bottom margin */
+  --spacing-full-without-menu: calc(100dvh - 24 * var(--spacing));
   --font-playfair: "Playfair", sans-serif;
   --font-inter: "Inter", sans-serif;
   --font-roboto: "Roboto", sans-serif;
