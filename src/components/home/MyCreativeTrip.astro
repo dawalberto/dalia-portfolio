@@ -1,7 +1,16 @@
 ---
+import { NAV_LINKS } from "../DesktopNav.astro"
+
+const projectsHref = new Map(
+  NAV_LINKS.filter((link) => link.href === "/projects").flatMap((projects) =>
+    (projects?.children || []).map((project) => [project.label, project.href])
+  )
+)
+
 const projects = [
   {
     title: "Cipher (Prosegur)",
+    href: projectsHref.get("Cipher"),
     role: "Product Designer",
     year: "2023 - 2025",
     description:
@@ -9,6 +18,7 @@ const projects = [
   },
   {
     title: "FAS Federación Artesanal de Sevilla",
+    href: projectsHref.get("Fas"),
     role: "UX/UI Designer",
     year: "2023",
     description:
@@ -16,6 +26,7 @@ const projects = [
   },
   {
     title: "Talento Mobile - Carrefour",
+    href: projectsHref.get("Carrefour"),
     role: "UX/UI Designer",
     year: "2022 - 2023",
     description:
@@ -23,6 +34,7 @@ const projects = [
   },
   {
     title: "Eunoia Digital - Banc Sabadell",
+    href: projectsHref.get("Banc Sabadell"),
     role: "UX Designer",
     year: "2021 - 2022",
     description:
@@ -30,6 +42,7 @@ const projects = [
   },
   {
     title: "Freelance",
+    href: projectsHref.get("Freelance"),
     role: "UX/UI Designer",
     year: "2021 - 2022",
     description:
@@ -53,11 +66,14 @@ const projects = [
   <div class="flex flex-col gap-4 mt-10 w-full">
     {
       projects.map((project) => (
-        <div class="p-8 bg-[#F9F9F9] flex w-full justify-between">
+        <a
+          href={project.href}
+          class="group p-8 bg-[#F9F9F9] flex w-full justify-between cursor-pointer transform transition duration-200 hover:drop-shadow-md hover:scale-101 active:drop-shadow-none active:scale-100"
+        >
           <div>
             <h2 class="font-roboto font-bold text-base sm:text-2xl">
-              <span class="text-main-17">{project.title}</span>
-              <span class="text-[#222222]"> - {project.role}</span>
+              <span class="text-main-17 group-hover:text-main-0">{project.title}</span>
+              <span class="text-main-0 group-hover:text-main-17"> - {project.role}</span>
             </h2>
             <h3 class="block sm:hidden font-roboto font-bold text-sm text-[#7E7E7E]">
               {project.year}
@@ -69,7 +85,7 @@ const projects = [
           <h3 class="hidden sm:flex items-center w-fit text-nowrap font-roboto font-bold text-3xl text-[#7E7E7E]">
             {project.year}
           </h3>
-        </div>
+        </a>
       ))
     }
   </div>
