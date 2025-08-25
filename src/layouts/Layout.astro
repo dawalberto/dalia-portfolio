@@ -1,4 +1,5 @@
 ---
+import MobileNav from "@/components/MobileNav.astro"
 import { ClientRouter } from "astro:transitions"
 import DesktopNav from "../components/DesktopNav.astro"
 import "../styles/global.css"
@@ -15,9 +16,10 @@ import "../styles/global.css"
     <ClientRouter />
   </head>
   <body>
-    <main class="max-w-7xl mx-auto px-4 2xl:px-0">
+    <main class="max-w-7xl mx-auto">
       <DesktopNav />
-      <div class="inline-block mt-12 w-full">
+      <MobileNav />
+      <div class="inline-block mt-20 sm:mt-12 w-full px-4 2xl:px-0 mb-12">
         <slot />
       </div>
     </main>

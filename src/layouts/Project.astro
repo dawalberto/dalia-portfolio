@@ -21,14 +21,13 @@ const { title, titleIcon, rol, duration, typeOfProject, tools, link, navItems } 
 
 <Layout>
   <article>
-    <header class="flex flex-col font-roboto text-4xl">
+    <header class="flex flex-col font-roboto text-4xl mt-8 border-b border-[#cccccc] pb-9">
       <h1
         transition:animate={slide({
           duration: 500,
         })}
-        class="flex gap-4 4k:-ml-12 items-center mt-16 pb-6 font-bold"
+        class="flex gap-4 items-center pb-6 font-bold"
       >
-        <span><Icon icon={titleIcon} /></span>
         <span>{title}</span>
       </h1>
       <div
@@ -68,19 +67,19 @@ const { title, titleIcon, rol, duration, typeOfProject, tools, link, navItems } 
     </header>
     <aside
       project-aside
-      class="font-roboto text-base mt-16 transform transition-all duration-300 ease-in-out"
+      class="font-roboto text-base mt-8 transform transition-all duration-300 ease-in-out"
     >
-      <nav class="px-4 py-2">
-        <ul class="flex flex-col gap-y-4">
+      <nav class="py-2">
+        <ul class="flex flex-col gap-y-1">
           {
             navItems &&
               Array.from(navItems.entries()).map(([key, item]) => (
-                <li class="group">
+                <li class="group hover:bg-[#F1F1F1] leading-6 py-3 px-2 rounded-md transform transition duration-200">
                   <a
                     href={`#${key}`}
-                    class="flex gap-2 items-center opacity-40 group-hover:opacity-100 group-hover:font-bold"
+                    class="flex gap-2 items-start opacity-40 group-hover:opacity-100 group-hover:font-bold"
                   >
-                    <span class="flex-none">
+                    <span class="flex-none pt-1">
                       <Icon icon={item.icon} />
                     </span>
                     {item.title}
@@ -93,7 +92,7 @@ const { title, titleIcon, rol, duration, typeOfProject, tools, link, navItems } 
     </aside>
     <main
       project-content
-      class="project-content mt-16 transform transition-all duration-300 ease-in-out"
+      class="project-content mt-8 pt-4 transform transition-all duration-300 ease-in-out"
     >
       <slot />
     </main>
@@ -113,14 +112,14 @@ const { title, titleIcon, rol, duration, typeOfProject, tools, link, navItems } 
       projectInfoContainer.classList.replace("max-h-52", "max-h-0")
       projectInfoContainer.classList.replace("text-main-0", "text-white")
       projectInfoContainer.classList.replace("visible", "invisible")
-      projectContentContainer.classList.replace("mt-16", "mt-0")
-      projectAsideContainer.classList.replace("mt-16", "mt-0")
+      projectContentContainer.classList.replace("mt-8", "mt-0")
+      projectAsideContainer.classList.replace("mt-8", "mt-0")
     } else {
       projectInfoContainer.classList.replace("max-h-0", "max-h-52")
       projectInfoContainer.classList.replace("text-white", "text-main-0")
       projectInfoContainer.classList.replace("invisible", "visible")
-      projectContentContainer.classList.replace("mt-0", "mt-16")
-      projectAsideContainer.classList.replace("mt-0", "mt-16")
+      projectContentContainer.classList.replace("mt-0", "mt-8")
+      projectAsideContainer.classList.replace("mt-0", "mt-8")
     }
   })
 
@@ -177,7 +176,7 @@ const { title, titleIcon, rol, duration, typeOfProject, tools, link, navItems } 
     grid-area: body;
     overflow-y: auto; /* Scroll independiente */
     scroll-behavior: smooth;
-    padding-inline: min(20em, 10%);
+    padding-inline: min(16em, 6%);
   }
 
   :global(section) {
@@ -197,12 +196,16 @@ const { title, titleIcon, rol, duration, typeOfProject, tools, link, navItems } 
     @apply flex flex-col gap-6;
   }
 
+  :global(main.project-content section strong) {
+    @apply font-semibold;
+  }
+
   :global(main.project-content section h2) {
-    @apply flex items-center gap-1.5 text-3xl font-bold;
+    @apply flex items-center gap-1.5 text-2xl font-bold;
   }
 
   :global(main.project-content section h3) {
-    @apply flex items-center gap-1.5 text-2xl font-bold;
+    @apply flex items-center gap-1.5 text-xl font-bold;
   }
 
   :global(main.project-content section ul) {
