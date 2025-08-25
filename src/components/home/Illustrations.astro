@@ -1,31 +1,67 @@
 ---
-import dogFlowers from '@assets/images/dog-flowers.jpeg';
-import hidden from '@assets/images/hidden.jpeg';
-import lyingDownFlowers from '@assets/images/lying-down-flowers.jpeg';
-import modelFlowers from '@assets/images/model-flowers.jpg';
-import skullFlowers from '@assets/images/skull-flowers.jpg';
-import smokeGirl from '@assets/images/smoke-girl.jpg';
-import womanSun from '@assets/images/sun.jpg';
+import dogFlowers from "@assets/images/dog-flowers.jpeg"
+import hidden from "@assets/images/hidden.jpeg"
+import lyingDownFlowers from "@assets/images/lying-down-flowers.jpeg"
+import modelFlowers from "@assets/images/model-flowers.jpg"
+import skullFlowers from "@assets/images/skull-flowers.jpg"
+import smokeGirl from "@assets/images/smoke-girl.jpg"
+import womanSun from "@assets/images/sun.jpg"
 
 const illustrationsRowClass = "flex flex-col sm:flex-row gap-x-6 gap-y-11"
-const imageAnimationClass = "sm:grayscale sm:hover:grayscale-0 sm:hover:shadow-xl/30 sm:transform sm:duration-1000"
+const imageAnimationClass =
+  "sm:grayscale sm:hover:grayscale-0 sm:hover:shadow-xl/30 sm:transform sm:duration-1000"
 ---
 
-<section class="mt-10 sm:mt-44">
-    <h1 class="font-roboto font-bold text-xl sm:text-4xl">Illustrations</h1>
-    <div class="flex flex-col gap-11 mt-10 box-border">
-        <div class={illustrationsRowClass}>
-            <img src={modelFlowers.src} class="block h-auto min-w-0 max-w-full sm:flex-[0_0_30%] object-cover" class:list={imageAnimationClass} alt="Broken woman with flowers">
-            <img src={skullFlowers.src} class="block h-auto min-w-0 max-w-full sm:flex-[1_1_0%] object-cover" class:list={imageAnimationClass} alt="woman with a painted face of Mexican skull and flowers covering her head">
-        </div>
-        <div class={illustrationsRowClass}>
-            <img src={womanSun.src} class="block h-auto min-w-0 max-w-full sm:flex-[30%_0_0] object-cover" class:list={imageAnimationClass} alt="Woman in the sun covering her face with a hat">
-            <img src={dogFlowers.src} class="block h-auto min-w-0 max-w-full sm:flex-[0_30%_0] object-cover" class:list={imageAnimationClass} alt="Dog with flowers as a crown">
-            <img src={lyingDownFlowers.src} class="block h-auto min-w-0 max-w-full sm:flex-[0_0_30%] object-cover" class:list={imageAnimationClass} alt="Woman lying down with flowers in her face">
-        </div>
-        <div class={illustrationsRowClass}>
-            <img src={smokeGirl.src} class="block h-auto min-w-0 max-w-full sm:flex-[50%_0] object-cover" class:list={imageAnimationClass} alt="Woman smoking">
-            <img src={hidden.src} class="block h-auto min-w-0 max-w-full sm:flex-[0_50%] object-cover" class:list={imageAnimationClass} alt="Hidden woman with flowers">
-        </div>
+<section class="mt-10 sm:mt-28">
+  <h1 class="font-roboto font-bold text-xl sm:text-4xl">Ilustraciones</h1>
+  <div class="flex flex-col gap-11 mt-10 box-border">
+    <div class={illustrationsRowClass}>
+      <img
+        src={modelFlowers.src}
+        class="block h-auto min-w-0 max-w-full sm:flex-[0_0_30%] object-cover"
+        class:list={imageAnimationClass}
+        alt="Broken woman with flowers"
+      />
+      <img
+        src={skullFlowers.src}
+        class="block h-auto min-w-0 max-w-full sm:flex-[1_1_0%] object-cover"
+        class:list={imageAnimationClass}
+        alt="woman with a painted face of Mexican skull and flowers covering her head"
+      />
     </div>
+    <div class={illustrationsRowClass}>
+      <img
+        src={womanSun.src}
+        class="block h-auto min-w-0 max-w-full sm:flex-[30%_0_0] object-cover"
+        class:list={imageAnimationClass}
+        alt="Woman in the sun covering her face with a hat"
+      />
+      <img
+        src={dogFlowers.src}
+        class="block h-auto min-w-0 max-w-full sm:flex-[0_30%_0] object-cover"
+        class:list={imageAnimationClass}
+        alt="Dog with flowers as a crown"
+      />
+      <img
+        src={lyingDownFlowers.src}
+        class="block h-auto min-w-0 max-w-full sm:flex-[0_0_30%] object-cover"
+        class:list={imageAnimationClass}
+        alt="Woman lying down with flowers in her face"
+      />
+    </div>
+    <div class={illustrationsRowClass}>
+      <img
+        src={smokeGirl.src}
+        class="block h-auto min-w-0 max-w-full sm:flex-[50%_0] object-cover"
+        class:list={imageAnimationClass}
+        alt="Woman smoking"
+      />
+      <img
+        src={hidden.src}
+        class="block h-auto min-w-0 max-w-full sm:flex-[0_50%] object-cover"
+        class:list={imageAnimationClass}
+        alt="Hidden woman with flowers"
+      />
+    </div>
+  </div>
 </section>
