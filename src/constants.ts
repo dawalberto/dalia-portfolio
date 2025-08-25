@@ -30,7 +30,7 @@ export const CIPHER_PROJECT = {
       CipherNavSections.SECTION_7,
       { title: "Pantallas finales + Design System + Dark Mode", icon: "palette" },
     ],
-    [CipherNavSections.SECTION_8, { title: "Conclusiones y futuribles", icon: "rocket-launch" }],
+    [CipherNavSections.SECTION_8, { title: "Conclusiones y futuribles", icon: "check-fat" }],
     [CipherNavSections.SECTION_9, { title: "Aprendizaje personal", icon: "brain" }],
   ]),
 }
@@ -63,12 +63,9 @@ export const FAS_PROJECT = {
     [FasNavSections.SECTION_4, { title: "Benchmark", icon: "chart-bar" }],
     [FasNavSections.SECTION_5, { title: "Arquitectura de la información", icon: "chart-polar" }],
     [FasNavSections.SECTION_6, { title: "Wireframes", icon: "pencil-line" }],
-    [
-      FasNavSections.SECTION_7,
-      { title: "Pantallas finales + Design System + Dark Mode", icon: "palette" },
-    ],
-    [FasNavSections.SECTION_8, { title: "Community Manager", icon: "device-mobile" }],
-    [FasNavSections.SECTION_9, { title: "Conclusiones y futuribles", icon: "rocket-launch" }],
+    [FasNavSections.SECTION_7, { title: "Pantallas finales", icon: "palette" }],
+    [FasNavSections.SECTION_8, { title: "Gestión redes sociales", icon: "device-mobile" }],
+    [FasNavSections.SECTION_9, { title: "Conclusiones y futuribles", icon: "check-fat" }],
     [FasNavSections.SECTION_10, { title: "Aprendizaje personal", icon: "brain" }],
   ]),
 }
@@ -106,7 +103,7 @@ export const CARREFOUR_PROJECT = {
       CarrefourNavSections.SECTION_7,
       { title: "Pantallas finales + Design System", icon: "palette" },
     ],
-    [CarrefourNavSections.SECTION_8, { title: "Conclusiones y futuribles", icon: "rocket-launch" }],
+    [CarrefourNavSections.SECTION_8, { title: "Conclusiones y futuribles", icon: "check-fat" }],
     [CarrefourNavSections.SECTION_9, { title: "Aprendizaje personal", icon: "brain" }],
   ]),
 }
@@ -147,10 +144,7 @@ export const BANC_SABADELL_PROJECT = {
       BancSabadellNavSections.SECTION_7,
       { title: "Prototipado y testeo (UserZoom)", icon: "spiral" },
     ],
-    [
-      BancSabadellNavSections.SECTION_8,
-      { title: "Conclusiones y futuribles", icon: "rocket-launch" },
-    ],
+    [BancSabadellNavSections.SECTION_8, { title: "Conclusiones y futuribles", icon: "check-fat" }],
     [BancSabadellNavSections.SECTION_9, { title: "Aprendizaje personal", icon: "brain" }],
   ]),
 }

@@ -1,35 +1,17 @@
 ---
-import Icon from "@/components/Icon.astro";
-import { BANC_SABADELL_PROJECT, BancSabadellNavSections } from "@/constants";
-import Project from "@/layouts/Project.astro";
+import Icon from "@/components/Icon.astro"
+import { BANC_SABADELL_PROJECT, BancSabadellNavSections } from "@/constants"
+import Project from "@/layouts/Project.astro"
 
-const SECTION_1 = BANC_SABADELL_PROJECT.navItems.get(
-  BancSabadellNavSections.SECTION_1,
-);
-const SECTION_2 = BANC_SABADELL_PROJECT.navItems.get(
-  BancSabadellNavSections.SECTION_2,
-);
-const SECTION_3 = BANC_SABADELL_PROJECT.navItems.get(
-  BancSabadellNavSections.SECTION_3,
-);
-const SECTION_4 = BANC_SABADELL_PROJECT.navItems.get(
-  BancSabadellNavSections.SECTION_4,
-);
-const SECTION_5 = BANC_SABADELL_PROJECT.navItems.get(
-  BancSabadellNavSections.SECTION_5,
-);
-const SECTION_6 = BANC_SABADELL_PROJECT.navItems.get(
-  BancSabadellNavSections.SECTION_6,
-);
-const SECTION_7 = BANC_SABADELL_PROJECT.navItems.get(
-  BancSabadellNavSections.SECTION_7,
-);
-const SECTION_8 = BANC_SABADELL_PROJECT.navItems.get(
-  BancSabadellNavSections.SECTION_8,
-);
-const SECTION_9 = BANC_SABADELL_PROJECT.navItems.get(
-  BancSabadellNavSections.SECTION_9,
-);
+const SECTION_1 = BANC_SABADELL_PROJECT.navItems.get(BancSabadellNavSections.SECTION_1)
+const SECTION_2 = BANC_SABADELL_PROJECT.navItems.get(BancSabadellNavSections.SECTION_2)
+const SECTION_3 = BANC_SABADELL_PROJECT.navItems.get(BancSabadellNavSections.SECTION_3)
+const SECTION_4 = BANC_SABADELL_PROJECT.navItems.get(BancSabadellNavSections.SECTION_4)
+const SECTION_5 = BANC_SABADELL_PROJECT.navItems.get(BancSabadellNavSections.SECTION_5)
+const SECTION_6 = BANC_SABADELL_PROJECT.navItems.get(BancSabadellNavSections.SECTION_6)
+const SECTION_7 = BANC_SABADELL_PROJECT.navItems.get(BancSabadellNavSections.SECTION_7)
+const SECTION_8 = BANC_SABADELL_PROJECT.navItems.get(BancSabadellNavSections.SECTION_8)
+const SECTION_9 = BANC_SABADELL_PROJECT.navItems.get(BancSabadellNavSections.SECTION_9)
 ---
 
 <Project
@@ -48,29 +30,25 @@ const SECTION_9 = BANC_SABADELL_PROJECT.navItems.get(
         <span>{SECTION_1?.title}</span>
       </h2>
       <p>
-        Cuando llegué al proyecto, no existía un equipo formalmente establecido
-        ni una estrategia digital definida para este servicio. El flujo de
-        solicitud de préstamos personales era exclusivamente presencial, lo que
-        generaba fricciones para los clientes y limitaba las oportunidades de
-        negocio en un contexto donde la banca online ya estaba en crecimiento.
+        Cuando llegué al proyecto, no existía un equipo formalmente establecido ni una estrategia
+        digital definida para este servicio. El flujo de solicitud de préstamos personales era
+        exclusivamente presencial, lo que generaba fricciones para los clientes y limitaba las
+        oportunidades de negocio en un contexto donde la banca online ya estaba en crecimiento.
       </p>
       <p>
-        El desafío consistía en trasladar un proceso complejo, con implicaciones
-        legales y financieras, al entorno digital, asegurando que resultara
-        comprensible, confiable y eficiente tanto para el usuario como para el
-        banco. Esto implicaba diseñar desde cero la experiencia completa,
-        creando cada paso del recorrido del cliente, desde la simulación de la
-        oferta hasta la confirmación final, y desarrollando prototipos
-        interactivos que sirvieran tanto para las pruebas de usuario como para
-        guiar el trabajo del equipo de desarrollo.
+        El desafío consistía en trasladar un proceso complejo, con implicaciones legales y
+        financieras, al entorno digital, asegurando que resultara comprensible, confiable y
+        eficiente tanto para el usuario como para el banco. Esto implicaba diseñar desde cero la
+        experiencia completa, creando cada paso del recorrido del cliente, desde la simulación de la
+        oferta hasta la confirmación final, y desarrollando prototipos interactivos que sirvieran
+        tanto para las pruebas de usuario como para guiar el trabajo del equipo de desarrollo.
       </p>
       <p>
-        Además, debía realizar testeos continuos de usabilidad y funcionalidad
-        en todas las fases del proyecto, tanto en UX como en UI, utilizando
-        UserZoom para obtener datos cualitativos y cuantitativos.
-        Posteriormente, elaboraba informes detallados que yo misma presentaba a
-        las áreas de negocio, justificando con evidencias cada ajuste propuesto
-        y facilitando la toma de decisiones.
+        Además, debía realizar testeos continuos de usabilidad y funcionalidad en todas las fases
+        del proyecto, tanto en UX como en UI, utilizando UserZoom para obtener datos cualitativos y
+        cuantitativos. Posteriormente, elaboraba informes detallados que yo misma presentaba a las
+        áreas de negocio, justificando con evidencias cada ajuste propuesto y facilitando la toma de
+        decisiones.
       </p>
       <h3>
         <Icon icon="brain" />
@@ -78,27 +56,17 @@ const SECTION_9 = BANC_SABADELL_PROJECT.navItems.get(
       </h3>
       <ul>
         <li>
-          Transformar un servicio presencial en un producto digital sin pérdida
-          de claridad ni confianza.
+          Transformar un servicio presencial en un producto digital sin pérdida de claridad ni
+          confianza.
         </li>
         <li>
-          Diseñar una experiencia que equilibre simplicidad de uso con
-          cumplimiento normativo.
+          Diseñar una experiencia que equilibre simplicidad de uso con cumplimiento normativo.
         </li>
+        <li>Minimizar el esfuerzo cognitivo en cada paso para reducir abandonos.</li>
+        <li>Garantizar accesibilidad y consistencia visual en todos los dispositivos.</li>
+        <li>Facilitar la comprensión de términos y condiciones sin sobrecargar al usuario.</li>
         <li>
-          Minimizar el esfuerzo cognitivo en cada paso para reducir abandonos.
-        </li>
-        <li>
-          Garantizar accesibilidad y consistencia visual en todos los
-          dispositivos.
-        </li>
-        <li>
-          Facilitar la comprensión de términos y condiciones sin sobrecargar al
-          usuario.
-        </li>
-        <li>
-          Crear prototipos de alta fidelidad que sirvieran como referencia
-          directa para desarrollo.
+          Crear prototipos de alta fidelidad que sirvieran como referencia directa para desarrollo.
         </li>
       </ul>
     </section>
@@ -108,19 +76,12 @@ const SECTION_9 = BANC_SABADELL_PROJECT.navItems.get(
         <span>{SECTION_2?.title}</span>
       </h2>
       <ul>
+        <li>Análisis profundo de las condiciones del producto y requisitos regulatorios.</li>
         <li>
-          Análisis profundo de las condiciones del producto y requisitos
-          regulatorios.
-        </li>
-        <li>
-          Definición de arquitectura de información para un recorrido lógico y
-          libre de obstáculos.
+          Definición de arquitectura de información para un recorrido lógico y libre de obstáculos.
         </li>
         <li>Diseño de flujos y wireframes desde cero para desktop y mobile.</li>
-        <li>
-          Creación de prototipos navegables para testeo con usuarios y entrega a
-          desarrollo.
-        </li>
+        <li>Creación de prototipos navegables para testeo con usuarios y entrega a desarrollo.</li>
         <li>Testeo iterativo con UserZoom.</li>
         <li>Generación de informes accionables con datos cruzados.</li>
         <li>Presentación y validación con stakeholders de negocio.</li>
@@ -133,15 +94,9 @@ const SECTION_9 = BANC_SABADELL_PROJECT.navItems.get(
         <span>{SECTION_3?.title}</span>
       </h2>
       <ul>
-        <li>
-          Estudio del comportamiento de usuarios en entornos financieros
-          digitales.
-        </li>
+        <li>Estudio del comportamiento de usuarios en entornos financieros digitales.</li>
         <li>Análisis de prácticas comunes en banca online y fintechs.</li>
-        <li>
-          Evaluación del flujo presencial existente para identificar barreras a
-          digitalizar.
-        </li>
+        <li>Evaluación del flujo presencial existente para identificar barreras a digitalizar.</li>
       </ul>
     </section>
     <section id={BancSabadellNavSections.SECTION_4}>
@@ -171,10 +126,9 @@ const SECTION_9 = BANC_SABADELL_PROJECT.navItems.get(
         <span>{SECTION_5?.title}</span>
       </h2>
       <p>
-        El diseño de la arquitectura de información buscó minimizar el número de
-        pasos sin sacrificar claridad ni cumplimiento legal, dividiendo el flujo
-        en bloques lógicos que facilitaran la comprensión y el avance del
-        usuario.
+        El diseño de la arquitectura de información buscó minimizar el número de pasos sin
+        sacrificar claridad ni cumplimiento legal, dividiendo el flujo en bloques lógicos que
+        facilitaran la comprensión y el avance del usuario.
       </p>
       <p>Estructura detallada del flujo:</p>
       <ul>
@@ -223,31 +177,25 @@ const SECTION_9 = BANC_SABADELL_PROJECT.navItems.get(
       </h2>
       <ul>
         <li>
-          Desarrollo de wireframes de baja y media fidelidad para validar la
-          jerarquía visual y el recorrido del usuario.
+          Desarrollo de wireframes de baja y media fidelidad para validar la jerarquía visual y el
+          recorrido del usuario.
         </li>
         <li>
-          Gracias a la existencia del sistema de diseño Galatea, incluso en la
-          fase de wireframes de UX se trabajaba directamente con los componentes
-          finales del sistema, lo que permitía:
+          Gracias a la existencia del sistema de diseño Galatea, incluso en la fase de wireframes de
+          UX se trabajaba directamente con los componentes finales del sistema, lo que permitía:
           <br />
+          <li>DENTRO Asegurar consistencia visual desde las primeras etapas.</li>
           <li>
-            DENTRO Asegurar consistencia visual desde las primeras etapas.
+            DENTRO Reducir el trabajo posterior del equipo de UI, ya que muchos elementos quedaban
+            prácticamente listos para la fase visual.
           </li>
           <li>
-            DENTRO Reducir el trabajo posterior del equipo de UI, ya que muchos
-            elementos quedaban prácticamente listos para la fase visual.
-          </li>
-          <li>
-            DENTRO Acelerar la validación con negocio y usuarios, al mostrar
-            prototipos más cercanos al producto final.
+            DENTRO Acelerar la validación con negocio y usuarios, al mostrar prototipos más cercanos
+            al producto final.
           </li>
         </li>
         <li>Versiones adaptadas a desktop y responsive.</li>
-        <li>
-          Componentes flexibles para iteraciones rápidas sin romper la
-          coherencia del diseño.
-        </li>
+        <li>Componentes flexibles para iteraciones rápidas sin romper la coherencia del diseño.</li>
       </ul>
       TODO FOTOS
     </section>
@@ -257,9 +205,8 @@ const SECTION_9 = BANC_SABADELL_PROJECT.navItems.get(
         <span>{SECTION_7?.title}</span>
       </h2>
       <p>
-        El flujo de trabajo incluía varias iteraciones controladas para
-        garantizar que cada fase del diseño cumpliera los objetivos de
-        usabilidad y negocio:
+        El flujo de trabajo incluía varias iteraciones controladas para garantizar que cada fase del
+        diseño cumpliera los objetivos de usabilidad y negocio:
       </p>
     </section>
     <section id={BancSabadellNavSections.SECTION_8}>
@@ -269,17 +216,21 @@ const SECTION_9 = BANC_SABADELL_PROJECT.navItems.get(
       </h2>
       <ul>
         <li>Creación de un flujo digital desde cero que antes no existía.</li>
+        <li>Diseño adaptado a diferentes dispositivos y validado con datos reales.</li>
         <li>
-          Diseño adaptado a diferentes dispositivos y validado con datos reales.
+          Prototipos funcionales que sirvieron como documento de referencia para el equipo de
+          desarrollo.
         </li>
-        <li>
-          Prototipos funcionales que sirvieron como documento de referencia para
-          el equipo de desarrollo.
-        </li>
-        <li>
-          Integración de insights en cada iteración para minimizar riesgos de
-          lanzamiento.
-        </li>
+        <li>Integración de insights en cada iteración para minimizar riesgos de lanzamiento.</li>
+      </ul>
+      <h2>
+        <Icon icon="rocket-launch" />
+        <span class="capitalize">{SECTION_8?.title.split(" ")[2]}</span>
+      </h2>
+      <ul>
+        <li>Validación automática de identidad y documentación.</li>
+        <li>Personalización de la oferta según perfil de usuario.</li>
+        <li>Simulador con comparativa de cuotas y plazos más visual.</li>
       </ul>
     </section>
     <section id={BancSabadellNavSections.SECTION_9}>
@@ -288,30 +239,27 @@ const SECTION_9 = BANC_SABADELL_PROJECT.navItems.get(
         <span>{SECTION_9?.title}</span>
       </h2>
       <p>
-        Este proyecto me permitió afrontar el reto de construir un producto
-        digital sin estructura previa, aprendiendo a traducir un proceso físico
-        a un entorno online de manera clara, segura y eficiente.
+        Este proyecto me permitió afrontar el reto de construir un producto digital sin estructura
+        previa, aprendiendo a traducir un proceso físico a un entorno online de manera clara, segura
+        y eficiente.
       </p>
       <p>
-        TODO ICONO Fortalecí mi habilidad para analizar y testear tanto UX como
-        UI, interpretando datos para tomar decisiones fundamentadas.
+        TODO ICONO Fortalecí mi habilidad para analizar y testear tanto UX como UI, interpretando
+        datos para tomar decisiones fundamentadas.
       </p>
       <p>
-        TODO ICNO Mejoré mi capacidad de crear prototipos que aceleraran la
-        validación y la implementación técnica.
+        TODO ICNO Mejoré mi capacidad de crear prototipos que aceleraran la validación y la
+        implementación técnica.
       </p>
       <p>
-        TODO ICONO Desarrollé experiencia al presentar hallazgos complejos a
-        áreas de negocio de forma comprensible y orientada a resultados.
+        TODO ICONO Desarrollé experiencia al presentar hallazgos complejos a áreas de negocio de
+        forma comprensible y orientada a resultados.
       </p>
       <p>TODO ICONO Adversidades:</p>
       <ul>
         <li>Ausencia inicial de equipo y referentes digitales.</li>
         <li>Limitaciones legales que condicionaban la experiencia.</li>
-        <li>
-          Necesidad de equilibrar rapidez de entrega con rigurosidad en la
-          validación.
-        </li>
+        <li>Necesidad de equilibrar rapidez de entrega con rigurosidad en la validación.</li>
       </ul>
     </section>
   </div>

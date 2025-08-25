@@ -1,18 +1,18 @@
 ---
-import Icon from "@/components/Icon.astro";
-import { CIPHER_PROJECT, CipherNavSections } from "@/constants";
-import Project from "@/layouts/Project.astro";
-import processImage from "@assets/images/process.jpg";
+import Icon from "@/components/Icon.astro"
+import { CIPHER_PROJECT, CipherNavSections } from "@/constants"
+import Project from "@/layouts/Project.astro"
+import processImage from "@assets/images/process.jpg"
 
-const SECTION_1 = CIPHER_PROJECT.navItems.get(CipherNavSections.SECTION_1);
-const SECTION_2 = CIPHER_PROJECT.navItems.get(CipherNavSections.SECTION_2);
-const SECTION_3 = CIPHER_PROJECT.navItems.get(CipherNavSections.SECTION_3);
-const SECTION_4 = CIPHER_PROJECT.navItems.get(CipherNavSections.SECTION_4);
-const SECTION_5 = CIPHER_PROJECT.navItems.get(CipherNavSections.SECTION_5);
-const SECTION_6 = CIPHER_PROJECT.navItems.get(CipherNavSections.SECTION_6);
-const SECTION_7 = CIPHER_PROJECT.navItems.get(CipherNavSections.SECTION_7);
-const SECTION_8 = CIPHER_PROJECT.navItems.get(CipherNavSections.SECTION_8);
-const SECTION_9 = CIPHER_PROJECT.navItems.get(CipherNavSections.SECTION_9);
+const SECTION_1 = CIPHER_PROJECT.navItems.get(CipherNavSections.SECTION_1)
+const SECTION_2 = CIPHER_PROJECT.navItems.get(CipherNavSections.SECTION_2)
+const SECTION_3 = CIPHER_PROJECT.navItems.get(CipherNavSections.SECTION_3)
+const SECTION_4 = CIPHER_PROJECT.navItems.get(CipherNavSections.SECTION_4)
+const SECTION_5 = CIPHER_PROJECT.navItems.get(CipherNavSections.SECTION_5)
+const SECTION_6 = CIPHER_PROJECT.navItems.get(CipherNavSections.SECTION_6)
+const SECTION_7 = CIPHER_PROJECT.navItems.get(CipherNavSections.SECTION_7)
+const SECTION_8 = CIPHER_PROJECT.navItems.get(CipherNavSections.SECTION_8)
+const SECTION_9 = CIPHER_PROJECT.navItems.get(CipherNavSections.SECTION_9)
 ---
 
 <Project
@@ -31,38 +31,29 @@ const SECTION_9 = CIPHER_PROJECT.navItems.get(CipherNavSections.SECTION_9);
         <span>{SECTION_1?.title}</span>
       </h2>
       <p>
-        Cuando me uní al equipo de Cipher, la plataforma ya contaba con un gran
-        potencial técnico, utilizada por organizaciones para la gestión de
-        amenazas y orquestación de respuestas. Sin embargo, presentaba múltiples
-        retos de diseño:
+        Cuando me uní al equipo de Cipher, la plataforma ya contaba con un gran potencial técnico,
+        utilizada por organizaciones para la gestión de amenazas y orquestación de respuestas. Sin
+        embargo, presentaba múltiples retos de diseño:
       </p>
       <ul>
         <li>Interfaz visualmente desactualizada.</li>
         <li>Estructura poco intuitiva para perfiles técnicos y no técnicos.</li>
         <li>Inconsistencias visuales y funcionales entre módulos.</li>
         <li>Ausencia de Design System.</li>
-        <li>
-          Falta de escalabilidad y flexibilidad (sin soporte para modo oscuro,
-          por ejemplo).
-        </li>
+        <li>Falta de escalabilidad y flexibilidad (sin soporte para modo oscuro, por ejemplo).</li>
       </ul>
       <p>
-        El objetivo fue liderar un rediseño integral de la plataforma, con un
-        enfoque centrado en el usuario, el negocio y la escalabilidad del
-        producto
+        El objetivo fue liderar un rediseño integral de la plataforma, con un enfoque centrado en el
+        usuario, el negocio y la escalabilidad del producto
       </p>
       <h3>
-        <span
-          >Para alcanzar este objetivo, consideré los siguientes conceptos
-          clave:</span
-        >
+        <span>Para alcanzar este objetivo, consideré los siguientes conceptos clave:</span>
       </h3>
       <ul>
         <li>
           <strong>Usabilidad para entornos complejos</strong>
           <br />
-          Interfaces claras y funcionales para usuarios técnicos con necesidades
-          avanzadas.
+          Interfaces claras y funcionales para usuarios técnicos con necesidades avanzadas.
         </li>
         <li>
           <strong>Escalabilidad visual y de componentes</strong>
@@ -72,14 +63,13 @@ const SECTION_9 = CIPHER_PROJECT.navItems.get(CipherNavSections.SECTION_9);
         <li>
           <strong>Consistencia transversal</strong>
           <br />
-          Desde la navegación hasta la interacción, el sistema debía comportarse
-          de forma uniforme.
+          Desde la navegación hasta la interacción, el sistema debía comportarse de forma uniforme.
         </li>
         <li>
           <strong>Accesibilidad visual y confort de uso</strong>
           <br />
-          Pensado también para profesionales que pasan horas frente a la herramienta
-          (modo oscuro, densidad, contrastes, etc.).
+          Pensado también para profesionales que pasan horas frente a la herramienta (modo oscuro, densidad,
+          contrastes, etc.).
         </li>
         <li>
           <strong>Diseño sistémico, no solo estético</strong>
@@ -94,14 +84,11 @@ const SECTION_9 = CIPHER_PROJECT.navItems.get(CipherNavSections.SECTION_9);
         <span>{SECTION_2?.title}</span>
       </h2>
       <p>
-        Me gusta empezar cualquier reto con una buena cantidad de possits y mi
-        cuaderno encima de la mesa, para empezar a apuntar todo lo que encuentre
-        que me sirva de ayuda
+        Me gusta empezar cualquier reto con una buena cantidad de possits y mi cuaderno encima de la
+        mesa, para empezar a apuntar todo lo que encuentre que me sirva de ayuda
       </p>
       <p>
-        El proceso de rediseño se estructuró en <strong
-          >7 fases estratégicas:</strong
-        >
+        El proceso de rediseño se estructuró en <strong>7 fases estratégicas:</strong>
       </p>
       <ul>
         <li>Auditoría UX y entrevistas internas.</li>
@@ -125,24 +112,17 @@ const SECTION_9 = CIPHER_PROJECT.navItems.get(CipherNavSections.SECTION_9);
         <span>{SECTION_3?.title}</span>
       </h2>
       <p>
-        Inicié el trabajo con una auditoría del producto actual y la
-        recopilación de insights clave:
+        Inicié el trabajo con una auditoría del producto actual y la recopilación de insights clave:
       </p>
       <ul>
         <li>Revisión funcional y visual del sistema.</li>
         <li>Análisis de tickets de soporte y feedback de usuarios.</li>
-        <li>
-          Entrevistas internas con stakeholders de producto, soporte, desarrollo
-          y ventas.
-        </li>
-        <li>
-          Estudio de métricas de navegación y uso (cuando estaban disponibles).
-        </li>
+        <li>Entrevistas internas con stakeholders de producto, soporte, desarrollo y ventas.</li>
+        <li>Estudio de métricas de navegación y uso (cuando estaban disponibles).</li>
       </ul>
       <p>
-        <strong>El diagnóstico fue claro:</strong> aunque robusta a nivel técnico,
-        la plataforma generaba fricción y confusión en tareas clave debido a un diseño
-        obsoleto y no centralizado.
+        <strong>El diagnóstico fue claro:</strong> aunque robusta a nivel técnico, la plataforma generaba
+        fricción y confusión en tareas clave debido a un diseño obsoleto y no centralizado.
       </p>
     </section>
     <section id={CipherNavSections.SECTION_4}>
@@ -151,60 +131,50 @@ const SECTION_9 = CIPHER_PROJECT.navItems.get(CipherNavSections.SECTION_9);
         <span>{SECTION_4?.title}</span>
       </h2>
       <p>
-        Realicé una comparativa exhaustiva con otras plataformas del ecosistema
-        de ciberseguridad y automatización para identificar estándares, patrones
-        y oportunidades de diferenciación.
+        Realicé una comparativa exhaustiva con otras plataformas del ecosistema de ciberseguridad y
+        automatización para identificar estándares, patrones y oportunidades de diferenciación.
       </p>
       <p>Plataformas analizadas:</p>
       <ul>
         <li>
           <strong>SentinelOne</strong>
           <br />
-          Interfaz robusta y avanzada, con un fuerte enfoque visual en visualizaciones
-          de amenazas. Usabilidad aceptable pero visualmente densa
+          Interfaz robusta y avanzada, con un fuerte enfoque visual en visualizaciones de amenazas. Usabilidad
+          aceptable pero visualmente densa
         </li>
         <li>
           <strong>SnapAttack</strong>
           <br />
-          Muy orientada al threat hunting. Buena arquitectura de información pero
-          visuales cargadas y no del todo intuitivas.
+          Muy orientada al threat hunting. Buena arquitectura de información pero visuales cargadas y
+          no del todo intuitivas.
         </li>
         <li>
           <strong>SOC Prime</strong>
           <br />
-          Alto grado de tecnicismo, estructura funcional sólida pero con carencias
-          visuales y de consistencia. Gran volumen de información mal jerarquizado.
+          Alto grado de tecnicismo, estructura funcional sólida pero con carencias visuales y de consistencia.
+          Gran volumen de información mal jerarquizado.
         </li>
         <li>
           <strong>Orna</strong>
           <br />
-          UX más centrada en equipos pequeños y flujos rápidos. Simplicidad bien
-          ejecutada pero limitada en personalización para casos complejos.
+          UX más centrada en equipos pequeños y flujos rápidos. Simplicidad bien ejecutada pero limitada
+          en personalización para casos complejos.
         </li>
         <li>
           <strong>Make</strong> (ex Integromat)
           <br />
-          Aunque no es una plataforma de ciberseguridad directa, su interfaz modular
-          y lógica de flujos fue inspiradora para pensar interacciones avanzadas
-          con nodos o reglas.
+          Aunque no es una plataforma de ciberseguridad directa, su interfaz modular y lógica de flujos
+          fue inspiradora para pensar interacciones avanzadas con nodos o reglas.
         </li>
       </ul>
       <p>Principales aprendizajes del benchmark:</p>
       <ul>
+        <li>Las plataformas más potentes suelen descuidar la claridad visual.</li>
+        <li>Hay una oportunidad de crear herramientas visualmente limpias pero potentes.</li>
+        <li>El modo oscuro bien aplicado se vuelve esencial en estos entornos.</li>
         <li>
-          Las plataformas más potentes suelen descuidar la claridad visual.
-        </li>
-        <li>
-          Hay una oportunidad de crear herramientas visualmente limpias pero
-          potentes.
-        </li>
-        <li>
-          El modo oscuro bien aplicado se vuelve esencial en estos entornos.
-        </li>
-        <li>
-          Patrones como navegación lateral persistente, dashboards
-          personalizables y microinteracciones bien calibradas mejoran
-          notablemente la experiencia.
+          Patrones como navegación lateral persistente, dashboards personalizables y
+          microinteracciones bien calibradas mejoran notablemente la experiencia.
         </li>
       </ul>
       TO DO FOTO
@@ -215,15 +185,13 @@ const SECTION_9 = CIPHER_PROJECT.navItems.get(CipherNavSections.SECTION_9);
         <span>{SECTION_5?.title}</span>
       </h2>
       <p>
-        A partir del research, diseñé una nueva estructura de navegación
-        centrada en tareas, con acceso rápido a lo crítico:
+        A partir del research, diseñé una nueva estructura de navegación centrada en tareas, con
+        acceso rápido a lo crítico:
       </p>
       <ul>
         <li>Reducción de pasos en flujos clave.</li>
         <li>Jerarquización clara y lógica de módulos.</li>
-        <li>
-          Simplificación visual de las rutas del usuario dentro del sistema.
-        </li>
+        <li>Simplificación visual de las rutas del usuario dentro del sistema.</li>
       </ul>
       TO DO FOTO
     </section>
@@ -232,10 +200,7 @@ const SECTION_9 = CIPHER_PROJECT.navItems.get(CipherNavSections.SECTION_9);
         {SECTION_6?.icon && <Icon icon={SECTION_6.icon} />}
         <span>{SECTION_6?.title}</span>
       </h2>
-      <p>
-        Los wireframes permitieron validar decisiones antes de entrar en diseño
-        visual:
-      </p>
+      <p>Los wireframes permitieron validar decisiones antes de entrar en diseño visual:</p>
       <ul>
         <li>Diseño modular de pantallas.</li>
         <li>Dashboards adaptables por tipo de usuario.</li>
@@ -255,10 +220,7 @@ const SECTION_9 = CIPHER_PROJECT.navItems.get(CipherNavSections.SECTION_9);
         <span>Design System desde cero</span>
       </h3>
       <ul>
-        <li>
-          Fue un pilar fundamental para garantizar la escalabilidad y la calidad
-          del diseño.
-        </li>
+        <li>Fue un pilar fundamental para garantizar la escalabilidad y la calidad del diseño.</li>
         <li>Tokens de diseño base (colores, tipografías, espaciados).</li>
         <li>Componentes reutilizables con variantes completas.</li>
         <li>Estados de interacción cubiertos (hover, error, loading, etc.).</li>
@@ -270,10 +232,7 @@ const SECTION_9 = CIPHER_PROJECT.navItems.get(CipherNavSections.SECTION_9);
         <span>Modo oscuro</span>
       </h3>
       <ul>
-        <li>
-          Diseñado con intención desde el principio, no como simple inversión
-          automática.
-        </li>
+        <li>Diseñado con intención desde el principio, no como simple inversión automática.</li>
         <li>Contrastes calibrados con estándares de accesibilidad (WCAG).</li>
         <li>Reducción de fatiga visual.</li>
         <li>Color tokens adaptados para ambos modos.</li>
@@ -284,24 +243,27 @@ const SECTION_9 = CIPHER_PROJECT.navItems.get(CipherNavSections.SECTION_9);
     <section id={CipherNavSections.SECTION_8}>
       <h2>
         {SECTION_8?.icon && <Icon icon={SECTION_8.icon} />}
-        <span>{SECTION_8?.title}</span>
+        <span>{SECTION_8?.title.split(" ")[0]}</span>
       </h2>
       <ul>
-        <li>
-          Se aumentó significativamente la claridad y coherencia visual del
-          producto.
-        </li>
-        <li>
-          La nueva arquitectura de información mejoró los tiempos de navegación.
-        </li>
-        <li>
-          El Design System permitió escalar más rápido y reducir errores en
-          desarrollo.
-        </li>
-        <li>
-          El modo oscuro fue uno de los puntos mejor valorados por los usuarios.
-        </li>
+        <li>Se aumentó significativamente la claridad y coherencia visual del producto.</li>
+        <li>La nueva arquitectura de información mejoró los tiempos de navegación.</li>
+        <li>El Design System permitió escalar más rápido y reducir errores en desarrollo.</li>
+        <li>El modo oscuro fue uno de los puntos mejor valorados por los usuarios.</li>
         <li>El equipo de diseño ganó independencia y eficiencia.</li>
+      </ul>
+      <h2>
+        {SECTION_8?.icon && <Icon icon="rocket-launch" />}
+        <span class="capitalize">{SECTION_8?.title.split(" ")[2]}</span>
+      </h2>
+      <ul>
+        <li>Implementar personalización avanzada del dashboard por perfil.</li>
+        <li>Aplicar estándares de accesibilidad AA en todos los componentes.</li>
+        <li>
+          Evolucionar el Design System hacia un repositorio compartido entre diseño y desarrollo.
+        </li>
+        <li>Incorporar analítica UX para decisiones más informadas.</li>
+        <li>Crear flujos guiados para onboarding de nuevos usuarios.</li>
       </ul>
     </section>
     <section id={CipherNavSections.SECTION_9}>
@@ -310,63 +272,56 @@ const SECTION_9 = CIPHER_PROJECT.navItems.get(CipherNavSections.SECTION_9);
         <span>{SECTION_9?.title}</span>
       </h2>
       <p>
-        Este proyecto fue una experiencia transformadora tanto a nivel
-        profesional como personal.
+        Este proyecto fue una experiencia transformadora tanto a nivel profesional como personal.
       </p>
       <p>
-        Hacer un rediseño completo de una plataforma tan técnica como Cipher
-        supuso enfrentarme a retos complejos, trabajar con equipos
-        multidisciplinares y tomar decisiones de alto impacto en todo momento.
-        Uno de los aprendizajes más importantes fue entender que diseñar para
-        entornos técnicos no es hacer las cosas más complicadas, sino todo lo
-        contrario: simplificar sin sacrificar poder, crear claridad sin perder
-        profundidad.
+        Hacer un rediseño completo de una plataforma tan técnica como Cipher supuso enfrentarme a
+        retos complejos, trabajar con equipos multidisciplinares y tomar decisiones de alto impacto
+        en todo momento. Uno de los aprendizajes más importantes fue entender que diseñar para
+        entornos técnicos no es hacer las cosas más complicadas, sino todo lo contrario: simplificar
+        sin sacrificar poder, crear claridad sin perder profundidad.
       </p>
       <ul>
         <li>
-          Aprendí a pensar en sistemas escalables y a construir no solo
-          pantallas, sino una lógica visual y funcional que pudiera crecer con
-          el producto.
+          Aprendí a pensar en sistemas escalables y a construir no solo pantallas, sino una lógica
+          visual y funcional que pudiera crecer con el producto.
         </li>
         <li>
-          Fortalecí mi capacidad para negociar prioridades con producto y
-          desarrollo, defendiendo al usuario pero también entendiendo las
-          limitaciones técnicas y de negocio.
+          Fortalecí mi capacidad para negociar prioridades con producto y desarrollo, defendiendo al
+          usuario pero también entendiendo las limitaciones técnicas y de negocio.
         </li>
         <li>
-          Valide la importancia de la escucha activa en entrevistas con usuarios
-          internos y externos, lo cual alimentó un diseño mucho más estratégico
-          y realista.
+          Valide la importancia de la escucha activa en entrevistas con usuarios internos y
+          externos, lo cual alimentó un diseño mucho más estratégico y realista.
         </li>
         <li>
-          Reforcé mi experiencia en accesibilidad, documentación y diseño
-          colaborativo, lo cual permitió un trabajo mucho más fluido y autónomo
-          con desarrollo.
+          Reforcé mi experiencia en accesibilidad, documentación y diseño colaborativo, lo cual
+          permitió un trabajo mucho más fluido y autónomo con desarrollo.
         </li>
       </ul>
       <p>Pero no todo fue lineal. También enfrenté adversidades:</p>
-      <li>
-        <strong>Resistencia al cambio: </strong> Algunos stakeholders técnicos estaban
-        cómodos con el diseño anterior. Tuve que argumentar con evidencia (tests,
-        benchmarks, métricas de uso) por qué un rediseño era necesario.
-      </li>
-      <li>
-        <strong>Carga técnica y falta de recursos de desarrollo:</strong> El equipo
-        de desarrollo no siempre podía implementar todo al ritmo que el diseño evolucionaba.
-        Tuve que priorizar con visión estratégica, entregando valor en fases y siendo
-        flexible sin perder la visión global.
-      </li>
-      <li>
-        <strong>Ambigüedad inicial: </strong> No había una hoja de ruta clara ni
-        objetivos de diseño definidos al empezar. Me tocó tomar un rol de liderazgo
-        proactivo, marcando el proceso, definiendo fases y empujando claridad donde
-        no la había.
-      </li>
-      <Icon icon="brain" />TO DO bombilla - En retrospectiva, estas dificultades
-      fueron claves para mi crecimiento. Aprendí a trabajar con empatía, a
-      adaptar mi lenguaje según el interlocutor (negocio, desarrollo, usuarios)
-      y a sostener decisiones de diseño basadas en lógica, datos y visión
-      sistémica.
+      <ul>
+        <li>
+          <strong>Resistencia al cambio: </strong> Algunos stakeholders técnicos estaban cómodos con
+          el diseño anterior. Tuve que argumentar con evidencia (tests, benchmarks, métricas de uso)
+          por qué un rediseño era necesario.
+        </li>
+        <li>
+          <strong>Carga técnica y falta de recursos de desarrollo:</strong> El equipo de desarrollo no
+          siempre podía implementar todo al ritmo que el diseño evolucionaba. Tuve que priorizar con
+          visión estratégica, entregando valor en fases y siendo flexible sin perder la visión global.
+        </li>
+        <li>
+          <strong>Ambigüedad inicial: </strong> No había una hoja de ruta clara ni objetivos de diseño
+          definidos al empezar. Me tocó tomar un rol de liderazgo proactivo, marcando el proceso, definiendo
+          fases y empujando claridad donde no la había.
+        </li>
+      </ul>
+      <p>
+        En retrospectiva, estas dificultades fueron claves para mi crecimiento. Aprendí a trabajar
+        con empatía, a adaptar mi lenguaje según el interlocutor (negocio, desarrollo, usuarios) y a
+        sostener decisiones de diseño basadas en lógica, datos y visión sistémica.
+      </p>
     </section>
   </div>
 </Project>

@@ -1,35 +1,17 @@
 ---
-import Icon from "@/components/Icon.astro";
-import { CARREFOUR_PROJECT, CarrefourNavSections } from "@/constants";
-import Project from "@/layouts/Project.astro";
+import Icon from "@/components/Icon.astro"
+import { CARREFOUR_PROJECT, CarrefourNavSections } from "@/constants"
+import Project from "@/layouts/Project.astro"
 
-const SECTION_1 = CARREFOUR_PROJECT.navItems.get(
-  CarrefourNavSections.SECTION_1,
-);
-const SECTION_2 = CARREFOUR_PROJECT.navItems.get(
-  CarrefourNavSections.SECTION_2,
-);
-const SECTION_3 = CARREFOUR_PROJECT.navItems.get(
-  CarrefourNavSections.SECTION_3,
-);
-const SECTION_4 = CARREFOUR_PROJECT.navItems.get(
-  CarrefourNavSections.SECTION_4,
-);
-const SECTION_5 = CARREFOUR_PROJECT.navItems.get(
-  CarrefourNavSections.SECTION_5,
-);
-const SECTION_6 = CARREFOUR_PROJECT.navItems.get(
-  CarrefourNavSections.SECTION_6,
-);
-const SECTION_7 = CARREFOUR_PROJECT.navItems.get(
-  CarrefourNavSections.SECTION_7,
-);
-const SECTION_8 = CARREFOUR_PROJECT.navItems.get(
-  CarrefourNavSections.SECTION_8,
-);
-const SECTION_9 = CARREFOUR_PROJECT.navItems.get(
-  CarrefourNavSections.SECTION_9,
-);
+const SECTION_1 = CARREFOUR_PROJECT.navItems.get(CarrefourNavSections.SECTION_1)
+const SECTION_2 = CARREFOUR_PROJECT.navItems.get(CarrefourNavSections.SECTION_2)
+const SECTION_3 = CARREFOUR_PROJECT.navItems.get(CarrefourNavSections.SECTION_3)
+const SECTION_4 = CARREFOUR_PROJECT.navItems.get(CarrefourNavSections.SECTION_4)
+const SECTION_5 = CARREFOUR_PROJECT.navItems.get(CarrefourNavSections.SECTION_5)
+const SECTION_6 = CARREFOUR_PROJECT.navItems.get(CarrefourNavSections.SECTION_6)
+const SECTION_7 = CARREFOUR_PROJECT.navItems.get(CarrefourNavSections.SECTION_7)
+const SECTION_8 = CARREFOUR_PROJECT.navItems.get(CarrefourNavSections.SECTION_8)
+const SECTION_9 = CARREFOUR_PROJECT.navItems.get(CarrefourNavSections.SECTION_9)
 ---
 
 <Project
@@ -48,28 +30,21 @@ const SECTION_9 = CARREFOUR_PROJECT.navItems.get(
         <span>{SECTION_1?.title}</span>
       </h2>
       <p>
-        El área financiera de Carrefour (Carrefour Pass) necesitaba una
-        evolución integral de su ecosistema digital para ofrecer una experiencia
-        fluida, coherente y moderna en todos los puntos de contacto: web, app
-        móvil y responsive.
+        El área financiera de Carrefour (Carrefour Pass) necesitaba una evolución integral de su
+        ecosistema digital para ofrecer una experiencia fluida, coherente y moderna en todos los
+        puntos de contacto: web, app móvil y responsive.
       </p>
       <p>El reto se centraba en:</p>
       <ul>
+        <li>Reorganizar toda la arquitectura de la información de sus plataformas financieras.</li>
+        <li>Diseñar una interfaz usable, intuitiva y adaptada a múltiples dispositivos.</li>
         <li>
-          Reorganizar toda la arquitectura de la información de sus plataformas
-          financieras.
+          Crear un sistema de diseño cohesivo y escalable, alineado con los valores de la marca
+          Carrefour.
         </li>
         <li>
-          Diseñar una interfaz usable, intuitiva y adaptada a múltiples
-          dispositivos.
-        </li>
-        <li>
-          Crear un sistema de diseño cohesivo y escalable, alineado con los
-          valores de la marca Carrefour.
-        </li>
-        <li>
-          Optimizar las interacciones clave (consulta de saldo, movimientos,
-          pagos, etc.) desde una lógica UX centrada en eficiencia y claridad.
+          Optimizar las interacciones clave (consulta de saldo, movimientos, pagos, etc.) desde una
+          lógica UX centrada en eficiencia y claridad.
         </li>
       </ul>
     </section>
@@ -81,26 +56,22 @@ const SECTION_9 = CARREFOUR_PROJECT.navItems.get(
       <li>
         <strong>Claridad y jerarquía de la información financiera</strong>
         <br />
-        Que el usuario pueda entender de forma inmediata su saldo, operaciones recientes
-        y opciones clave.
+        Que el usuario pueda entender de forma inmediata su saldo, operaciones recientes y opciones clave.
       </li>
       <li>
         <strong>Consistencia visual y funcional</strong>
         <br />
-        Que la experiencia sea unificada entre app, web y móvil, facilitando el aprendizaje
-        y la confianza.
+        Que la experiencia sea unificada entre app, web y móvil, facilitando el aprendizaje y la confianza.
       </li>
       <li>
         <strong>Diseño centrado en tareas</strong>
         <br />
-        Acciones como pagar, consultar movimientos o gestionar la tarjeta deben estar
-        a un clic.
+        Acciones como pagar, consultar movimientos o gestionar la tarjeta deben estar a un clic.
       </li>
       <li>
         <strong>Seguridad + Accesibilidad</strong>
         <br />
-        Interfaces que transmitan confianza, con diseño accesible para todos los
-        perfiles.
+        Interfaces que transmitan confianza, con diseño accesible para todos los perfiles.
       </li>
     </ul>
     <section id={CarrefourNavSections.SECTION_2}>
@@ -109,9 +80,7 @@ const SECTION_9 = CARREFOUR_PROJECT.navItems.get(
         <span>{SECTION_2?.title}</span>
       </h2>
       <ul>
-        <li>
-          Exploración de la estructura actual y pain points de usuarios reales.
-        </li>
+        <li>Exploración de la estructura actual y pain points de usuarios reales.</li>
         <li>Diseño de nueva arquitectura de información.</li>
         <li>Wireframes para flujos completos: app, web y responsive.</li>
         <li>Prototipado de interacciones clave.</li>
@@ -125,14 +94,12 @@ const SECTION_9 = CARREFOUR_PROJECT.navItems.get(
         <span>{SECTION_3?.title}</span>
       </h2>
       <p>
-        Realicé una revisión exhaustiva de la experiencia previa y los patrones
-        financieros más efectivos:
+        Realicé una revisión exhaustiva de la experiencia previa y los patrones financieros más
+        efectivos:
       </p>
       <ul>
         <li>Comportamientos comunes de los usuarios de banca digital.</li>
-        <li>
-          Necesidades prioritarias: seguridad, control, facilidad de gestión.
-        </li>
+        <li>Necesidades prioritarias: seguridad, control, facilidad de gestión.</li>
         <li>Feedback interno del equipo de producto y atención al cliente.</li>
       </ul>
     </section>
@@ -142,8 +109,8 @@ const SECTION_9 = CARREFOUR_PROJECT.navItems.get(
         <span>{SECTION_4?.title}</span>
       </h2>
       <p>
-        Estudié otras apps financieras y soluciones de banca digital para
-        detectar buenas prácticas y patrones efectivos:
+        Estudié otras apps financieras y soluciones de banca digital para detectar buenas prácticas
+        y patrones efectivos:
       </p>
       <ul>
         <li>
@@ -163,12 +130,10 @@ const SECTION_9 = CARREFOUR_PROJECT.navItems.get(
       <ul>
         <li>Es crucial mostrar saldo e información clave en primer nivel.</li>
         <li>
-          Los flujos más usados (pago, movimientos, bloqueo) deben estar
-          accesibles en un solo toque.
+          Los flujos más usados (pago, movimientos, bloqueo) deben estar accesibles en un solo
+          toque.
         </li>
-        <li>
-          La consistencia entre app y web fortalece la confianza del usuario.
-        </li>
+        <li>La consistencia entre app y web fortalece la confianza del usuario.</li>
       </ul>
     </section>
     <section id={CarrefourNavSections.SECTION_5}>
@@ -176,19 +141,11 @@ const SECTION_9 = CARREFOUR_PROJECT.navItems.get(
         {SECTION_5?.icon && <Icon icon={SECTION_5.icon} />}
         <span>{SECTION_5?.title}</span>
       </h2>
-      <p>
-        Reorganicé la estructura de forma jerárquica y clara, priorizando tareas
-        esenciales:
-      </p>
+      <p>Reorganicé la estructura de forma jerárquica y clara, priorizando tareas esenciales:</p>
       <ul>
         <li>Home simple, con tarjetas y saldo visible.</li>
-        <li>
-          Navegación con acceso directo a: movimientos, pagar, tarjetas,
-          contacto.
-        </li>
-        <li>
-          Integración de herramientas útiles: alertas, configuración, bloqueo.
-        </li>
+        <li>Navegación con acceso directo a: movimientos, pagar, tarjetas, contacto.</li>
+        <li>Integración de herramientas útiles: alertas, configuración, bloqueo.</li>
       </ul>
     </section>
     <section id={CarrefourNavSections.SECTION_6}>
@@ -197,8 +154,8 @@ const SECTION_9 = CARREFOUR_PROJECT.navItems.get(
         <span>{SECTION_6?.title}</span>
       </h2>
       <p>
-        Diseñé wireframes de baja y media fidelidad para definir interacciones
-        clave y validarlas con el equipo:
+        Diseñé wireframes de baja y media fidelidad para definir interacciones clave y validarlas
+        con el equipo:
       </p>
       <ul>
         <li>Interacciones pensadas para ser intuitivas y rápidas.</li>
@@ -212,55 +169,50 @@ const SECTION_9 = CARREFOUR_PROJECT.navItems.get(
         <span>{SECTION_7?.title}</span>
       </h2>
       <p>
-        Desarrollé <strong>prototipos interactivos </strong>en alta fidelidad
-        para:
+        Desarrollé <strong>prototipos interactivos </strong>en alta fidelidad para:
       </p>
       <ul>
         <li>Validar el flujo completo de navegación.</li>
-        <li>
-          Testear la fluidez de interacciones como scrolls, tabs, sliders,
-          formularios.
-        </li>
+        <li>Testear la fluidez de interacciones como scrolls, tabs, sliders, formularios.</li>
         <li>Facilitar la comunicación entre diseño y desarrollo.</li>
       </ul>
       <p>
-        Uno de los pilares del proyecto fue la construcción de un <strong
-          >Design System</strong
-        > modular y escalable, documentado para su implementación por el equipo de
-        desarrollo:
+        Uno de los pilares del proyecto fue la construcción de un <strong>Design System</strong> modular
+        y escalable, documentado para su implementación por el equipo de desarrollo:
         <li>Componentes reutilizables: botones, tarjetas, inputs, modales.</li>
         <li>Tokens de diseño: colores, tipografía, espaciados.</li>
-        <li>
-          Principios de diseño para mantener consistencia y accesibilidad.
-        </li>
+        <li>Principios de diseño para mantener consistencia y accesibilidad.</li>
       </p>
       <p>
-        TODO ICONO Resultado: un sistema visual cohesivo, alineado con la
-        identidad de Carrefour, adaptable a nuevas funcionalidades futuras.
+        TODO ICONO Resultado: un sistema visual cohesivo, alineado con la identidad de Carrefour,
+        adaptable a nuevas funcionalidades futuras.
       </p>
     </section>
     <section id={CarrefourNavSections.SECTION_8}>
       <h2>
         {SECTION_8?.icon && <Icon icon={SECTION_8.icon} />}
-        <span>{SECTION_8?.title}</span>
+        <span>{SECTION_8?.title.split(" ")[0]}</span>
       </h2>
       <ul>
         <li>
-          Se logró una experiencia digital más clara, fluida y unificada para
-          los usuarios de Carrefour Pass.
+          Se logró una experiencia digital más clara, fluida y unificada para los usuarios de
+          Carrefour Pass.
         </li>
+        <li>La arquitectura reorganizada facilita la navegación y mejora la eficiencia.</li>
+        <li>El sistema de diseño garantiza coherencia y sostenibilidad a largo plazo.</li>
+        <li>Los flujos de interacción son más accesibles, rápidos y visualmente confiables.</li>
+      </ul>
+      <h2>
+        <Icon icon="rocket-launch" />
+        <span class="capitalize">{SECTION_8?.title.split(" ")[2]}</span>
+      </h2>
+      <ul>
         <li>
-          La arquitectura reorganizada facilita la navegación y mejora la
-          eficiencia.
+          Implementación de funcionalidades avanzadas como visualización predictiva de gastos.
         </li>
-        <li>
-          El sistema de diseño garantiza coherencia y sostenibilidad a largo
-          plazo.
-        </li>
-        <li>
-          Los flujos de interacción son más accesibles, rápidos y visualmente
-          confiables.
-        </li>
+        <li>Personalización de la interfaz según perfil y hábitos del usuario.</li>
+        <li>Mayor integración con productos Carrefour (club, beneficios, promociones).</li>
+        <li>Mejora continua del sistema con analítica y testeo real.</li>
       </ul>
     </section>
     <section id={CarrefourNavSections.SECTION_9}>
@@ -269,24 +221,20 @@ const SECTION_9 = CARREFOUR_PROJECT.navItems.get(
         <span>{SECTION_9?.title}</span>
       </h2>
       <p>
-        Este proyecto me permitió crecer en el diseño de productos complejos y
-        multisistema, aplicando UX en un entorno de alta responsabilidad como es
-        el financiero.
+        Este proyecto me permitió crecer en el diseño de productos complejos y multisistema,
+        aplicando UX en un entorno de alta responsabilidad como es el financiero.
       </p>
       <p>
-        TODO ICONO Reforcé mis habilidades en arquitectura de información
-        centrada en tareas, adaptándola a distintos dispositivos y casos de uso
-        reales.
+        TODO ICONO Reforcé mis habilidades en arquitectura de información centrada en tareas,
+        adaptándola a distintos dispositivos y casos de uso reales.
       </p>
       <p>
-        TODO ICONO Profundicé en la importancia de crear un sistema visual
-        robusto, que permita escalar el producto sin perder coherencia ni
-        calidad.
+        TODO ICONO Profundicé en la importancia de crear un sistema visual robusto, que permita
+        escalar el producto sin perder coherencia ni calidad.
       </p>
       <p>
-        TODO ICONO Aprendí a colaborar en entornos de alta exigencia, donde los
-        requisitos de negocio, legalidad y seguridad requieren especial
-        atención.
+        TODO ICONO Aprendí a colaborar en entornos de alta exigencia, donde los requisitos de
+        negocio, legalidad y seguridad requieren especial atención.
       </p>
       <p>TODO ICONO También enfrenté desafíos como:</p>
       <ul>
@@ -296,19 +244,19 @@ const SECTION_9 = CARREFOUR_PROJECT.navItems.get(
         </li>
         <li>
           <strong>Interfaz condicionada por marca madre:</strong>
-          Adaptar la innovación visual a un marco de marca global como Carrefour
-          fue todo un reto de equilibrio entre creatividad y restricción.
+          Adaptar la innovación visual a un marco de marca global como Carrefour fue todo un reto de
+          equilibrio entre creatividad y restricción.
         </li>
         <li>
           <strong>Visibilidad limitada de usuarios reales:</strong>
-          No fue posible realizar entrevistas directas, por lo que me apoyé en benchmarks,
-          sesiones internas y heurísticas para fundamentar decisiones.
+          No fue posible realizar entrevistas directas, por lo que me apoyé en benchmarks, sesiones internas
+          y heurísticas para fundamentar decisiones.
         </li>
       </ul>
       <p>
-        TO DO ICONO Fue una experiencia que me permitió fortalecer mi perfil
-        como diseñadora de producto digital, contribuyendo de forma activa en
-        cada fase del proceso y aportando valor desde lo funcional y lo visual.
+        TO DO ICONO Fue una experiencia que me permitió fortalecer mi perfil como diseñadora de
+        producto digital, contribuyendo de forma activa en cada fase del proceso y aportando valor
+        desde lo funcional y lo visual.
       </p>
     </section>
   </div>
