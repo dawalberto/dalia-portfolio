@@ -23,7 +23,7 @@ export const CIPHER_PROJECT = {
     [CipherNavSections.SECTION_1, { title: "El reto", icon: "puzzle-piece" }],
     [CipherNavSections.SECTION_2, { title: "El proceso", icon: "magnifying-glass" }],
     [CipherNavSections.SECTION_3, { title: "Desk research", icon: "arrows-counter-clockwise" }],
-    [CipherNavSections.SECTION_4, { title: "Il Benchmark", icon: "chart-bar" }],
+    [CipherNavSections.SECTION_4, { title: "Benchmark", icon: "chart-bar" }],
     [CipherNavSections.SECTION_5, { title: "Arquitectura de la información", icon: "chart-polar" }],
     [CipherNavSections.SECTION_6, { title: "Wireframes", icon: "pencil-line" }],
     [
@@ -60,7 +60,7 @@ export const FAS_PROJECT = {
     [FasNavSections.SECTION_1, { title: "El reto", icon: "puzzle-piece" }],
     [FasNavSections.SECTION_2, { title: "El proceso", icon: "magnifying-glass" }],
     [FasNavSections.SECTION_3, { title: "Desk research", icon: "arrows-counter-clockwise" }],
-    [FasNavSections.SECTION_4, { title: "Il Benchmark", icon: "chart-bar" }],
+    [FasNavSections.SECTION_4, { title: "Benchmark", icon: "chart-bar" }],
     [FasNavSections.SECTION_5, { title: "Arquitectura de la información", icon: "chart-polar" }],
     [FasNavSections.SECTION_6, { title: "Wireframes", icon: "pencil-line" }],
     [
