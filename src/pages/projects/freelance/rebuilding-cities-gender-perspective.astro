@@ -1,0 +1,75 @@
+---
+import Icon from "@/components/Icon.astro"
+import {
+  REBUILDING_CITIES_GENDER_PERSPECTIVE_PROJECT,
+  RebuildingCitiesGenderPerspectiveNavSections,
+} from "@/constants"
+import Project from "@/layouts/Project.astro"
+
+const SECTION_1 = REBUILDING_CITIES_GENDER_PERSPECTIVE_PROJECT.navItems.get(
+  RebuildingCitiesGenderPerspectiveNavSections.SECTION_1
+)
+const SECTION_2 = REBUILDING_CITIES_GENDER_PERSPECTIVE_PROJECT.navItems.get(
+  RebuildingCitiesGenderPerspectiveNavSections.SECTION_2
+)
+const SECTION_3 = REBUILDING_CITIES_GENDER_PERSPECTIVE_PROJECT.navItems.get(
+  RebuildingCitiesGenderPerspectiveNavSections.SECTION_3
+)
+const SECTION_4 = REBUILDING_CITIES_GENDER_PERSPECTIVE_PROJECT.navItems.get(
+  RebuildingCitiesGenderPerspectiveNavSections.SECTION_4
+)
+const SECTION_5 = REBUILDING_CITIES_GENDER_PERSPECTIVE_PROJECT.navItems.get(
+  RebuildingCitiesGenderPerspectiveNavSections.SECTION_5
+)
+const SECTION_6 = REBUILDING_CITIES_GENDER_PERSPECTIVE_PROJECT.navItems.get(
+  RebuildingCitiesGenderPerspectiveNavSections.SECTION_6
+)
+---
+
+<Project
+  title={REBUILDING_CITIES_GENDER_PERSPECTIVE_PROJECT.title}
+  rol={REBUILDING_CITIES_GENDER_PERSPECTIVE_PROJECT.rol}
+  duration={REBUILDING_CITIES_GENDER_PERSPECTIVE_PROJECT.duration}
+  typeOfProject={REBUILDING_CITIES_GENDER_PERSPECTIVE_PROJECT.typeOfProject}
+  tools={REBUILDING_CITIES_GENDER_PERSPECTIVE_PROJECT.tools}
+  navItems={REBUILDING_CITIES_GENDER_PERSPECTIVE_PROJECT.navItems}
+>
+  <div>
+    <section id={RebuildingCitiesGenderPerspectiveNavSections.SECTION_1}>
+      <h2>
+        {SECTION_1?.icon && <Icon icon={SECTION_1.icon} />}
+        <span>{SECTION_1?.title}</span>
+      </h2>
+    </section>
+    <section id={RebuildingCitiesGenderPerspectiveNavSections.SECTION_2}>
+      <h2>
+        {SECTION_2?.icon && <Icon icon={SECTION_2.icon} />}
+        <span>{SECTION_2?.title}</span>
+      </h2>
+    </section>
+    <section id={RebuildingCitiesGenderPerspectiveNavSections.SECTION_3}>
+      <h2>
+        {SECTION_3?.icon && <Icon icon={SECTION_3.icon} />}
+        <span>{SECTION_3?.title}</span>
+      </h2>
+    </section>
+    <section id={RebuildingCitiesGenderPerspectiveNavSections.SECTION_4}>
+      <h2>
+        {SECTION_4?.icon && <Icon icon={SECTION_4.icon} />}
+        <span>{SECTION_4?.title}</span>
+      </h2>
+    </section>
+    <section id={RebuildingCitiesGenderPerspectiveNavSections.SECTION_5}>
+      <h2>
+        {SECTION_5?.icon && <Icon icon={SECTION_5.icon} />}
+        <span>{SECTION_5?.title}</span>
+      </h2>
+    </section>
+    <section id={RebuildingCitiesGenderPerspectiveNavSections.SECTION_6}>
+      <h2>
+        {SECTION_6?.icon && <Icon icon={SECTION_6.icon} />}
+        <span>{SECTION_6?.title}</span>
+      </h2>
+    </section>
+  </div>
+</Project>

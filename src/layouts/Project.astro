@@ -6,7 +6,6 @@ import { slide } from "astro:transitions"
 
 type ProjectProps = {
   title: string
-  titleIcon: IconName
   rol: string
   duration: string
   typeOfProject: string
@@ -15,8 +14,7 @@ type ProjectProps = {
   navItems: Map<string, { title: string; icon: IconName }>
 }
 
-const { title, titleIcon, rol, duration, typeOfProject, tools, link, navItems } =
-  Astro.props as ProjectProps
+const { title, rol, duration, typeOfProject, tools, link, navItems } = Astro.props as ProjectProps
 ---
 
 <Layout>
