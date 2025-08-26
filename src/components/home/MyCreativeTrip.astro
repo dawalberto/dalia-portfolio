@@ -1,8 +1,9 @@
 ---
+import { CONFIG } from "@/config"
 import { NAV_LINKS } from "../DesktopNav.astro"
 
 const projectsHref = new Map(
-  NAV_LINKS.filter((link) => link.href === "/projects").flatMap((projects) =>
+  NAV_LINKS.filter((link) => link.href === `${CONFIG.base}/projects`).flatMap((projects) =>
     (projects?.children || []).map((project) => [project.label, project.href])
   )
 )

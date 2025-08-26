@@ -1,14 +1,19 @@
 ---
+import { CONFIG } from "@/config"
 import Layout from "@/layouts/Layout.astro"
 ---
 
 <Layout>
   <div class="flex flex-col gap6">
-    <a href="/projects/freelance/rebuilding-cities-gender-perspective"
+    <a href={`${CONFIG.base}/projects/freelance/rebuilding-cities-gender-perspective`}
       >Rebuilding Cities with a Gender Perspective</a
     >
-    <a href="/projects/freelance/ink">INK - Branding & Web Design for a Creative Studio</a>
-    <a href="/projects/freelance/kingsugi">Kingsugi - Restoring the Broken</a>
-    <a href="/projects/freelance/atid">ATID - A Tool for Inclusive Urban Development</a>
+    <a href={`${CONFIG.base}/projects/freelance/ink`}
+      >INK - Branding & Web Design for a Creative Studio</a
+    >
+    <a href={`${CONFIG.base}/projects/freelance/kingsugi`}>Kingsugi - Restoring the Broken</a>
+    <a href={`${CONFIG.base}/projects/freelance/atid`}
+      >ATID - A Tool for Inclusive Urban Development</a
+    >
   </div>
 </Layout>
