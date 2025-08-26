@@ -1,19 +1,62 @@
 ---
 import { CONFIG } from "@/config"
 import { NAV_LINKS } from "./DesktopNav.astro"
-import Icon from "./Icon.astro"
+import Icon, { type IconName } from "./Icon.astro"
 import daliaImage from "@assets/images/dalia-inicio.jpg"
+import type { Project } from "@/constants"
+import { CIPHER_PROJECT } from "@/constants"
+import { FAS_PROJECT } from "@/constants"
+import { CARREFOUR_PROJECT } from "@/constants"
+import { BANC_SABADELL_PROJECT } from "@/constants"
+import type { CipherNavSections } from "@/constants"
+import type { FasNavSections } from "@/constants"
+import type { BancSabadellNavSections } from "@/constants"
+import type { CarrefourNavSections } from "@/constants"
+
 const { pathname } = Astro.url
+const splittedPathname = pathname.split("/").filter(Boolean)
+const currentPage = splittedPathname[splittedPathname.length - 1] as Project
+
+const projectsNavigationPageKey = (
+  NAV_LINKS.filter(({ href }) => href === `${CONFIG.base}/projects`)[0]?.children || []
+).map((item) => item.href.replace(`${CONFIG.base}/projects/`, "")) as Project[]
+
+const inProjectPage = projectsNavigationPageKey.includes(currentPage)
+
+let projectNavItems: [
+  CipherNavSections | FasNavSections | CarrefourNavSections | BancSabadellNavSections,
+  {
+    title: string
+    icon: IconName
+  },
+][] = []
+
+if (inProjectPage) {
+  switch (currentPage) {
+    case "cipher":
+      projectNavItems = Array.from(CIPHER_PROJECT.navItems)
+      break
+    case "fas":
+      projectNavItems = Array.from(FAS_PROJECT.navItems)
+      break
+    case "carrefour":
+      projectNavItems = Array.from(CARREFOUR_PROJECT.navItems)
+      break
+    case "banc-sabadell":
+      projectNavItems = Array.from(BANC_SABADELL_PROJECT.navItems)
+      break
+  }
+}
 ---
 
 <div class="relative block sm:hidden z-50">
   <input type="checkbox" id="nav-toggle" class="peer hidden" />
   <div
-    class="fixed top-0 left-0 w-dvw flex items-center py-3 px-4 bg-white border-b border-gray-300"
+    class="fixed top-0 left-0 w-dvw flex items-center justify-end py-4 px-4 bg-white border-b border-zinc-200"
   >
-    <label for="nav-toggle" class="inline-flex items-center text-sm cursor-pointer">
+    <label for="nav-toggle" class="inline-flex items-center">
       <span class="sr-only">Toggle navigation</span>
-      <Icon icon="list" size="24px" />
+      <Icon icon="list" size="32px" />
     </label>
   </div>
 
@@ -36,7 +79,26 @@ const { pathname } = Astro.url
         </div>
       </a>
 
-      <span class="block h-0.5 bg-[#F6F6F6] my-6"></span>
+      <span class="block h-0.5 bg-[#F6F6F6] my-6" />
+
+      {
+        inProjectPage && projectNavItems.length && (
+          <div class="px-3">
+            <label class="text-[10px] leading-3 tracking-wider">ÍNDICE</label>
+            <ul class="leading-5 mt-3">
+              {projectNavItems.map(([href, { icon, title }]) => (
+                <li>
+                  <a href={`#${href}`} class="flex gap-2 py-2.5 px-1">
+                    {icon && <span class="flex-none self-start mt-1"><Icon icon={icon} /></span>}
+                    {title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+      <span class="block h-0.5 bg-[#F6F6F6] my-6" />
+        )
+      }
 
       <div class="px-3">
         <label class="text-[10px] leading-3 tracking-wider">MENU</label>
@@ -112,7 +174,7 @@ const { pathname } = Astro.url
                           : "",
                       ]}
                     >
-                      {navItem.icon && <Icon icon={navItem.icon} />}
+                      {navItem.icon && <span class="flex-none"><Icon icon={navItem.icon} /></span>}
                       {navItem.label}
                     </a>
                   )}
@@ -140,6 +202,8 @@ const { pathname } = Astro.url
   document.addEventListener("click", (ev) => {
     const target = ev.target
     if (!(target instanceof Element)) return
+
+    const checkbox = document.getElementById("nav-toggle") as HTMLInputElement | null
 
     // Toggle de submenús
     const btn = target.closest<HTMLElement>("[data-toggle]")

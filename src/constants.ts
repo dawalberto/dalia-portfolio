@@ -1,5 +1,7 @@
 import type { IconName } from "./components/Icon.astro"
 
+export type Project = "cipher" | "fas" | "carrefour" | "banc-sabadell" | "freelance"
+
 export enum CipherNavSections {
   SECTION_1 = "challenge",
   SECTION_2 = "process",

@@ -19,18 +19,21 @@ const { title, rol, duration, typeOfProject, tools, link, navItems } = Astro.pro
 
 <Layout>
   <article>
-    <header class="flex flex-col font-roboto text-4xl mt-8 border-b border-[#cccccc] pb-9">
+    <header
+      project-header
+      class="flex flex-col font-roboto text-3xl sm:text-4xl mt-2 sm:mt-8 border-b border-[#cccccc] pb-2 sm:pb-8"
+    >
       <h1
         transition:animate={slide({
           duration: 300,
         })}
-        class="flex gap-4 items-center pb-6 font-bold font-playfair text-main-0"
+        class="flex gap-4 items-center pb-6 font-bold font-playfair text-main-0 text-pretty"
       >
         <span>{title}</span>
       </h1>
       <div
         project-info
-        class="flex flex-col gap-y-2 text-main-0 visible text-xl max-h-52 transform transition-all duration-300 ease-in-out"
+        class="flex flex-col gap-y-2 text-main-0 visible text-base sm:text-xl max-h-52 transform transition-all duration-300 ease-in-out"
       >
         <h2><span class="font-bold">Rol:</span> <span class="opacity-85">{rol}</span></h2>
         <h2>
@@ -99,25 +102,48 @@ const { title, rol, duration, typeOfProject, tools, link, navItems } = Astro.pro
 
 <script>
   const projectContentContainer = document.querySelector("[project-content]") as HTMLElement | null
-  const projectInfoContainer = document.querySelector("[project-info]") as HTMLElement | null
-  const projectAsideContainer = document.querySelector("[project-aside]") as HTMLElement | null
 
   projectContentContainer?.addEventListener("scroll", () => {
-    if (!projectContentContainer || !projectInfoContainer || !projectAsideContainer) return
-    const { scrollTop } = projectContentContainer
+    const projectInfoContainer = document.querySelector("[project-info]") as HTMLElement | null
+    const projectAsideContainer = document.querySelector("[project-aside]") as HTMLElement | null
+    const projectHeaderContainer = document.querySelector("[project-header]") as HTMLElement | null
 
+    if (
+      !projectContentContainer ||
+      !projectInfoContainer ||
+      !projectAsideContainer ||
+      !projectHeaderContainer
+    ) {
+      return
+    }
+
+    const { scrollTop } = projectContentContainer
+    console.log(
+      'projectHeaderContainer.querySelector("h1")',
+      projectHeaderContainer.querySelector("h1")
+    )
     if (scrollTop > 125) {
       projectInfoContainer.classList.replace("max-h-52", "max-h-0")
       projectInfoContainer.classList.replace("text-main-0", "text-white")
       projectInfoContainer.classList.replace("visible", "invisible")
       projectContentContainer.classList.replace("mt-8", "mt-0")
       projectAsideContainer.classList.replace("mt-8", "mt-0")
+      projectHeaderContainer.classList.replace("pb-2", "pb-0")
+      projectHeaderContainer.classList.replace("text-3xl", "text-xl")
+      projectHeaderContainer.classList.replace("sm:mt-8", "sm:mt-4")
+      projectHeaderContainer.classList.replace("sm:pb-8", "sm:pb-4")
+      projectHeaderContainer.querySelector("h1")?.classList.replace("pb-6", "pb-2")
     } else {
       projectInfoContainer.classList.replace("max-h-0", "max-h-52")
       projectInfoContainer.classList.replace("text-white", "text-main-0")
       projectInfoContainer.classList.replace("invisible", "visible")
       projectContentContainer.classList.replace("mt-0", "mt-8")
       projectAsideContainer.classList.replace("mt-0", "mt-8")
+      projectHeaderContainer.classList.replace("pb-0", "pb-2")
+      projectHeaderContainer.classList.replace("text-xl", "text-3xl")
+      projectHeaderContainer.classList.replace("sm:mt-4", "sm:mt-8")
+      projectHeaderContainer.classList.replace("sm:pb-4", "sm:pb-8")
+      projectHeaderContainer.querySelector("h1")?.classList.replace("pb-2", "pb-6")
     }
   })
 
@@ -187,11 +213,11 @@ const { title, rol, duration, typeOfProject, tools, link, navItems } = Astro.pro
   }
 
   :global(main.project-content > div) {
-    @apply flex flex-col gap-11 text-xl font-roboto text-pretty text-main-0 leading-7;
+    @apply flex flex-col gap-11 text-lg sm:text-xl font-roboto text-pretty text-main-0 leading-8;
   }
 
   :global(main.project-content section) {
-    @apply flex flex-col gap-6;
+    @apply flex flex-col gap-4 sm:gap-6;
   }
 
   :global(main.project-content section strong) {
@@ -199,14 +225,39 @@ const { title, rol, duration, typeOfProject, tools, link, navItems } = Astro.pro
   }
 
   :global(main.project-content section h2) {
-    @apply flex items-center gap-1.5 text-2xl font-bold;
+    @apply flex items-center gap-1.5 text-xl sm:text-2xl font-bold;
+  }
+
+  :global(main.project-content section h2 svg) {
+    @apply flex-none self-start mt-1;
   }
 
   :global(main.project-content section h3) {
-    @apply flex items-center gap-1.5 text-xl font-bold;
+    @apply flex items-center gap-1.5 text-lg sm:text-xl font-bold;
+  }
+
+  :global(main.project-content section h3 svg) {
+    @apply flex-none self-start mt-1;
   }
 
   :global(main.project-content section ul) {
     @apply list-disc list-outside ml-6;
+  }
+
+  @media (max-width: theme(screens.sm)) {
+    article {
+      grid-template-columns: 1fr; /* Only one column */
+      grid-template-areas:
+        "header"
+        "body";
+    }
+
+    aside[project-aside] {
+      display: none; /* Hide sidebar */
+    }
+
+    main[project-content] {
+      padding-inline: 0;
+    }
   }
 </style>
