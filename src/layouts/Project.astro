@@ -101,76 +101,87 @@ const { title, rol, duration, typeOfProject, tools, link, navItems } = Astro.pro
 </Layout>
 
 <script>
-  const projectContentContainer = document.querySelector("[project-content]") as HTMLElement | null
-
-  projectContentContainer?.addEventListener("scroll", () => {
-    const projectInfoContainer = document.querySelector("[project-info]") as HTMLElement | null
-    const projectAsideContainer = document.querySelector("[project-aside]") as HTMLElement | null
-    const projectHeaderContainer = document.querySelector("[project-header]") as HTMLElement | null
-
-    if (
-      !projectContentContainer ||
-      !projectInfoContainer ||
-      !projectAsideContainer ||
-      !projectHeaderContainer
-    ) {
-      return
-    }
-
-    const { scrollTop } = projectContentContainer
-    console.log(
-      'projectHeaderContainer.querySelector("h1")',
-      projectHeaderContainer.querySelector("h1")
-    )
-    if (scrollTop > 125) {
-      projectInfoContainer.classList.replace("max-h-52", "max-h-0")
-      projectInfoContainer.classList.replace("text-main-0", "text-white")
-      projectInfoContainer.classList.replace("visible", "invisible")
-      projectContentContainer.classList.replace("mt-8", "mt-0")
-      projectAsideContainer.classList.replace("mt-8", "mt-0")
-      projectHeaderContainer.classList.replace("pb-2", "pb-0")
-      projectHeaderContainer.classList.replace("text-3xl", "text-xl")
-      projectHeaderContainer.classList.replace("sm:mt-8", "sm:mt-4")
-      projectHeaderContainer.classList.replace("sm:pb-8", "sm:pb-4")
-      projectHeaderContainer.querySelector("h1")?.classList.replace("pb-6", "pb-2")
-    } else {
-      projectInfoContainer.classList.replace("max-h-0", "max-h-52")
-      projectInfoContainer.classList.replace("text-white", "text-main-0")
-      projectInfoContainer.classList.replace("invisible", "visible")
-      projectContentContainer.classList.replace("mt-0", "mt-8")
-      projectAsideContainer.classList.replace("mt-0", "mt-8")
-      projectHeaderContainer.classList.replace("pb-0", "pb-2")
-      projectHeaderContainer.classList.replace("text-xl", "text-3xl")
-      projectHeaderContainer.classList.replace("sm:mt-4", "sm:mt-8")
-      projectHeaderContainer.classList.replace("sm:pb-4", "sm:pb-8")
-      projectHeaderContainer.querySelector("h1")?.classList.replace("pb-2", "pb-6")
-    }
+  document.addEventListener("astro:after-swap", () => {
+    initProjectLayout()
   })
 
-  // Active navItem 👇
-  const sections = document.querySelectorAll("main[project-content] section[id]")
-  const navLinks = document.querySelectorAll("aside[project-aside] nav a")
+  function initProjectLayout() {
+    const projectContentContainer = document.querySelector("[project-content]")
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          // Quitamos "active" de todos
-          navLinks.forEach((link) => link.classList.remove("active"))
-          // Buscamos el link que apunta a la sección visible
-          const id = entry.target.getAttribute("id")
-          const activeLink = document.querySelector(`aside[project-aside] nav a[href="#${id}"]`)
-          if (activeLink) activeLink.classList.add("active")
+    if (!projectContentContainer) return
+
+    projectContentContainer.addEventListener("scroll", () => {
+      projectContentContainer?.addEventListener("scroll", () => {
+        const projectInfoContainer = document.querySelector("[project-info]") as HTMLElement | null
+        const projectAsideContainer = document.querySelector(
+          "[project-aside]"
+        ) as HTMLElement | null
+        const projectHeaderContainer = document.querySelector(
+          "[project-header]"
+        ) as HTMLElement | null
+
+        if (
+          !projectContentContainer ||
+          !projectInfoContainer ||
+          !projectAsideContainer ||
+          !projectHeaderContainer
+        ) {
+          return
+        }
+
+        const { scrollTop } = projectContentContainer
+        console.log(
+          'projectHeaderContainer.querySelector("h1")',
+          projectHeaderContainer.querySelector("h1")
+        )
+        if (scrollTop > 125) {
+          projectInfoContainer.classList.replace("max-h-52", "max-h-0")
+          projectInfoContainer.classList.replace("text-main-0", "text-white")
+          projectInfoContainer.classList.replace("visible", "invisible")
+          projectContentContainer.classList.replace("mt-8", "mt-0")
+          projectAsideContainer.classList.replace("mt-8", "mt-0")
+          projectHeaderContainer.classList.replace("pb-2", "pb-0")
+          projectHeaderContainer.classList.replace("text-3xl", "text-xl")
+          projectHeaderContainer.classList.replace("sm:mt-8", "sm:mt-4")
+          projectHeaderContainer.classList.replace("sm:pb-8", "sm:pb-4")
+          projectHeaderContainer.querySelector("h1")?.classList.replace("pb-6", "pb-2")
+        } else {
+          projectInfoContainer.classList.replace("max-h-0", "max-h-52")
+          projectInfoContainer.classList.replace("text-white", "text-main-0")
+          projectInfoContainer.classList.replace("invisible", "visible")
+          projectContentContainer.classList.replace("mt-0", "mt-8")
+          projectAsideContainer.classList.replace("mt-0", "mt-8")
+          projectHeaderContainer.classList.replace("pb-0", "pb-2")
+          projectHeaderContainer.classList.replace("text-xl", "text-3xl")
+          projectHeaderContainer.classList.replace("sm:mt-4", "sm:mt-8")
+          projectHeaderContainer.classList.replace("sm:pb-4", "sm:pb-8")
+          projectHeaderContainer.querySelector("h1")?.classList.replace("pb-2", "pb-6")
         }
       })
-    },
-    {
-      root: document.querySelector("main[project-content]"), // scroll container
-      threshold: 0.6, // 60% de visibilidad
-    }
-  )
+    })
 
-  sections.forEach((section) => observer.observe(section))
+    const sections = document.querySelectorAll("main[project-content] section[id]")
+    const navLinks = document.querySelectorAll("aside[project-aside] nav a")
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            navLinks.forEach((link) => link.classList.remove("active"))
+            const id = entry.target.getAttribute("id")
+            const activeLink = document.querySelector(`aside[project-aside] nav a[href="#${id}"]`)
+            if (activeLink) activeLink.classList.add("active")
+          }
+        })
+      },
+      { root: projectContentContainer, threshold: 0.6 }
+    )
+
+    sections.forEach((section) => observer.observe(section))
+  }
+
+  // Inicialización al primer render
+  initProjectLayout()
 </script>
 
 <style>
