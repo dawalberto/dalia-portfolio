@@ -11,6 +11,6 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   site: CONFIG.site,
-  base: CONFIG.base, // ⚠️ añade esto si tu repo no es la raíz del usuario
+  // base: CONFIG.base, // ⚠️ añade esto si tu repo no es la raíz del usuario
   integrations: [sitemap()],
 })
