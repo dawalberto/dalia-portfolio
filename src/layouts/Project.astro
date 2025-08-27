@@ -130,10 +130,6 @@ const { title, rol, duration, typeOfProject, tools, link, navItems } = Astro.pro
         }
 
         const { scrollTop } = projectContentContainer
-        console.log(
-          'projectHeaderContainer.querySelector("h1")',
-          projectHeaderContainer.querySelector("h1")
-        )
         if (scrollTop > 125) {
           projectInfoContainer.classList.replace("max-h-52", "max-h-0")
           projectInfoContainer.classList.replace("text-main-0", "text-white")
