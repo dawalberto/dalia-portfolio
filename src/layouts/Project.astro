@@ -21,7 +21,7 @@ const { title, rol, duration, typeOfProject, tools, link, navItems } = Astro.pro
   <article>
     <header
       project-header
-      class="flex flex-col font-roboto text-3xl sm:text-4xl mt-2 sm:mt-8 border-b border-[#cccccc] pb-2 sm:pb-8"
+      class="flex flex-col font-roboto text-3xl sm:text-4xl sm:mt-8 border-b border-[#cccccc] sm:pb-8"
     >
       <h1
         transition:animate={slide({
@@ -185,7 +185,7 @@ const { title, rol, duration, typeOfProject, tools, link, navItems } = Astro.pro
 
   article {
     margin: 0;
-    height: var(--spacing-full-without-menu); /* Toda la ventana */
+    height: var(--spacing-full-without-menu-desktop); /* Toda la ventana */
     display: grid;
     grid-template-rows: auto 1fr;
     grid-template-columns: 200px 1fr; /* Sidebar 200px + body resto */
@@ -253,6 +253,7 @@ const { title, rol, duration, typeOfProject, tools, link, navItems } = Astro.pro
 
   @media (max-width: theme(screens.sm)) {
     article {
+      height: var(--spacing-full-without-menu-mobile);
       grid-template-columns: 1fr; /* Only one column */
       grid-template-areas:
         "header"
