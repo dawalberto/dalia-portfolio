@@ -2,6 +2,11 @@
 import Icon from "@/components/Icon.astro"
 import { FAS_PROJECT, FasNavSections } from "@/constants"
 import Project from "@/layouts/Project.astro"
+import fasContentImage1 from "@assets/images/fas-content-1.jpg"
+import fasContentImage2 from "@assets/images/fas-content-2.png"
+import fasContentImage3 from "@assets/images/fas-content-3.jpg"
+import fasContentImage4 from "@assets/images/fas-content-4.jpg"
+import fasContentImage5 from "@assets/images/fas-content-5.jpg"
 
 const SECTION_1 = FAS_PROJECT.navItems.get(FasNavSections.SECTION_1)
 const SECTION_2 = FAS_PROJECT.navItems.get(FasNavSections.SECTION_2)
@@ -112,6 +117,7 @@ const SECTION_10 = FAS_PROJECT.navItems.get(FasNavSections.SECTION_10)
           Expectativas del cliente (representar con orgullo la identidad sevillana artesanal).
         </li>
       </ul>
+      <img src={fasContentImage1.src} class="w-full h-auto" alt="project images" />
     </section>
     <section id={FasNavSections.SECTION_4}>
       <h2>
@@ -165,7 +171,7 @@ const SECTION_10 = FAS_PROJECT.navItems.get(FasNavSections.SECTION_10)
         <li>Información clara de contacto y asociación.</li>
         <li>Enlaces visibles a redes sociales.</li>
       </ul>
-      TODO FOTO
+      <img src={fasContentImage2.src} class="w-full h-auto" alt="project images" />
     </section>
     <section id={FasNavSections.SECTION_6}>
       <h2>
@@ -178,7 +184,7 @@ const SECTION_10 = FAS_PROJECT.navItems.get(FasNavSections.SECTION_10)
         <li>Enlace directo a secciones clave desde la home.</li>
         <li>Navegación lateral simplificada en versión móvil.</li>
       </ul>
-      TODO FOTO
+      <img src={fasContentImage3.src} class="w-full h-auto" alt="project images" />
     </section>
     <section id={FasNavSections.SECTION_7}>
       <h2>
@@ -194,9 +200,9 @@ const SECTION_10 = FAS_PROJECT.navItems.get(FasNavSections.SECTION_10)
         <li>Diseño responsive y limpio.</li>
         <li>Integración con Instagram y redes sociales.</li>
         <li>Formularios de contacto y suscripción.</li>
-        <li>ITEM 2</li>
+        <li>Fichas visuales de talleres artesanos</li>
       </ul>
-      TODO FOTO
+      <img src={fasContentImage4.src} class="w-full h-auto" alt="project images" />
     </section>
     <section id={FasNavSections.SECTION_8}>
       <h2>
@@ -213,10 +219,13 @@ const SECTION_10 = FAS_PROJECT.navItems.get(FasNavSections.SECTION_10)
         <li>Difusión de los artesanos como protagonistas.</li>
       </ul>
       <p>
-        ICONO<strong>Resultado:</strong> incremento de seguidores, mayor interacción y mejor visibilidad
-        para el colectivo.
+        <span class="float-start pt-1.5 pr-1"><Icon icon="target" /></span>
+        <strong>Resultado:</strong>
+        <span
+          >incremento de seguidores, mayor interacción y mejor visibilidad para el colectivo.</span
+        >
       </p>
-      TODO FOTO
+      <img src={fasContentImage5.src} class="w-full h-auto" alt="project images" />
     </section>
     <section id={FasNavSections.SECTION_9}>
       <h2>
@@ -256,15 +265,24 @@ const SECTION_10 = FAS_PROJECT.navItems.get(FasNavSections.SECTION_10)
         producto artesanal.
       </p>
       <p>
-        ICONO Aprendí a equilibrar diseño visual con estructura informativa, pensando siempre en la
-        sostenibilidad del sitio para el cliente (sin sobrecargar de plugins o complejidad
-        innecesaria).
+        <span class="float-start pt-1.5 pr-1"><Icon icon="sketch-logo" /></span>
+        <span>
+          Aprendí a equilibrar diseño visual con estructura informativa, pensando siempre en la
+          sostenibilidad del sitio para el cliente (sin sobrecargar de plugins o complejidad
+          innecesaria).
+        </span>
       </p>
       <p>
-        ICONO Gané experiencia en adaptar lenguaje y estética a públicos muy diversos, desde
-        turistas hasta instituciones culturales.
+        <span class="float-start pt-1.5 pr-1"><Icon icon="sketch-logo" /></span>
+        <span
+          >Gané experiencia en adaptar lenguaje y estética a públicos muy diversos, desde turistas
+          hasta instituciones culturales.</span
+        >
       </p>
-      <p>ICONO También enfrenté desafíos importantes:</p>
+      <p>
+        <span class="float-start pt-1.5 pr-1"><Icon icon="hourglass-simple-medium" /></span>
+        <span>También enfrenté desafíos importantes:</span>
+      </p>
       <ul>
         <li>
           <strong>Limitaciones de contenido:</strong>
@@ -282,9 +300,12 @@ const SECTION_10 = FAS_PROJECT.navItems.get(FasNavSections.SECTION_10)
         </li>
       </ul>
       <p>
-        ICONO En resumen, este proyecto me ayudó a fortalecer mi enfoque integral como diseñadora
-        digital, conectando lo visual, lo estratégico y lo funcional con propósito y sensibilidad
-        cultural.
+        <span class="float-start pt-1.5 pr-1"><Icon icon="lightbulb" /></span>
+        <span>
+          En resumen, este proyecto me ayudó a fortalecer mi enfoque integral como diseñadora
+          digital, conectando lo visual, lo estratégico y lo funcional con propósito y sensibilidad
+          cultural.
+        </span>
       </p>
     </section>
   </div>
