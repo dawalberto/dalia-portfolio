@@ -31,7 +31,10 @@ const { pathname } = Astro.url
 ---
 
 <!-- 48px height of menu -->
-<nav class="hidden sm:flex min-h-12 font-inter items-center fixed left-0 w-dvw z-10 bg-white">
+<nav
+  id="menu-nav"
+  class="hidden sm:flex min-h-12 font-inter items-center fixed left-0 top-0 w-dvw z-40 bg-white"
+>
   <ul class="flex space-x-4 w-fit mx-auto relative">
     {
       NAV_LINKS.map((navItem) => (

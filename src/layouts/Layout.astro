@@ -1,5 +1,4 @@
 ---
-import Maintenance from "@/components/Maintenance.astro"
 import MobileNav from "@/components/MobileNav.astro"
 import { ClientRouter } from "astro:transitions"
 import DesktopNav from "../components/DesktopNav.astro"
@@ -15,8 +14,6 @@ import "../styles/global.css"
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="generator" content={Astro.generator} />
     <title>Dalia's portfolio</title>
-    <!-- Script de mantenimiento -->
-    <script src="/maintenance.js" type="module"></script>
     <ClientRouter />
   </head>
   <body>
@@ -27,7 +24,5 @@ import "../styles/global.css"
         <slot />
       </div>
     </main>
-    <!-- Mantenimiento -->
-    <Maintenance />
   </body>
 </html>
