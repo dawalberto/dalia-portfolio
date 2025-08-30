@@ -65,7 +65,7 @@ export function initIntro() {
 
   // 1. Subir contenido dentro del cuadro
   tl.to(painting, {
-    yPercent: isMobile ? -75 : -80, // menos recorrido en móvil
+    yPercent: isMobile ? -40 : -50, // menos recorrido en móvil
     duration: isMobile ? 5 : 3, // más tiempo en móvil
   })
 
