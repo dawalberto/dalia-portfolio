@@ -15,15 +15,16 @@ const year = new Date().getFullYear()
   <section id="intro" class="fixed top-0 left-0 h-screen w-screen overflow-hidden">
     <div
       id="portfolio-title"
-      class="hidden sm:flex absolute bottom-1/12 left-[7%] text-white text-[8vw] z-50 font-inter flex-col items-end gap-0 leading-44 tracking-wider"
+      class="top-10 text-6xl left-1/2 -translate-x-1/2 sm:translate-x-0 sm:top-auto flex absolute sm:bottom-1/4 sm:left-[4%] text-white sm:text-[8vw] z-50 font-playfair flex-col items-center sm:items-end gap-12 sm:gap-24 leading-0 tracking-wider"
     >
       <h1>Portfolio</h1>
-      <span class="-mr-24">{year}</span>
+      <span class="sm:-mr-16">{year}</span>
     </div>
     <div
-      class="text-white animate-bounce block sm:hidden absolute bottom-6 left-1/2 -translate-x-1/2 z-50"
+      id="scroll-cheer"
+      class="text-white animate-slow-bounce opacity-75 absolute bottom-28 sm:bottom-6 left-1/2 -translate-x-1/2 z-50"
     >
-      <Icon icon="arrow-fat-lines-down" size="48px" />
+      <Icon icon="caret-double-down" size="48px" />
     </div>
     <!-- Imagen cuadro vacío -->
     <img

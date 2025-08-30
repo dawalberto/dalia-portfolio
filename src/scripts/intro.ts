@@ -3,41 +3,34 @@ import ScrollTrigger from "gsap/ScrollTrigger"
 
 gsap.registerPlugin(ScrollTrigger)
 
-export async function initIntro() {
+export function initIntro() {
+  const isMobile = document.documentElement.clientWidth <= 640 // sm
   const painting = document.getElementById("painting")
   const intro = document.getElementById("intro")
   const nav = document.getElementById("desktop-nav")
   const title = document.getElementById("portfolio-title")
-
-  // Limpiar triggers antiguos
-  // ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
-
-  // Reset estado inicial
-  // if (intro) {
-  //   intro.style.display = "block"
-  //   intro.style.scale = "1"
-  //   intro.style.opacity = "1"
-  //   intro.style.zIndex = "50"
-  // }
-  // if (painting) {
-  //   painting.style.y = "0%"
-  //   painting.style.opacity = "1"
-  // }
-  // if (title) {
-  //   title.style.opacity = "1"
-  // }
-  // if (nav) {
-  //   nav.style.zIndex = "50"
-  // }
+  const scrollCheer = document.getElementById("scroll-cheer")
 
   if (title) {
     gsap.to(title, {
       opacity: 0,
       scrollTrigger: {
-        trigger: "#intro", // la sección del intro
-        start: "top top", // empieza en cuanto empiezas a scrollear
-        end: "top+=50 top", // puedes ajustar si quieres que desaparezca antes
-        scrub: true, // animación progresiva con el scroll
+        trigger: "#intro",
+        start: "top top",
+        end: "top+=50 top",
+        scrub: true,
+      },
+    })
+  }
+
+  if (scrollCheer) {
+    gsap.to(scrollCheer, {
+      opacity: 0,
+      scrollTrigger: {
+        trigger: "#intro",
+        start: "top top",
+        end: "top+=50 top",
+        scrub: true,
       },
     })
   }
@@ -46,7 +39,7 @@ export async function initIntro() {
     scrollTrigger: {
       trigger: "#intro",
       start: "top top",
-      end: "+=100%", // duración relativa del scroll, puedes ajustar
+      end: isMobile ? "+=150%" : "+=100%", // scroll más largo en móvil
       scrub: true,
       pin: true,
       pinSpacing: false,
@@ -65,14 +58,15 @@ export async function initIntro() {
         if (nav) nav.style.zIndex = "50"
         if (intro) intro.style.display = "none"
         if (title) title.style.opacity = "0"
+        if (scrollCheer) scrollCheer.style.opacity = "0"
       },
     },
   })
 
   // 1. Subir contenido dentro del cuadro
   tl.to(painting, {
-    yPercent: -100,
-    duration: 2,
+    yPercent: isMobile ? -75 : -80, // menos recorrido en móvil
+    duration: isMobile ? 5 : 3, // más tiempo en móvil
   })
 
   // 2. Zoom "entrando al cuadro"
@@ -82,7 +76,7 @@ export async function initIntro() {
       scale: 4,
       transformOrigin: "center center",
       ease: "power2.inOut",
-      duration: 3,
+      duration: isMobile ? 5 : 3, // más lento en móvil
     },
     "<"
   )
@@ -92,7 +86,7 @@ export async function initIntro() {
     ["#frame", "#painting"],
     {
       opacity: 0,
-      duration: 1.5,
+      duration: isMobile ? 2.5 : 1.5,
     },
     "-=1"
   )
