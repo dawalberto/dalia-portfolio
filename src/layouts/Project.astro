@@ -251,6 +251,10 @@ const { title, rol, duration, typeOfProject, tools, link, navItems } = Astro.pro
     @apply list-disc list-outside ml-6;
   }
 
+  :global(main.project-content section ol) {
+    @apply list-decimal list-outside ml-6;
+  }
+
   @media (max-width: theme(screens.sm)) {
     article {
       height: var(--spacing-full-without-menu-mobile);

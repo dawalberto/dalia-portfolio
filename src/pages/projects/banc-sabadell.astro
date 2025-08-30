@@ -2,6 +2,15 @@
 import Icon from "@/components/Icon.astro"
 import { BANC_SABADELL_PROJECT, BancSabadellNavSections } from "@/constants"
 import Project from "@/layouts/Project.astro"
+import sabadellContentImage1 from "@assets/images/sabadell-content-1.jpg"
+import sabadellContentImage2 from "@assets/images/sabadell-content-2.png"
+import sabadellContentImage3 from "@assets/images/sabadell-content-3.jpg"
+import sabadellContentImage4 from "@assets/images/sabadell-content-4.jpg"
+import sabadellContentImage5 from "@assets/images/sabadell-content-5.jpg"
+import sabadellContentImage6 from "@assets/images/sabadell-content-6.jpg"
+import sabadellContentImage7 from "@assets/images/sabadell-content-7.jpg"
+import sabadellContentImage8 from "@assets/images/sabadell-content-8.jpg"
+import sabadellContentImage9 from "@assets/images/sabadell-content-9.jpg"
 
 const SECTION_1 = BANC_SABADELL_PROJECT.navItems.get(BancSabadellNavSections.SECTION_1)
 const SECTION_2 = BANC_SABADELL_PROJECT.navItems.get(BancSabadellNavSections.SECTION_2)
@@ -49,10 +58,7 @@ const SECTION_9 = BANC_SABADELL_PROJECT.navItems.get(BancSabadellNavSections.SEC
         áreas de negocio, justificando con evidencias cada ajuste propuesto y facilitando la toma de
         decisiones.
       </p>
-      <h3>
-        <Icon icon="brain" />
-        <span>Conceptos clave para alcanzar el objetivo:</span>
-      </h3>
+      <h3>🧠 Conceptos clave para alcanzar el objetivo:</h3>
       <ul>
         <li>
           Transformar un servicio presencial en un producto digital sin pérdida de claridad ni
@@ -86,6 +92,7 @@ const SECTION_9 = BANC_SABADELL_PROJECT.navItems.get(BancSabadellNavSections.SEC
         <li>Presentación y validación con stakeholders de negocio.</li>
         <li>Implementación gradual de mejoras validadas.</li>
       </ul>
+      <img src={sabadellContentImage1.src} class="w-full h-auto" alt="project images" />
     </section>
     <section id={BancSabadellNavSections.SECTION_3}>
       <h2>
@@ -97,6 +104,7 @@ const SECTION_9 = BANC_SABADELL_PROJECT.navItems.get(BancSabadellNavSections.SEC
         <li>Análisis de prácticas comunes en banca online y fintechs.</li>
         <li>Evaluación del flujo presencial existente para identificar barreras a digitalizar.</li>
       </ul>
+      <img src={sabadellContentImage2.src} class="w-full h-auto" alt="project images" />
     </section>
     <section id={BancSabadellNavSections.SECTION_4}>
       <h2>
@@ -130,44 +138,69 @@ const SECTION_9 = BANC_SABADELL_PROJECT.navItems.get(BancSabadellNavSections.SEC
         facilitaran la comprensión y el avance del usuario.
       </p>
       <p>Estructura detallada del flujo:</p>
-      <ul>
+      <ol>
         <li>
           <strong>Pantalla de bienvenida</strong>
           <br />
-          DESCRIPCION
+          <ul>
+            <li>Breve explicación del proceso y requisitos básicos.</li>
+            <li>Llamada a la acción clara (“Comenzar solicitud”).</li>
+          </ul>
         </li>
         <li>
-          <strong>ITEM 1 EN NEGRITA</strong>
+          <strong>Simulación de préstamo</strong>
           <br />
-          DESCRIPCION
+          <ul>
+            <li>Selección de importe y plazo mediante sliders o campos numéricos.</li>
+            <li>Cálculo instantáneo de la cuota mensual.</li>
+            <li>Posibilidad de ajustar valores antes de continuar.</li>
+          </ul>
         </li>
         <li>
-          <strong>ITEM 1 EN NEGRITA</strong>
+          <strong>Resumen de condiciones</strong>
           <br />
-          DESCRIPCION
+          <ul>
+            <li>Intereses, comisiones y TAE visualizados de forma clara.</li>
+            <li>Desglose del coste total.</li>
+            <li>Botón de “Aceptar y continuar” que confirma la comprensión del usuario.</li>
+          </ul>
         </li>
         <li>
-          <strong>ITEM 1 EN NEGRITA</strong>
+          <strong>Formulario de datos personales</strong>
           <br />
-          DESCRIPCION
+          <ul>
+            <li>Solicitud de datos imprescindibles (nombre, DNI, contacto, empleo, ingresos).</li>
+            <li>Validación instantánea de formato y coherencia de datos.</li>
+          </ul>
         </li>
         <li>
-          <strong>ITEM 1 EN NEGRITA</strong>
+          <strong>Documentación y validación</strong>
           <br />
-          DESCRIPCION
+          <ul>
+            <li>Subida de documentos (nóminas, identificación).</li>
+            <li>Confirmación de recepción y revisión.</li>
+          </ul>
         </li>
         <li>
-          <strong>ITEM 1 EN NEGRITA</strong>
+          <strong>Aceptación legal</strong>
           <br />
-          DESCRIPCION
+          <ul>
+            <li>
+              Casillas de aceptación para términos, condiciones y consentimiento de tratamiento de
+              datos.
+            </li>
+            <li>Acceso a documentos legales en formato descargable.</li>
+          </ul>
         </li>
         <li>
-          <strong>ITEM 1 EN NEGRITA</strong>
+          <strong>Confirmación final</strong>
           <br />
-          DESCRIPCION
+          <ul>
+            <li>Mensaje claro de aprobación o estado “en revisión”.</li>
+            <li>Información sobre próximos pasos.</li>
+          </ul>
         </li>
-      </ul>
-      TODO FOTO
+      </ol>
     </section>
     <section id={BancSabadellNavSections.SECTION_6}>
       <h2>
@@ -183,20 +216,28 @@ const SECTION_9 = BANC_SABADELL_PROJECT.navItems.get(BancSabadellNavSections.SEC
           Gracias a la existencia del sistema de diseño Galatea, incluso en la fase de wireframes de
           UX se trabajaba directamente con los componentes finales del sistema, lo que permitía:
           <br />
-          <li>DENTRO Asegurar consistencia visual desde las primeras etapas.</li>
-          <li>
-            DENTRO Reducir el trabajo posterior del equipo de UI, ya que muchos elementos quedaban
-            prácticamente listos para la fase visual.
-          </li>
-          <li>
-            DENTRO Acelerar la validación con negocio y usuarios, al mostrar prototipos más cercanos
-            al producto final.
-          </li>
+          <ul>
+            <li>Asegurar consistencia visual desde las primeras etapas.</li>
+            <li>
+              Reducir el trabajo posterior del equipo de UI, ya que muchos elementos quedaban
+              prácticamente listos para la fase visual.
+            </li>
+            <li>
+              Acelerar la validación con negocio y usuarios, al mostrar prototipos más cercanos al
+              producto final.
+            </li>
+          </ul>
         </li>
         <li>Versiones adaptadas a desktop y responsive.</li>
         <li>Componentes flexibles para iteraciones rápidas sin romper la coherencia del diseño.</li>
       </ul>
-      TODO FOTOS
+      <img src={sabadellContentImage3.src} class="w-full h-auto" alt="project images" />
+      <div class="flex items-center sm:justify-between sm:gap-10 gap-6">
+        <img src={sabadellContentImage4.src} class="w-[30%] h-auto" alt="project images" />
+        <img src={sabadellContentImage5.src} class="w-[30%] h-auto" alt="project images" />
+        <img src={sabadellContentImage6.src} class="w-[30%] h-auto" alt="project images" />
+      </div>
+      <strong>*Las imágenes llevan Blur por clausula de confidencialidad con la empresa</strong>
     </section>
     <section id={BancSabadellNavSections.SECTION_7}>
       <h2>
@@ -207,6 +248,76 @@ const SECTION_9 = BANC_SABADELL_PROJECT.navItems.get(BancSabadellNavSections.SEC
         El flujo de trabajo incluía varias iteraciones controladas para garantizar que cada fase del
         diseño cumpliera los objetivos de usabilidad y negocio:
       </p>
+      <ol>
+        <li>
+          <strong>Prototipado UX inicial</strong>
+          <ul>
+            <li>
+              Creación de prototipos interactivos centrados exclusivamente en la parte de UX, con
+              foco en arquitectura de la información, recorridos y microinteracciones clave.
+            </li>
+            <li>
+              Estos prototipos se testeaban en UserZoom con usuarios reales siguiendo tareas
+              representativas (“Simula un préstamo de 10.000 € a 5 años”).
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Testeo y reporte a negocio</strong>
+          <ul>
+            <li>Recopilación de datos cualitativos y cuantitativos del test.</li>
+            <li>
+              Elaboración de un informe detallado con hallazgos, puntos de fricción y oportunidades
+              de mejora.
+            </li>
+            <li>Presentación del informe a negocio para validar los cambios propuestos.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Prototipado UI</strong>
+          <ul>
+            <li>
+              Una vez aprobado el flujo y estructura de UX, se desarrollaba la UI completa
+              (componentes visuales, estilos, iconografía, etc.).
+            </li>
+            <li>
+              Se creaba un nuevo prototipo en alta fidelidad que integraba la parte visual
+              definitiva.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Testeo final</strong>
+          <ul>
+            <li>
+              Se testeaba nuevamente con usuarios la versión UI para validar que superara el
+              porcentaje de success rate establecido como objetivo del proyecto.
+            </li>
+            <li>
+              Si los resultados eran satisfactorios, se elaboraba un informe final y se presentaba a
+              negocio para aprobación definitiva.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Documento de interacción para desarrollo</strong>
+          <ul>
+            <li>
+              Tras recibir el visto bueno de negocio, se preparaba el documento de interacción
+              (hand-off) para desarrolladores, detallando comportamiento de componentes, flujos y
+              reglas de interacción.
+            </li>
+            <li>
+              Este documento aseguraba que la implementación técnica mantuviera la experiencia
+              definida y validada en las fases previas.
+            </li>
+          </ul>
+        </li>
+      </ol>
+      <img src={sabadellContentImage7.src} class="w-full h-auto" alt="project images" />
+      <strong>*Las imágenes llevan Blur por clausula de confidencialidad con la empresa</strong>
+      <img src={sabadellContentImage8.src} class="w-full h-auto" alt="project images" />
+      <img src={sabadellContentImage9.src} class="w-full h-auto" alt="project images" />
     </section>
     <section id={BancSabadellNavSections.SECTION_8}>
       <h2>
@@ -242,19 +353,21 @@ const SECTION_9 = BANC_SABADELL_PROJECT.navItems.get(BancSabadellNavSections.SEC
         previa, aprendiendo a traducir un proceso físico a un entorno online de manera clara, segura
         y eficiente.
       </p>
-      <p>
-        TODO ICONO Fortalecí mi habilidad para analizar y testear tanto UX como UI, interpretando
-        datos para tomar decisiones fundamentadas.
-      </p>
-      <p>
-        TODO ICNO Mejoré mi capacidad de crear prototipos que aceleraran la validación y la
-        implementación técnica.
-      </p>
-      <p>
-        TODO ICONO Desarrollé experiencia al presentar hallazgos complejos a áreas de negocio de
-        forma comprensible y orientada a resultados.
-      </p>
-      <p>TODO ICONO Adversidades:</p>
+      <ul>
+        <li>
+          💎 Fortalecí mi habilidad para analizar y testear tanto UX como UI, interpretando datos
+          para tomar decisiones fundamentadas.
+        </li>
+        <li>
+          💎 Mejoré mi capacidad de crear prototipos que aceleraran la validación y la
+          implementación técnica.
+        </li>
+        <li>
+          💎 Desarrollé experiencia al presentar hallazgos complejos a áreas de negocio de forma
+          comprensible y orientada a resultados.
+        </li>
+      </ul>
+      <p>⏳ Adversidades:</p>
       <ul>
         <li>Ausencia inicial de equipo y referentes digitales.</li>
         <li>Limitaciones legales que condicionaban la experiencia.</li>
