@@ -5,13 +5,11 @@ import DesignTrilogy from "@components/home/DesignTrilogy.astro"
 import Front from "@components/home/Front.astro"
 import MyCreativeTrip from "@components/home/MyCreativeTrip.astro"
 import Layout from "@layouts/Layout.astro"
-import Preloader from "@/components/home/Preloader.astro"
-import Introduction from "@/components/home/Introduction.astro"
 ---
 
 <Layout>
-  <Preloader />
-  <Introduction />
+  <!-- <Preloader />
+  <Introduction /> -->
   <article>
     <Front />
     <div class="flex flex-col mt-10 gap-10 sm:gap-28">
@@ -20,7 +18,7 @@ import Introduction from "@/components/home/Introduction.astro"
       <MyCreativeTrip />
       <Illustrations />
     </div>
-    <script>
+    <!-- <script>
       import("../scripts/intro").then((mod) => mod.initIntro())
 
       document.addEventListener("astro:after-swap", () => {
@@ -36,6 +34,6 @@ import Introduction from "@/components/home/Introduction.astro"
           setTimeout(() => preloader.remove(), 1000) // eliminar del DOM
         }
       })
-    </script>
+    </script> -->
   </article>
 </Layout>
