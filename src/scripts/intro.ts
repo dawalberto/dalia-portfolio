@@ -105,7 +105,7 @@ export function initIntro() {
       pin: true,
       pinSpacing: false,
       onEnter: () => {
-        if (intro) intro.style.zIndex = "40"
+        if (intro) intro.style.zIndex = "50"
         if (nav) nav.style.zIndex = "20"
         // Eliminamos mt-20 al empezar
         if (portfolioContent) portfolioContent.classList.remove("mt-20")
@@ -113,7 +113,7 @@ export function initIntro() {
       onEnterBack: () => {
         if (intro) {
           intro.style.display = "block"
-          intro.style.zIndex = "40"
+          intro.style.zIndex = "50"
         }
         if (nav) nav.style.zIndex = "20"
         // Eliminamos mt-20 si volvemos hacia arriba
