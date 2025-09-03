@@ -1,29 +1,29 @@
 ---
-import Icon from "@/components/Icon.astro"
+import Icon from "@/components/Icon.astro";
 import {
   REBUILDING_CITIES_GENDER_PERSPECTIVE_PROJECT,
   RebuildingCitiesGenderPerspectiveNavSections,
-} from "@/constants"
-import Project from "@/layouts/Project.astro"
+} from "@/constants";
+import Project from "@/layouts/Project.astro";
 
 const SECTION_1 = REBUILDING_CITIES_GENDER_PERSPECTIVE_PROJECT.navItems.get(
-  RebuildingCitiesGenderPerspectiveNavSections.SECTION_1
-)
+  RebuildingCitiesGenderPerspectiveNavSections.SECTION_1,
+);
 const SECTION_2 = REBUILDING_CITIES_GENDER_PERSPECTIVE_PROJECT.navItems.get(
-  RebuildingCitiesGenderPerspectiveNavSections.SECTION_2
-)
+  RebuildingCitiesGenderPerspectiveNavSections.SECTION_2,
+);
 const SECTION_3 = REBUILDING_CITIES_GENDER_PERSPECTIVE_PROJECT.navItems.get(
-  RebuildingCitiesGenderPerspectiveNavSections.SECTION_3
-)
+  RebuildingCitiesGenderPerspectiveNavSections.SECTION_3,
+);
 const SECTION_4 = REBUILDING_CITIES_GENDER_PERSPECTIVE_PROJECT.navItems.get(
-  RebuildingCitiesGenderPerspectiveNavSections.SECTION_4
-)
+  RebuildingCitiesGenderPerspectiveNavSections.SECTION_4,
+);
 const SECTION_5 = REBUILDING_CITIES_GENDER_PERSPECTIVE_PROJECT.navItems.get(
-  RebuildingCitiesGenderPerspectiveNavSections.SECTION_5
-)
+  RebuildingCitiesGenderPerspectiveNavSections.SECTION_5,
+);
 const SECTION_6 = REBUILDING_CITIES_GENDER_PERSPECTIVE_PROJECT.navItems.get(
-  RebuildingCitiesGenderPerspectiveNavSections.SECTION_6
-)
+  RebuildingCitiesGenderPerspectiveNavSections.SECTION_6,
+);
 ---
 
 <Project
@@ -40,36 +40,300 @@ const SECTION_6 = REBUILDING_CITIES_GENDER_PERSPECTIVE_PROJECT.navItems.get(
         {SECTION_1?.icon && <Icon icon={SECTION_1.icon} />}
         <span>{SECTION_1?.title}</span>
       </h2>
+      <p>
+        El briefing inicial planteaba una cuestión clave: ¿cómo rediseñar el
+        entorno urbano desde una perspectiva de género e inclusión? La
+        oportunidad era repensar un espacio urbano desigual, con la meta de
+        convertirlo en un entorno más accesible, seguro e integrador para
+        mujeres, minorías y colectivos vulnerables.
+      </p>
+      <p>Conceptos clave para llegar al objetivo:</p>
+      <ul>
+        <li>
+          Inclusión social → tener en cuenta las diferentes formas de habitar la
+          ciudad.
+        </li>
+        <li>Perspectiva de género → diseñar espacios seguros y equitativos.</li>
+        <li>Participación ciudadana → involucrar a vecinos y colectivos.</li>
+        <li>
+          Usabilidad urbana → fomentar el uso real y continuo de los espacios.
+        </li>
+        <li>
+          Seguridad percibida → iluminación, vigilancia natural y confianza
+          social.
+        </li>
+        <li>
+          Cohesión cultural → aprovechar la riqueza multicultural del barrio.
+        </li>
+      </ul>
+      TODO FOTO
     </section>
     <section id={RebuildingCitiesGenderPerspectiveNavSections.SECTION_2}>
       <h2>
         {SECTION_2?.icon && <Icon icon={SECTION_2.icon} />}
         <span>{SECTION_2?.title}</span>
       </h2>
-    </section>
-    <section id={RebuildingCitiesGenderPerspectiveNavSections.SECTION_3}>
-      <h2>
-        {SECTION_3?.icon && <Icon icon={SECTION_3.icon} />}
-        <span>{SECTION_3?.title}</span>
-      </h2>
-    </section>
-    <section id={RebuildingCitiesGenderPerspectiveNavSections.SECTION_4}>
-      <h2>
-        {SECTION_4?.icon && <Icon icon={SECTION_4.icon} />}
-        <span>{SECTION_4?.title}</span>
-      </h2>
-    </section>
-    <section id={RebuildingCitiesGenderPerspectiveNavSections.SECTION_5}>
-      <h2>
-        {SECTION_5?.icon && <Icon icon={SECTION_5.icon} />}
-        <span>{SECTION_5?.title}</span>
-      </h2>
-    </section>
-    <section id={RebuildingCitiesGenderPerspectiveNavSections.SECTION_6}>
-      <h2>
-        {SECTION_6?.icon && <Icon icon={SECTION_6.icon} />}
-        <span>{SECTION_6?.title}</span>
-      </h2>
+      TODO FOTO TODO TITULO BIEN PUESTO
+      <h3>
+        <h3>1. Descubrir – Investigación</h3>
+        <ul>
+          <li>
+            <strong>Desk Research → </strong>
+            análisis de estudios previos, estadísticas urbanas y género.
+            <ul>
+              <li>
+                <strong>Hallazgos:</strong>
+                mujeres usan más las zonas verdes; siguen cargando con tareas familiares
+                pese a trabajar; minorías tienen menos acceso a oportunidades; fuerte
+                desigualdad en percepción de seguridad.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Research Questions</strong> (Usuario – Competencia – Producto):
+            <ul>
+              <li>
+                ¿Qué elementos hacen que una plaza sea segura para todos los
+                géneros?
+              </li>
+              <li>¿Cómo usan mujeres y hombres los espacios urbanos?</li>
+              <li>
+                ¿Qué referentes internacionales existen de diseño inclusivo?
+              </li>
+            </ul>
+          </li>
+        </ul>
+        TODO FOTO
+        <ul>
+          <li>
+            <strong>Cuestionario cuantitativo → </strong>
+            enviado a +200 personas, con +100 respuestas..
+          </li>
+        </ul>
+        TODO FOTO (CON SU TEXTO) TODO FOTO ( CON SU TEXTO)
+        <ul>
+          <li>
+            <strong>Insight clave → </strong>
+            67,6% pedía más zonas verdes
+          </li>
+        </ul>
+        TODO FOTO TODO FOTO
+        <ul>
+          <li>
+            <strong>Entrevistas cualitativas: </strong>
+            (6 en total):
+            <ul>
+              <ul>
+                <li>
+                  Perfiles diversos (madre soltera, jóvenes, hombres, minorías).
+                </li>
+                <li>
+                  <strong
+                    >Contraste: algunas mujeres no percibían desigualdad →</strong
+                  >
+                  reveló normalización de las carencias.
+                </li>
+                <li>
+                  <strong>Verbatims potentes:</strong>
+                  “El acoso callejero me ha pasado a mí como a todas las mujeres”,
+                  “FALTA EDUCACIÓN”.
+                </li>
+              </ul>
+            </ul>
+            <h3>1. Definir – Síntesis</h3>
+            <ul>
+              <li>
+                <strong>Insights principales:</strong>
+                <ul>
+                  <li>Las zonas verdes son clave para el bienestar urbano.</li>
+                  <li>
+                    La percepción de seguridad depende tanto del diseño físico
+                    como de la educación social.
+                  </li>
+                  <li>Necesidad de espacios de encuentro más allá de bares.</li>
+                </ul>
+              </li>
+              <li>
+                <strong>User Persona (Mireia):</strong>
+                madre soltera de 3 niños, busca entornos seguros y verdes para conciliar.
+              </li>
+
+              <li>
+                <strong>Mapa de empatía + Journey Map:</strong>
+                identificación de pain points → falta de zonas verdes, inseguridad,
+                poca socialización fuera de bares.
+              </li>
+              TODO FOTO TODO FOTO
+              <p>
+                Y nos introducimos ya en el segundo diamante,<strong>
+                  La fase de Ideación:</strong
+                >
+              </p>
+              TODO FOTO
+              <h3>1. Idear – Soluciones</h3>
+              <p>
+                <strong>Inspiración en el modelo Woonerf (Holanda) →</strong> integrar
+                vegetación, cultura y seguridad en un mismo entorno urbano.
+              </p>
+              <p>Lugar elegido: Plaza MACBA (Raval, Barcelona)</p>
+              <p>Motivos</p>
+              <ul>
+                <li>Zona con inmigración, desigualdad e inseguridad.</li>
+                <li>Punto cultural por los museos y el arte contemporáneo.</li>
+                <li>Oportunidad de cohesión social y cultural.</li>
+              </ul>
+              <p>Idea central:</p>
+              <p>
+                Crear un espacio urbano común, donde apetezca estar, se fomente
+                la convivencia y se garantice la seguridad.
+              </p>
+              <h3>4. Desarrollar – Prototipo de la Plaza</h3>
+              <p>Se definieron 3 zonas principales:</p>
+
+              <ul>
+                <li>
+                  <strong>1. Zona Jocs →</strong>
+                  deportes en equipo + integración con arte urbano.
+                </li>
+                <li>
+                  <strong>2. Zona Picnic →</strong>
+                  madre soltera de 3 niños, busca entornos seguros y verdes para
+                  conciliar.
+                </li>
+                <li>
+                  <strong>3. Zona Oasi →</strong>
+                  <ul>
+                    <li>Subzona Skatepark (respeto al colectivo local).</li>
+                    <li>Subzona descanso y socialización.</li>
+                  </ul>
+                  TODO FOTO TODO FOTO TODO FOTO TODO FOTO
+
+                  <section
+                    id={RebuildingCitiesGenderPerspectiveNavSections.SECTION_3}
+                  >
+                    <h2>
+                      {SECTION_3?.icon && <Icon icon={SECTION_3.icon} />}
+                      <span>{SECTION_3?.title}</span>
+                    </h2>
+                    <p>
+                      Además de la plaza física, se desarrolló una plataforma
+                      digital:
+                    </p>
+                    <ul>
+                      <li>
+                        <p></p><strong>mapa de sitio→</strong> web con secciones
+                        principales:
+                      </li>
+                      <ul>
+                        <li>
+                          Comunidad → Plaza Jove, programa para jóvenes con
+                          actividades cívicas.
+                        </li>
+                        <li>
+                          Programación → talleres, conciertos, charlas y
+                          actividades gratuitas.
+                        </li>
+                        <li>Noticias del barrio.</li>
+                        <li>Contacto / participación vecinal.</li>
+                      </ul>
+                    </ul>
+                    TODO FOTO
+                    <p>Descatar las partes más interesantes de la web:</p>
+                    <ul>
+                      <li>
+                        <strong>Comundiad:</strong>
+                        Creamos la parte de PLAZA JOVE, es un programa que da una
+                        oportunidad a los jóvenes del barrio centrada en el desarrollo
+                        de habilidades a través del compromiso cívico. Los jóvenes
+                        adquieren habilidades y experiencia y también establecen
+                        conexiones con otros adolescentes.
+                      </li>
+                    </ul>
+                    <ul>
+                      <li>
+                        <strong>Programación:</strong>
+                        En esta parte los usuarios pueden encontrar muchas actividades
+                        como talleres, conciertos, charlas, debates y muchas más
+                        cosas. Estas actividades son de forma presencial y gratuitas
+                        para que todos puedan participar sin quieren.
+                      </li>
+                    </ul>
+                    TODO FOTO
+                    <section
+                      id={RebuildingCitiesGenderPerspectiveNavSections.SECTION_4}
+                    >
+                      <h2>
+                        {SECTION_4?.icon && <Icon icon={SECTION_4.icon} />}
+                        <span>{SECTION_4?.title}</span>
+                      </h2>
+                      <p>
+                        <strong>Wireframes iniciales de la web →</strong> jerarquía
+                        clara, foco en comunidad y agenda cultural.
+                      </p>
+                      <p>
+                        <strong>Prototipo de alta fidelidad →</strong> reflejo visual
+                        de la plaza y su plataforma digital.
+                      </p>
+                      <p>
+                        <strong
+                          >Iteraciones con feedback de usuarios y vecinos</strong
+                        > refinamiento del flujo y contenidos.
+                      </p>
+                      TODO FOTO TODO FOTO TODO VIDEO
+                    </section>
+                    <section
+                      id={RebuildingCitiesGenderPerspectiveNavSections.SECTION_5}
+                    >
+                      <h2>
+                        {SECTION_5?.icon && <Icon icon={SECTION_5.icon} />}
+                        <span>{SECTION_5?.title}</span>
+                      </h2>
+                      <p>
+                        El Design Thinking permitió pasar de un reto abstracto a
+                        soluciones urbanas y digitales tangibles.
+                      </p>
+                      <p>
+                        <strong>Insight principal: </strong> los usuarios demandan
+                        zonas verdes + seguridad + cultura comunitaria.
+                      </p>
+                      <p>
+                        El contraste entre percepciones (mujeres que no veían
+                        desigualdad vs hombres que sí) demostró la importancia
+                        de la educación y la concienciación.
+                      </p>
+                      <p>
+                        <strong>Aprendizaje personal:</strong> gestionar contradicciones
+                        en la investigación, trabajar con comunidad y adaptar un
+                        enfoque de género a un diseño urbano real.
+                      </p>
+                    </section>
+                    <section
+                      id={RebuildingCitiesGenderPerspectiveNavSections.SECTION_6}
+                    >
+                      <h2>
+                        {SECTION_6?.icon && <Icon icon={SECTION_6.icon} />}
+                        <span>{SECTION_6?.title}</span>
+                      </h2>
+                      <ul>
+                        <li>
+                          Ampliar la comunidad digital con un espacio solo para
+                          vecinos → participación directa.
+                        </li>
+                        <li>Desarrollar app móvil + RRSS de la plaza.</li>
+                        <li>Potenciar transporte público hacia la plaza.</li>
+                        <li>
+                          Extender el modelo a otras plazas y barrios con
+                          problemas similares.
+                        </li>
+                      </ul>
+                    </section>
+                  </section>
+                </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+      </h3>
     </section>
   </div>
 </Project>
