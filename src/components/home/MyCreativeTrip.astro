@@ -1,6 +1,7 @@
 ---
 import { CONFIG } from "@/config"
 import { NAV_LINKS } from "../DesktopNav.astro"
+import Icon from "../Icon.astro"
 
 const projectsHref = new Map(
   NAV_LINKS.filter((link) => link.href === `${CONFIG.base}/projects`).flatMap((projects) =>
@@ -69,9 +70,12 @@ const projects = [
       projects.map((project) => (
         <a
           href={project.href}
-          class="group p-8 bg-[#F9F9F9] flex w-full justify-between cursor-pointer transform transition duration-200 hover:drop-shadow-md hover:scale-101 active:drop-shadow-none active:scale-100"
+          class="relative sm:min-h-40 group p-8 bg-[#F9F9F9] flex w-full justify-between cursor-pointer transform transition duration-300 hover:drop-shadow active:drop-shadow-none"
         >
           <div>
+            <span class="absolute top-5 right-5 block sm:hidden animate-pulse">
+              <Icon icon="arrow-square-in" />
+            </span>
             <h2 class="font-roboto font-bold text-base sm:text-2xl">
               <span class="text-main-17 group-hover:text-main-0">{project.title}</span>
               <span class="text-main-0 group-hover:text-main-17"> - {project.role}</span>
