@@ -259,6 +259,10 @@ const { title, rol, duration, typeOfProject, tools, link, navItems } = Astro.pro
     @apply list-disc list-outside ml-6;
   }
 
+  :global(main.project-content section ul.custom-list) {
+    @apply list-none;
+  }
+
   :global(main.project-content section ul ul) {
     @apply py-3;
   }
