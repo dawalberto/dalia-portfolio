@@ -3,6 +3,12 @@ import Icon from "@/components/Icon.astro"
 import { ATID_PROJECT, AtidNavSections } from "@/constants"
 import Project from "@/layouts/Project.astro"
 
+import atidContentImage1 from "@assets/images/atid-content-1.png"
+import atidContentImage2 from "@assets/images/atid-content-2.png"
+import atidContentImage3 from "@assets/images/atid-content-3.png"
+import atidContentImage4 from "@assets/images/atid-content-4.png"
+import atidContentImage5 from "@assets/images/atid-content-5.png"
+
 const SECTION_1 = ATID_PROJECT.navItems.get(AtidNavSections.SECTION_1)
 const SECTION_2 = ATID_PROJECT.navItems.get(AtidNavSections.SECTION_2)
 const SECTION_3 = ATID_PROJECT.navItems.get(AtidNavSections.SECTION_3)
@@ -10,6 +16,8 @@ const SECTION_4 = ATID_PROJECT.navItems.get(AtidNavSections.SECTION_4)
 const SECTION_5 = ATID_PROJECT.navItems.get(AtidNavSections.SECTION_5)
 const SECTION_6 = ATID_PROJECT.navItems.get(AtidNavSections.SECTION_6)
 const SECTION_7 = ATID_PROJECT.navItems.get(AtidNavSections.SECTION_7)
+const SECTION_8 = ATID_PROJECT.navItems.get(AtidNavSections.SECTION_8)
+const SECTION_9 = ATID_PROJECT.navItems.get(AtidNavSections.SECTION_9)
 ---
 
 <!-- Proyecto de Empatía Animal - Kingsugi -->
@@ -78,7 +86,7 @@ const SECTION_7 = ATID_PROJECT.navItems.get(AtidNavSections.SECTION_7)
       </h2>
       <p><strong>Desk Research</strong></p>
       <p>Para entender el mercado y las necesidades de los usuarios:</p>
-      <ul>
+      <ol>
         <li>
           Analicé competidores globales en soluciones de lectores UHF y dispositivos industriales.
         </li>
@@ -90,20 +98,20 @@ const SECTION_7 = ATID_PROJECT.navItems.get(AtidNavSections.SECTION_7)
           Profundicé en la comprensión de los productos de ATID:
           <ul>
             <li>
-              PONER EN NEGRITA All-in-One Intelligence Reader: Potente lector UHF para aplicaciones
-              industriales exigentes.
+              <strong>All-in-One Intelligence Reader:</strong> Potente lector UHF para aplicaciones industriales
+              exigentes.
             </li>
             <li>
-              PONER EN NEGRITA Agile Bluetooth Reader: Lector UHF ligero adaptable a entornos
-              empresariales variados.
+              <strong>Agile Bluetooth Reader:</strong> Lector UHF ligero adaptable a entornos empresariales
+              variados.
             </li>
             <li>
-              PONER EN NEGRITA All-in-One Design Intelligence Reader: Lector UHF inteligente y
-              versátil (Entre otros)
+              <strong>All-in-One Design Intelligence Reader:</strong> Lector UHF inteligente y versátil
+              (entre otros)
             </li>
           </ul>
         </li>
-      </ul>
+      </ol>
 
       <p>
         El objetivo era asegurar que cada sección de la web transmitiera innovación, robustez y
@@ -113,7 +121,7 @@ const SECTION_7 = ATID_PROJECT.navItems.get(AtidNavSections.SECTION_7)
         <strong>🎨 Design Evaluation (Evaluación del Diseño Actual)</strong>
       </p>
       <p>La web existente presentaba varios problemas:</p>
-      <ul>
+      <ol>
         <li>Logo pixelado y uso de imágenes de stock.</li>
         <li>Imágenes de productos desactualizadas y de baja calidad.</li>
         <li>Visualización en móvil mal implementada, afectando la usabilidad.</li>
@@ -126,7 +134,7 @@ const SECTION_7 = ATID_PROJECT.navItems.get(AtidNavSections.SECTION_7)
             <li>Colores: F3F4F3, 9DD3A3, 15846A, 32A33F, 090404</li>
           </ul>
         </li>
-      </ul>
+      </ol>
       <p><strong>🖥️ Usability Evaluation (Evaluación de Usabilidad)</strong></p>
       <p>Principales problemas detectados:</p>
       <ul>
@@ -226,27 +234,19 @@ const SECTION_7 = ATID_PROJECT.navItems.get(AtidNavSections.SECTION_7)
           <strong>Home:</strong>
           Introducción a la marca y sus productos, destacando innovación tecnológica y aplicaciones industriales.
         </li>
-      </ul>
-      <ul>
         <li>
           <strong>Productos:</strong>
           Sección que describe cada dispositivo, incluyendo imágenes de alta calidad, descripciones técnicas
           y beneficios.
         </li>
-      </ul>
-      <ul>
         <li>
           <strong>Sobre nosotros:</strong>
           Historia de ATID, misión, visión y enfoque en innovación tecnológica.
         </li>
-      </ul>
-      <ul>
         <li>
           <strong>Support:</strong>
           Recursos para clientes, manuales técnicos y asistencia postventa.
         </li>
-      </ul>
-      <ul>
         <li>
           <strong>Contacto:</strong>
           Formulario de contacto y datos de la empresa.
@@ -256,7 +256,7 @@ const SECTION_7 = ATID_PROJECT.navItems.get(AtidNavSections.SECTION_7)
         El objetivo era que el usuario pudiera acceder fácilmente a información clave sobre los
         productos y la empresa.
       </p>
-      TODO FOTO
+      <img src={atidContentImage1.src} class="w-full h-auto" alt="project images" />
     </section>
     <section id={AtidNavSections.SECTION_5}>
       <h2>
@@ -275,7 +275,7 @@ const SECTION_7 = ATID_PROJECT.navItems.get(AtidNavSections.SECTION_7)
         Se incorporaron elementos visuales y flujos de usuario que equilibraban funcionalidad y
         estética.
       </p>
-      TODO FOTO
+      <img src={atidContentImage2.src} class="w-full h-auto" alt="project images" />
     </section>
     <section id={AtidNavSections.SECTION_6}>
       <h2>
@@ -316,12 +316,13 @@ const SECTION_7 = ATID_PROJECT.navItems.get(AtidNavSections.SECTION_7)
         Cada página transmite la innovación y confiabilidad de ATID, generando confianza en clientes
         potenciales y destacando la marca frente a la competencia.
       </p>
-      TODO FOTO TOFO FOTO
+      <img src={atidContentImage3.src} class="w-full h-auto" alt="project images" />
+      <img src={atidContentImage4.src} class="w-full h-auto" alt="project images" />
     </section>
-    <section id={AtidNavSections.SECTION_7}>
+    <section id={AtidNavSections.SECTION_8}>
       <h2>
-        {SECTION_7?.icon && <Icon icon={SECTION_7.icon} />}
-        <span>{SECTION_7?.title}</span>
+        {SECTION_8?.icon && <Icon icon={SECTION_8.icon} />}
+        <span>{SECTION_8?.title.split(" ")[0]}</span>
       </h2>
       <ul>
         <li>La nueva web mejoró la experiencia del usuario y la percepción de la marca.</li>
@@ -334,11 +335,9 @@ const SECTION_7 = ATID_PROJECT.navItems.get(AtidNavSections.SECTION_7)
           el éxito del proyecto.
         </li>
       </ul>
-    </section>
-    <section id={AtidNavSections.SECTION_7}>
       <h2>
-        {SECTION_7?.icon && <Icon icon={SECTION_7.icon} />}
-        <span>{SECTION_7?.title}</span>
+        <Icon icon="rocket-launch" />
+        <span class="capitalize">{SECTION_8?.title.split(" ")[2]}</span>
       </h2>
       <ul>
         <li>
@@ -354,10 +353,10 @@ const SECTION_7 = ATID_PROJECT.navItems.get(AtidNavSections.SECTION_7)
         </li>
       </ul>
     </section>
-    <section id={AtidNavSections.SECTION_7}>
+    <section id={AtidNavSections.SECTION_9}>
       <h2>
-        {SECTION_7?.icon && <Icon icon={SECTION_7.icon} />}
-        <span>{SECTION_7?.title}</span>
+        {SECTION_9?.icon && <Icon icon={SECTION_9.icon} />}
+        <span>{SECTION_9?.title}</span>
       </h2>
       <p>Trabajar en este proyecto fue una experiencia profesional y personal transformadora:</p>
       <ul>
@@ -382,7 +381,7 @@ const SECTION_7 = ATID_PROJECT.navItems.get(AtidNavSections.SECTION_7)
         posible superar cualquier desafío, incluso trabajando con clientes internacionales y en un
         idioma que no dominas completamente.
       </p>
-      TODO FOTO
+      <img src={atidContentImage5.src} class="w-full h-auto" alt="project images" />
     </section>
   </div>
 </Project>

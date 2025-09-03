@@ -259,13 +259,15 @@ export const KINGSUGI_PROJECT = {
 }
 
 export enum AtidNavSections {
-  SECTION_1 = "context",
-  SECTION_2 = "challenge",
-  SECTION_3 = "sprint-process",
-  SECTION_4 = "design",
-  SECTION_5 = "testing",
-  SECTION_6 = "conclusions",
-  SECTION_7 = "personal-thought",
+  SECTION_1 = "challenge",
+  SECTION_2 = "process",
+  SECTION_3 = "benchmark",
+  SECTION_4 = "information-architecture",
+  SECTION_5 = "wireframes",
+  SECTION_6 = "prototypes",
+  SECTION_7 = "final-screens",
+  SECTION_8 = "conclusions-and-futuribles",
+  SECTION_9 = "personal-reflection",
 }
 
 export const ATID_PROJECT = {
@@ -276,12 +278,14 @@ export const ATID_PROJECT = {
     "Proyecto de rediseño de sitio web corporativo B2B con enfoque en productos tecnológicos e industriales.",
   tools: ["Figma", "Miro", "Trello", "Google Scholar / Artículos online", "Notion", "Google Meet"],
   navItems: new Map<AtidNavSections, { title: string; icon: IconName }>([
-    [AtidNavSections.SECTION_1, { title: "Contexto", icon: "book" }],
-    [AtidNavSections.SECTION_2, { title: "El desafío", icon: "puzzle-piece" }],
-    [AtidNavSections.SECTION_3, { title: "Proceso de sprint", icon: "hourglass-simple-medium" }],
-    [AtidNavSections.SECTION_4, { title: "El diseño", icon: "pencil-line" }],
-    [AtidNavSections.SECTION_5, { title: "Testeo", icon: "check-fat" }],
-    [AtidNavSections.SECTION_6, { title: "Conclusiones y futuribles", icon: "brain" }],
-    [AtidNavSections.SECTION_7, { title: "Reflexión personal", icon: "magic-wand" }],
+    [AtidNavSections.SECTION_1, { title: "El reto", icon: "puzzle-piece" }],
+    [AtidNavSections.SECTION_2, { title: "El proceso", icon: "magnifying-glass" }],
+    [AtidNavSections.SECTION_3, { title: "Benchmark", icon: "chart-bar" }],
+    [AtidNavSections.SECTION_4, { title: "Arquitectura de la información", icon: "chart-polar" }],
+    [AtidNavSections.SECTION_5, { title: "Wireframes", icon: "pencil-line" }],
+    [AtidNavSections.SECTION_6, { title: "Prototipos", icon: "spiral" }],
+    [AtidNavSections.SECTION_7, { title: "Pantallas finales", icon: "palette" }],
+    [AtidNavSections.SECTION_8, { title: "Conclusiones y futuribles", icon: "brain" }],
+    [AtidNavSections.SECTION_9, { title: "Reflexión personal", icon: "magic-wand" }],
   ]),
 }
