@@ -200,6 +200,7 @@ export enum InkNavSections {
   SECTION_3 = "information-architecture",
   SECTION_4 = "wireframes-and-prototypes",
   SECTION_5 = "conclusions",
+  SECTION_6 = "futuribles",
 }
 
 export const INK_PROJECT = {
@@ -214,7 +215,8 @@ export const INK_PROJECT = {
     [InkNavSections.SECTION_2, { title: "El proceso", icon: "magnifying-glass" }],
     [InkNavSections.SECTION_3, { title: "Arquitectura de la información", icon: "chart-polar" }],
     [InkNavSections.SECTION_4, { title: "Wireframes y prototipo", icon: "pencil-line" }],
-    [InkNavSections.SECTION_5, { title: "Conclusiones y futuribles", icon: "check-fat" }],
+    [InkNavSections.SECTION_5, { title: "Conclusiones", icon: "check-fat" }],
+    [InkNavSections.SECTION_6, { title: "Futuribles", icon: "brain" }],
   ]),
 }
 
