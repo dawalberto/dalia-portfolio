@@ -101,83 +101,206 @@ const { title, rol, duration, typeOfProject, tools, link, navItems } = Astro.pro
 </Layout>
 
 <script>
+  // Variables globales para manejar observadores
+  let currentScrollObserver: (() => void) | null = null
+  let currentIntersectionObserver: IntersectionObserver | null = null
+  let isScrolling = false
+  let scrollTimeout: NodeJS.Timeout
+
   document.addEventListener("astro:after-swap", () => {
     initProjectLayout()
   })
 
   function initProjectLayout() {
-    const projectContentContainer = document.querySelector("[project-content]")
+    // Limpiar observadores previos
+    cleanup()
+
+    const projectContentContainer = document.querySelector(
+      "[project-content]"
+    ) as HTMLElement | null
 
     if (!projectContentContainer) return
 
-    projectContentContainer.addEventListener("scroll", () => {
-      projectContentContainer?.addEventListener("scroll", () => {
-        const projectInfoContainer = document.querySelector("[project-info]") as HTMLElement | null
-        const projectAsideContainer = document.querySelector(
-          "[project-aside]"
-        ) as HTMLElement | null
-        const projectHeaderContainer = document.querySelector(
-          "[project-header]"
-        ) as HTMLElement | null
+    // Configurar observador de scroll para el header
+    setupScrollObserver(projectContentContainer)
 
-        if (
-          !projectContentContainer ||
-          !projectInfoContainer ||
-          !projectAsideContainer ||
-          !projectHeaderContainer
-        ) {
-          return
-        }
+    // Configurar observador de intersección para navegación
+    setupNavigationObserver(projectContentContainer)
+  }
 
-        const { scrollTop } = projectContentContainer
-        if (scrollTop > 125) {
-          projectInfoContainer.classList.replace("max-h-52", "max-h-0")
-          projectInfoContainer.classList.replace("text-main-0", "text-white")
-          projectInfoContainer.classList.replace("visible", "invisible")
-          projectContentContainer.classList.replace("mt-8", "mt-0")
-          projectAsideContainer.classList.replace("mt-8", "mt-0")
-          projectHeaderContainer.classList.replace("pb-2", "pb-0")
-          projectHeaderContainer.classList.replace("text-3xl", "text-xl")
-          projectHeaderContainer.classList.replace("sm:mt-8", "sm:mt-4")
-          projectHeaderContainer.classList.replace("sm:pb-8", "sm:pb-4")
-          projectHeaderContainer.querySelector("h1")?.classList.replace("pb-6", "pb-2")
-        } else {
-          projectInfoContainer.classList.replace("max-h-0", "max-h-52")
-          projectInfoContainer.classList.replace("text-white", "text-main-0")
-          projectInfoContainer.classList.replace("invisible", "visible")
-          projectContentContainer.classList.replace("mt-0", "mt-8")
-          projectAsideContainer.classList.replace("mt-0", "mt-8")
-          projectHeaderContainer.classList.replace("pb-0", "pb-2")
-          projectHeaderContainer.classList.replace("text-xl", "text-3xl")
-          projectHeaderContainer.classList.replace("sm:mt-4", "sm:mt-8")
-          projectHeaderContainer.classList.replace("sm:pb-4", "sm:pb-8")
-          projectHeaderContainer.querySelector("h1")?.classList.replace("pb-2", "pb-6")
-        }
-      })
-    })
+  function cleanup() {
+    // Remover listener de scroll previo
+    if (currentScrollObserver) {
+      const container = document.querySelector("[project-content]")
+      container?.removeEventListener("scroll", currentScrollObserver)
+      currentScrollObserver = null
+    }
 
+    // Desconectar observador de intersección previo
+    if (currentIntersectionObserver) {
+      currentIntersectionObserver.disconnect()
+      currentIntersectionObserver = null
+    }
+  }
+
+  function setupScrollObserver(container: HTMLElement) {
+    const projectInfoContainer = document.querySelector("[project-info]") as HTMLElement | null
+    const projectAsideContainer = document.querySelector("[project-aside]") as HTMLElement | null
+    const projectHeaderContainer = document.querySelector("[project-header]") as HTMLElement | null
+
+    if (!projectInfoContainer || !projectAsideContainer || !projectHeaderContainer) return
+
+    const scrollHandler = () => {
+      const { scrollTop } = container
+
+      if (scrollTop > 125) {
+        projectInfoContainer.classList.replace("max-h-52", "max-h-0")
+        projectInfoContainer.classList.replace("text-main-0", "text-white")
+        projectInfoContainer.classList.replace("visible", "invisible")
+        container.classList.replace("mt-8", "mt-0")
+        projectAsideContainer.classList.replace("mt-8", "mt-0")
+        projectHeaderContainer.classList.replace("pb-2", "pb-0")
+        projectHeaderContainer.classList.replace("text-3xl", "text-xl")
+        projectHeaderContainer.classList.replace("sm:mt-8", "sm:mt-4")
+        projectHeaderContainer.classList.replace("sm:pb-8", "sm:pb-4")
+        projectHeaderContainer.querySelector("h1")?.classList.replace("pb-6", "pb-2")
+      } else {
+        projectInfoContainer.classList.replace("max-h-0", "max-h-52")
+        projectInfoContainer.classList.replace("text-white", "text-main-0")
+        projectInfoContainer.classList.replace("invisible", "visible")
+        container.classList.replace("mt-0", "mt-8")
+        projectAsideContainer.classList.replace("mt-0", "mt-8")
+        projectHeaderContainer.classList.replace("pb-0", "pb-2")
+        projectHeaderContainer.classList.replace("text-xl", "text-3xl")
+        projectHeaderContainer.classList.replace("sm:mt-4", "sm:mt-8")
+        projectHeaderContainer.classList.replace("sm:pb-4", "sm:pb-8")
+        projectHeaderContainer.querySelector("h1")?.classList.replace("pb-2", "pb-6")
+      }
+    }
+
+    currentScrollObserver = scrollHandler
+    container.addEventListener("scroll", scrollHandler, { passive: true })
+  }
+
+  function setupNavigationObserver(container: HTMLElement) {
     const sections = document.querySelectorAll("main[project-content] section[id]")
     const navLinks = document.querySelectorAll("aside[project-aside] nav a")
 
-    const observer = new IntersectionObserver(
+    if (sections.length === 0 || navLinks.length === 0) return
+
+    // Función para actualizar navegación activa
+    function updateActiveNav(activeId: string) {
+      navLinks.forEach((link) => {
+        link.classList.remove("active")
+        if (link.getAttribute("href") === `#${activeId}`) {
+          link.classList.add("active")
+        }
+      })
+    }
+
+    // Función para determinar qué sección está más visible
+    function findMostVisibleSection() {
+      let mostVisible = { element: null as Element | null, ratio: 0 }
+
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect()
+        const containerRect = container.getBoundingClientRect()
+
+        // Calcular qué parte de la sección es visible
+        const visibleTop = Math.max(rect.top, containerRect.top)
+        const visibleBottom = Math.min(rect.bottom, containerRect.bottom)
+        const visibleHeight = Math.max(0, visibleBottom - visibleTop)
+        const visibilityRatio = visibleHeight / rect.height
+
+        if (visibilityRatio > mostVisible.ratio) {
+          mostVisible = { element: section, ratio: visibilityRatio }
+        }
+      })
+
+      return mostVisible.element
+    }
+
+    // Observer con múltiples thresholds para mayor precisión
+    const thresholds = Array.from({ length: 21 }, (_, i) => i * 0.05) // 0, 0.05, 0.1, ..., 1.0
+
+    currentIntersectionObserver = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            navLinks.forEach((link) => link.classList.remove("active"))
-            const id = entry.target.getAttribute("id")
-            const activeLink = document.querySelector(`aside[project-aside] nav a[href="#${id}"]`)
-            if (activeLink) activeLink.classList.add("active")
-          }
-        })
+        // Evitar conflictos durante scroll programático
+        if (isScrolling) return
+
+        // Si alguna sección tiene alta visibilidad, úsala
+        const highlyVisible = entries.find((entry) => entry.intersectionRatio > 0.5)
+        if (highlyVisible?.isIntersecting) {
+          const id = highlyVisible.target.getAttribute("id")
+          if (id) updateActiveNav(id)
+          return
+        }
+
+        // Si no, encontrar la más visible manualmente
+        const mostVisible = findMostVisibleSection()
+        if (mostVisible) {
+          const id = mostVisible.getAttribute("id")
+          if (id) updateActiveNav(id)
+        }
       },
-      { root: projectContentContainer, threshold: 0.6 }
+      {
+        root: container,
+        rootMargin: "-10% 0px -10% 0px", // Margen para activar antes
+        threshold: thresholds,
+      }
     )
 
-    sections.forEach((section) => observer.observe(section))
+    sections.forEach((section) => {
+      currentIntersectionObserver?.observe(section)
+    })
+
+    // Manejar clicks en navegación
+    navLinks.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault()
+        const href = link.getAttribute("href")
+        if (!href) return
+
+        const targetId = href.substring(1)
+        const targetSection = document.getElementById(targetId)
+        if (!targetSection) return
+
+        // Marcar que estamos en scroll programático
+        isScrolling = true
+        clearTimeout(scrollTimeout)
+
+        // Scroll suave al objetivo
+        targetSection.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+          inline: "nearest",
+        })
+
+        // Actualizar navegación inmediatamente
+        updateActiveNav(targetId)
+
+        // Restablecer flag después del scroll
+        scrollTimeout = setTimeout(() => {
+          isScrolling = false
+        }, 1000) // Tiempo suficiente para completar scroll suave
+      })
+    })
+
+    // Activar el primer elemento visible al cargar
+    setTimeout(() => {
+      const mostVisible = findMostVisibleSection()
+      if (mostVisible) {
+        const id = mostVisible.getAttribute("id")
+        if (id) updateActiveNav(id)
+      }
+    }, 100)
   }
 
   // Inicialización al primer render
   initProjectLayout()
+
+  // Limpiar al salir de la página
+  document.addEventListener("astro:before-swap", cleanup)
 </script>
 
 <style>
@@ -185,10 +308,10 @@ const { title, rol, duration, typeOfProject, tools, link, navItems } = Astro.pro
 
   article {
     margin: 0;
-    height: var(--spacing-full-without-menu-desktop); /* Toda la ventana */
+    height: var(--spacing-full-without-menu-desktop);
     display: grid;
     grid-template-rows: auto 1fr;
-    grid-template-columns: 200px 1fr; /* Sidebar 200px + body resto */
+    grid-template-columns: 200px 1fr;
     grid-template-areas:
       "header header"
       "sidebar body";
@@ -200,23 +323,24 @@ const { title, rol, duration, typeOfProject, tools, link, navItems } = Astro.pro
 
   aside {
     grid-area: sidebar;
-    overflow-y: auto; /* Scroll independiente */
+    overflow-y: auto;
   }
 
   main {
     grid-area: body;
-    overflow-y: auto; /* Scroll independiente */
+    overflow-y: auto;
     scroll-behavior: smooth;
     padding-inline: min(16em, 6%);
   }
 
   :global(section) {
-    scroll-margin-top: 0; /* Ajusta este valor para que coincida con el offset del scroll */
+    scroll-margin-top: 20px; /* Mejor offset para navegación */
   }
 
   :global(nav a.active) {
-    opacity: 1;
-    font-weight: bold;
+    opacity: 1 !important;
+    font-weight: bold !important;
+    color: var(--color-main-17, #1f2937);
   }
 
   :global(main.project-content > div) {
@@ -225,6 +349,7 @@ const { title, rol, duration, typeOfProject, tools, link, navItems } = Astro.pro
 
   :global(main.project-content section) {
     @apply flex flex-col gap-4 sm:gap-6;
+    min-height: 100px; /* Altura mínima para mejor detección */
   }
 
   :global(main.project-content img) {
@@ -278,14 +403,14 @@ const { title, rol, duration, typeOfProject, tools, link, navItems } = Astro.pro
   @media (max-width: theme(screens.sm)) {
     article {
       height: var(--spacing-full-without-menu-mobile);
-      grid-template-columns: 1fr; /* Only one column */
+      grid-template-columns: 1fr;
       grid-template-areas:
         "header"
         "body";
     }
 
     aside[project-aside] {
-      display: none; /* Hide sidebar */
+      display: none;
     }
 
     main[project-content] {
