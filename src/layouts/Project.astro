@@ -247,6 +247,10 @@ const { title, rol, duration, typeOfProject, tools, link, navItems } = Astro.pro
     @apply flex items-center gap-1.5 text-lg sm:text-xl font-bold;
   }
 
+  :global(main.project-content section p.confidence) {
+    @apply text-xs;
+  }
+
   :global(main.project-content section h3 svg) {
     @apply flex-none self-start mt-1;
   }
