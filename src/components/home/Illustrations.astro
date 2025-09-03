@@ -8,8 +8,6 @@ import smokeGirl from "@assets/images/smoke-girl.jpg"
 import womanSun from "@assets/images/sun.jpg"
 
 const illustrationsRowClass = "flex flex-col sm:flex-row gap-x-6 gap-y-11"
-const imageAnimationClass =
-  "sm:grayscale sm:hover:grayscale-0 sm:hover:shadow-xl/30 sm:transform sm:duration-1000"
 ---
 
 <section>
@@ -19,13 +17,11 @@ const imageAnimationClass =
       <img
         src={modelFlowers.src}
         class="block h-auto min-w-0 max-w-full sm:flex-[0_0_30%] object-cover"
-        class:list={imageAnimationClass}
         alt="Broken woman with flowers"
       />
       <img
         src={skullFlowers.src}
         class="block h-auto min-w-0 max-w-full sm:flex-[1_1_0%] object-cover"
-        class:list={imageAnimationClass}
         alt="woman with a painted face of Mexican skull and flowers covering her head"
       />
     </div>
@@ -33,19 +29,16 @@ const imageAnimationClass =
       <img
         src={womanSun.src}
         class="block h-auto min-w-0 max-w-full sm:flex-[30%_0_0] object-cover"
-        class:list={imageAnimationClass}
         alt="Woman in the sun covering her face with a hat"
       />
       <img
         src={dogFlowers.src}
         class="block h-auto min-w-0 max-w-full sm:flex-[0_30%_0] object-cover"
-        class:list={imageAnimationClass}
         alt="Dog with flowers as a crown"
       />
       <img
         src={lyingDownFlowers.src}
         class="block h-auto min-w-0 max-w-full sm:flex-[0_0_30%] object-cover"
-        class:list={imageAnimationClass}
         alt="Woman lying down with flowers in her face"
       />
     </div>
@@ -53,13 +46,11 @@ const imageAnimationClass =
       <img
         src={smokeGirl.src}
         class="block h-auto min-w-0 max-w-full sm:flex-[50%_0] object-cover"
-        class:list={imageAnimationClass}
         alt="Woman smoking"
       />
       <img
         src={hidden.src}
         class="block h-auto min-w-0 max-w-full sm:flex-[0_50%] object-cover"
-        class:list={imageAnimationClass}
         alt="Hidden woman with flowers"
       />
     </div>
