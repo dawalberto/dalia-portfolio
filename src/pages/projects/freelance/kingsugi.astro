@@ -1,15 +1,15 @@
 ---
-import Icon from "@/components/Icon.astro";
-import { KINGSUGI_PROJECT, KingsugiNavSections } from "@/constants";
-import Project from "@/layouts/Project.astro";
+import Icon from "@/components/Icon.astro"
+import { KINGSUGI_PROJECT, KingsugiNavSections } from "@/constants"
+import Project from "@/layouts/Project.astro"
 
-const SECTION_1 = KINGSUGI_PROJECT.navItems.get(KingsugiNavSections.SECTION_1);
-const SECTION_2 = KINGSUGI_PROJECT.navItems.get(KingsugiNavSections.SECTION_2);
-const SECTION_3 = KINGSUGI_PROJECT.navItems.get(KingsugiNavSections.SECTION_3);
-const SECTION_4 = KINGSUGI_PROJECT.navItems.get(KingsugiNavSections.SECTION_4);
-const SECTION_5 = KINGSUGI_PROJECT.navItems.get(KingsugiNavSections.SECTION_5);
-const SECTION_6 = KINGSUGI_PROJECT.navItems.get(KingsugiNavSections.SECTION_6);
-const SECTION_7 = KINGSUGI_PROJECT.navItems.get(KingsugiNavSections.SECTION_7);
+const SECTION_1 = KINGSUGI_PROJECT.navItems.get(KingsugiNavSections.SECTION_1)
+const SECTION_2 = KINGSUGI_PROJECT.navItems.get(KingsugiNavSections.SECTION_2)
+const SECTION_3 = KINGSUGI_PROJECT.navItems.get(KingsugiNavSections.SECTION_3)
+const SECTION_4 = KINGSUGI_PROJECT.navItems.get(KingsugiNavSections.SECTION_4)
+const SECTION_5 = KINGSUGI_PROJECT.navItems.get(KingsugiNavSections.SECTION_5)
+const SECTION_6 = KINGSUGI_PROJECT.navItems.get(KingsugiNavSections.SECTION_6)
+const SECTION_7 = KINGSUGI_PROJECT.navItems.get(KingsugiNavSections.SECTION_7)
 ---
 
 <!-- Proyecto de Empatía Animal - Kingsugi -->
@@ -28,22 +28,19 @@ const SECTION_7 = KINGSUGI_PROJECT.navItems.get(KingsugiNavSections.SECTION_7);
         <span>{SECTION_1?.title}</span>
       </h2>
       <p>
-        Este proyecto marcó el inicio de mi camino en el mundo del diseño UX/UI.
-        Fue mi primera experiencia aplicando la metodología Design Sprint, un
-        reto intenso y con tiempo limitado (5 días), que me enseñó la
-        importancia de tomar decisiones rápidas, trabajar bajo presión y validar
-        ideas con usuarios.
+        Este proyecto marcó el inicio de mi camino en el mundo del diseño UX/UI. Fue mi primera
+        experiencia aplicando la metodología Design Sprint, un reto intenso y con tiempo limitado (5
+        días), que me enseñó la importancia de tomar decisiones rápidas, trabajar bajo presión y
+        validar ideas con usuarios.
       </p>
       <p>El reto era:</p>
       <p>
-        <strong
-          >“¿Cómo fomentar la empatía en las personas hacia los animales?”</strong
-        >
+        <strong>“¿Cómo fomentar la empatía en las personas hacia los animales?”</strong>
       </p>
       <p>
-        Un problema de gran relevancia si tenemos en cuenta que en España se
-        abandonan más de 300.000 animales al año, además del maltrato que sufren
-        en ámbitos como circos, experimentación o cría.
+        Un problema de gran relevancia si tenemos en cuenta que en España se abandonan más de
+        300.000 animales al año, además del maltrato que sufren en ámbitos como circos,
+        experimentación o cría.
       </p>
     </section>
     <section id={KingsugiNavSections.SECTION_2}>
@@ -52,13 +49,11 @@ const SECTION_7 = KINGSUGI_PROJECT.navItems.get(KingsugiNavSections.SECTION_7);
         <span>{SECTION_2?.title}</span>
       </h2>
       <p>
-        El objetivo era claro: aumentar la empatía de las personas hacia los
-        animales y visibilizar su situación, con el fin de que sean considerados
-        seres vivos con derechos y no meras herramientas para beneficio humano.
+        El objetivo era claro: aumentar la empatía de las personas hacia los animales y visibilizar
+        su situación, con el fin de que sean considerados seres vivos con derechos y no meras
+        herramientas para beneficio humano.
       </p>
-      <p>
-        Decidí enfocarme en los animales más olvidados dentro de la adopción:
-      </p>
+      <p>Decidí enfocarme en los animales más olvidados dentro de la adopción:</p>
       <ul>
         <li>Animales discapacitados</li>
         <li>Razas discriminadas</li>
@@ -66,8 +61,8 @@ const SECTION_7 = KINGSUGI_PROJECT.navItems.get(KingsugiNavSections.SECTION_7);
         <li>Aquellos con menor probabilidad de encontrar hogar</li>
       </ul>
       <p>
-        La propuesta fue diseñar una app que diera visibilidad a estos animales,
-        facilitara la adopción y acercara a los usuarios a sus historias.
+        La propuesta fue diseñar una app que diera visibilidad a estos animales, facilitara la
+        adopción y acercara a los usuarios a sus historias.
       </p>
     </section>
     <section id={KingsugiNavSections.SECTION_3}>
@@ -77,31 +72,28 @@ const SECTION_7 = KINGSUGI_PROJECT.navItems.get(KingsugiNavSections.SECTION_7);
       </h2>
       <p><strong>Día 1 – Mapear el problema</strong></p>
       <p>
-        Creamos un mapa del problema y decidimos centrarnos en dar visibilidad a
-        los animales con menos opciones de adopción.
+        Creamos un mapa del problema y decidimos centrarnos en dar visibilidad a los animales con
+        menos opciones de adopción.
       </p>
       <p><strong>Día 2 – Idear soluciones</strong></p>
-      <p>
-        Ejercicios como Crazy 8s nos ayudaron a generar gran cantidad de ideas
-        en poco tiempo.
-      </p>
+      <p>Ejercicios como Crazy 8s nos ayudaron a generar gran cantidad de ideas en poco tiempo.</p>
       TO DO FOTO
       <p><strong>Día 3 – Decidir</strong></p>
       <p>
-        Seleccionamos las mejores propuestas y elaboramos un storyboard con el
-        flujo que tendría la aplicación.
+        Seleccionamos las mejores propuestas y elaboramos un storyboard con el flujo que tendría la
+        aplicación.
       </p>
       TO DO FOTO
       <p><strong>Día 4 – Prototipar</strong></p>
       <p>
-        Pasé de bocetos en papel a los primeros wireframes digitales, con un
-        enfoque sencillo, claro y accesible.
+        Pasé de bocetos en papel a los primeros wireframes digitales, con un enfoque sencillo, claro
+        y accesible.
       </p>
       TO DO FOTO
       <p><strong>Día 5 – Testear</strong></p>
       <p>
-        Validamos el prototipo con usuarios reales, lo que me permitió recoger
-        mis primeros verbatims y detectar áreas de mejora.
+        Validamos el prototipo con usuarios reales, lo que me permitió recoger mis primeros
+        verbatims y detectar áreas de mejora.
       </p>
     </section>
     <section id={KingsugiNavSections.SECTION_4}>
@@ -119,37 +111,34 @@ const SECTION_7 = KINGSUGI_PROJECT.navItems.get(KingsugiNavSections.SECTION_7);
       <ul>
         <li>
           <strong>Catálogo de animales: </strong>
-          listado filtrado por especie, con nombre, edad y opciones para ampliar
-          información o descartar.
+          listado filtrado por especie, con nombre, edad y opciones para ampliar información o descartar.
         </li>
       </ul>
       <ul>
         <li>
           <strong>Ficha detallada: </strong>
-          foto, descripción, edad, ubicación y ficha clínica con botón para iniciar
-          el proceso de adopción.
+          foto, descripción, edad, ubicación y ficha clínica con botón para iniciar el proceso de adopción.
         </li>
       </ul>
       <ul>
         <li>
           <strong>Filtros:</strong>
-          búsqueda por distancia, acción (adoptar, apadrinar, visitar santuario,
-          talleres…), edad y peso del animal.
+          búsqueda por distancia, acción (adoptar, apadrinar, visitar santuario, talleres…), edad y peso
+          del animal.
         </li>
       </ul>
       <p><strong>Decisiones de diseño</strong></p>
       <ul>
         <li>
           <strong>Colores:</strong>
-          naranja (#FFC932) como tono cálido y optimista, combinado con blanco y
-          negro para claridad y accesibilidad.
+          naranja (#FFC932) como tono cálido y optimista, combinado con blanco y negro para claridad
+          y accesibilidad.
         </li>
       </ul>
       <ul>
         <li>
           <strong>Catálogo de animales: </strong>
-          listado filtrado por especie, con nombre, edad y opciones para ampliar
-          información o descartar.
+          listado filtrado por especie, con nombre, edad y opciones para ampliar información o descartar.
         </li>
       </ul>
       <ul>
@@ -157,8 +146,7 @@ const SECTION_7 = KINGSUGI_PROJECT.navItems.get(KingsugiNavSections.SECTION_7);
           <strong>Tipografía:</strong>
           Fredoka One y Londrina para títulos → tono cercano, dinámico y positivo.
           <br />
-          Inter para cuerpo de texto → alta legibilidad en pantallas pequeñas y flexibilidad
-          de pesos.
+          Inter para cuerpo de texto → alta legibilidad en pantallas pequeñas y flexibilidad de pesos.
         </li>
       </ul>
       TODO FOTO TODO FOTO
@@ -168,18 +156,14 @@ const SECTION_7 = KINGSUGI_PROJECT.navItems.get(KingsugiNavSections.SECTION_7);
         {SECTION_5?.icon && <Icon icon={SECTION_5.icon} />}
         <span>{SECTION_5?.title}</span>
       </h2>
-      <p>
-        Los usuarios comprendieron el flujo con facilidad y destacaron su
-        utilidad:
-      </p>
+      <p>Los usuarios comprendieron el flujo con facilidad y destacaron su utilidad:</p>
       <ul>
         <li>“Algo así es muy necesario para dar visibilidad”</li>
         <li>“¡Me encanta, creo que es súper útil!”</li>
       </ul>
       <p>
-        El aprendizaje más importante fue que los usuarios lo percibían como una
-        app de adopción generalista, cuando la intención era poner el foco en
-        animales “especiales”.
+        El aprendizaje más importante fue que los usuarios lo percibían como una app de adopción
+        generalista, cuando la intención era poner el foco en animales “especiales”.
       </p>
     </section>
     <section id={KingsugiNavSections.SECTION_6}>
@@ -187,23 +171,12 @@ const SECTION_7 = KINGSUGI_PROJECT.navItems.get(KingsugiNavSections.SECTION_7);
         {SECTION_6?.icon && <Icon icon={SECTION_6.icon} />}
         <span>{SECTION_6?.title}</span>
       </h2>
-      <p>
-        Este fue mi primer proyecto en UX/UI, y supuso una gran experiencia de
-        aprendizaje.
-      </p>
+      <p>Este fue mi primer proyecto en UX/UI, y supuso una gran experiencia de aprendizaje.</p>
       <p>✅ Logros:</p>
       <ul>
-        <li>
-          Diseñar un flujo claro y sencillo, comprensible para todo tipo de
-          usuarios.
-        </li>
-        <li>
-          Validar un prototipo con usuarios reales y recibir feedback directo.
-        </li>
-        <li>
-          Experimentar con colores y tipografías para transmitir emociones y
-          empatía.
-        </li>
+        <li>Diseñar un flujo claro y sencillo, comprensible para todo tipo de usuarios.</li>
+        <li>Validar un prototipo con usuarios reales y recibir feedback directo.</li>
+        <li>Experimentar con colores y tipografías para transmitir emociones y empatía.</li>
       </ul>
       AÑADIR FUTURIBLES
       <ul>
@@ -219,14 +192,13 @@ const SECTION_7 = KINGSUGI_PROJECT.navItems.get(KingsugiNavSections.SECTION_7);
       <span>{SECTION_7?.title}</span>
     </h2>
     <p>
-      Este proyecto fue el punto de partida de mi trayectoria en UX/UI. Me
-      enseñó que el diseño no es solo crear pantallas bonitas, sino investigar,
-      sintetizar, empatizar y validar con usuarios.
+      Este proyecto fue el punto de partida de mi trayectoria en UX/UI. Me enseñó que el diseño no
+      es solo crear pantallas bonitas, sino investigar, sintetizar, empatizar y validar con
+      usuarios.
     </p>
     <p>
-      Fue un reto que me mostró la importancia de la empatía, no solo hacia los
-      animales, sino también hacia las personas que usarán las soluciones que
-      diseñamos.
+      Fue un reto que me mostró la importancia de la empatía, no solo hacia los animales, sino
+      también hacia las personas que usarán las soluciones que diseñamos.
     </p>
   </section>
 </Project>

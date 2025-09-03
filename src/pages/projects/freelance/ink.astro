@@ -1,13 +1,13 @@
 ---
-import Icon from "@/components/Icon.astro";
-import { INK_PROJECT, InkNavSections } from "@/constants";
-import Project from "@/layouts/Project.astro";
+import Icon from "@/components/Icon.astro"
+import { INK_PROJECT, InkNavSections } from "@/constants"
+import Project from "@/layouts/Project.astro"
 
-const SECTION_1 = INK_PROJECT.navItems.get(InkNavSections.SECTION_1);
-const SECTION_2 = INK_PROJECT.navItems.get(InkNavSections.SECTION_2);
-const SECTION_3 = INK_PROJECT.navItems.get(InkNavSections.SECTION_3);
-const SECTION_4 = INK_PROJECT.navItems.get(InkNavSections.SECTION_4);
-const SECTION_5 = INK_PROJECT.navItems.get(InkNavSections.SECTION_5);
+const SECTION_1 = INK_PROJECT.navItems.get(InkNavSections.SECTION_1)
+const SECTION_2 = INK_PROJECT.navItems.get(InkNavSections.SECTION_2)
+const SECTION_3 = INK_PROJECT.navItems.get(InkNavSections.SECTION_3)
+const SECTION_4 = INK_PROJECT.navItems.get(InkNavSections.SECTION_4)
+const SECTION_5 = INK_PROJECT.navItems.get(InkNavSections.SECTION_5)
 ---
 
 <Project
@@ -24,41 +24,30 @@ const SECTION_5 = INK_PROJECT.navItems.get(InkNavSections.SECTION_5);
         {SECTION_1?.icon && <Icon icon={SECTION_1.icon} />}
         <span>{SECTION_1?.title}</span>
       </h2>
-      <p>
-        A la hora de hacerse un tatuaje, los usuarios se enfrentan a muchas
-        preguntas:
-      </p>
+      <p>A la hora de hacerse un tatuaje, los usuarios se enfrentan a muchas preguntas:</p>
       <p>
         <strong
-          >¿Qué es lo más importante? ¿El estilo? ¿El artista? ¿La técnica? ¿La
-          ubicación?</strong
+          >¿Qué es lo más importante? ¿El estilo? ¿El artista? ¿La técnica? ¿La ubicación?</strong
         >
       </p>
-      <p>
-        La realidad es que actualmente el proceso de búsqueda de tatuador y
-        estilo es:
-      </p>
+      <p>La realidad es que actualmente el proceso de búsqueda de tatuador y estilo es:</p>
       <ul>
         <li>Lento y fragmentado (Instagram, Pinterest, recomendaciones).</li>
+        <li>Poco organizado (falta de agendas, disponibilidad, presupuestos).</li>
         <li>
-          Poco organizado (falta de agendas, disponibilidad, presupuestos).
-        </li>
-        <li>
-          Desigual para artistas emergentes, que tienen dificultades para
-          visibilizar su trabajo.
+          Desigual para artistas emergentes, que tienen dificultades para visibilizar su trabajo.
         </li>
       </ul>
       <p>💡 Pregunta clave:</p>
       <p>
         <strong
-          >¿Qué podemos hacer para que el proceso de buscar tatuador, estilo y
-          cita sea rápido, confiable y sencillo para usuarios y artistas?</strong
+          >¿Qué podemos hacer para que el proceso de buscar tatuador, estilo y cita sea rápido,
+          confiable y sencillo para usuarios y artistas?</strong
         >
       </p>
       <p>
-        El objetivo estaba claro: crear una app que conectara usuarios y
-        tatuadores, centralizando la búsqueda de estilos, artistas, presupuestos
-        y reservas en un único lugar.
+        El objetivo estaba claro: crear una app que conectara usuarios y tatuadores, centralizando
+        la búsqueda de estilos, artistas, presupuestos y reservas en un único lugar.
       </p>
       TODO FOTO
     </section>
@@ -70,24 +59,17 @@ const SECTION_5 = INK_PROJECT.navItems.get(InkNavSections.SECTION_5);
       <h3>1. Descubrir – Investigación</h3>
       <ul>
         <li>
-          Existía ya una app similar, pero con muchas limitaciones (pocas
-          ciudades, funciones mal diseñadas).
+          Existía ya una app similar, pero con muchas limitaciones (pocas ciudades, funciones mal
+          diseñadas).
         </li>
-        <li>
-          Benchmark → comparativa de apps existentes (de tatuajes, portfolios,
-          reservas).
-        </li>
-        <li>
-          Conclusión: ninguna cubría bien las necesidades reales de usuarios y
-          tatuadores.
-        </li>
+        <li>Benchmark → comparativa de apps existentes (de tatuajes, portfolios, reservas).</li>
+        <li>Conclusión: ninguna cubría bien las necesidades reales de usuarios y tatuadores.</li>
       </ul>
       <p>
         <strong>Research Question</strong>
       </p>
       <p>
-        Se elaboraron preguntas clave para cuestionarios y entrevistas, buscando
-        validar hipótesis.
+        Se elaboraron preguntas clave para cuestionarios y entrevistas, buscando validar hipótesis.
       </p>
       TODO FOTO
       <p>
@@ -99,21 +81,11 @@ const SECTION_5 = INK_PROJECT.navItems.get(InkNavSections.SECTION_5);
           <strong>Insights</strong>
 
           <ul>
-            <li>
-              Los usuarios pierden demasiado tiempo en la búsqueda de estilo y
-              tatuador.
-            </li>
-            <li>
-              Necesitan ver trabajos previos y disponibilidad antes de decidir.
-            </li>
+            <li>Los usuarios pierden demasiado tiempo en la búsqueda de estilo y tatuador.</li>
+            <li>Necesitan ver trabajos previos y disponibilidad antes de decidir.</li>
             <li>La mayoría usa Instagram y Pinterest como referencia.</li>
-            <li>
-              Alta demanda de una app que ahorre tiempo y organice la
-              información.
-            </li>
-            <li>
-              Algunos usuarios incluso lo definieron como un “océano azul”.
-            </li>
+            <li>Alta demanda de una app que ahorre tiempo y organice la información.</li>
+            <li>Algunos usuarios incluso lo definieron como un “océano azul”.</li>
           </ul>
         </li>
         TODO FOTO
@@ -125,10 +97,7 @@ const SECTION_5 = INK_PROJECT.navItems.get(InkNavSections.SECTION_5);
 
             <ul>
               <li>“Cuesta encontrar tatuador porque no actualizan redes.”</li>
-              <li>
-                “He perdido mucho tiempo en estudios para que me digan que no
-                tienen hueco.”
-              </li>
+              <li>“He perdido mucho tiempo en estudios para que me digan que no tienen hueco.”</li>
               <li>“Lo más difícil es dar con el estilo exacto.”</li>
             </ul>
           </li>
@@ -138,9 +107,7 @@ const SECTION_5 = INK_PROJECT.navItems.get(InkNavSections.SECTION_5);
 
             <ul>
               <li>La técnica y el estilo son lo más importante.</li>
-              <li>
-                Los sistemas de citas y presupuestos actuales no funcionan bien.
-              </li>
+              <li>Los sistemas de citas y presupuestos actuales no funcionan bien.</li>
             </ul>
             TODO FOTO
             <p><strong>Entrevistas a tatuadores (8 profesionales)</strong></p>
@@ -149,10 +116,7 @@ const SECTION_5 = INK_PROJECT.navItems.get(InkNavSections.SECTION_5);
                 <strong>Verbatims:</strong>
 
                 <ul>
-                  <li>
-                    “Lo que quiero es diseñar y tatuar, no pasarme el día dando
-                    precios.”
-                  </li>
+                  <li>“Lo que quiero es diseñar y tatuar, no pasarme el día dando precios.”</li>
                   <li>“Me estresa dar presupuestos.”</li>
                   <li>“Necesitamos un buen sistema de citas y reservas.”</li>
                 </ul>
@@ -164,9 +128,7 @@ const SECTION_5 = INK_PROJECT.navItems.get(InkNavSections.SECTION_5);
                 <ul>
                   <li>Falta de organización y herramientas de agenda.</li>
                   <li>Gran dependencia de Instagram, con sus limitaciones.</li>
-                  <li>
-                    Necesidad urgente de un sistema centralizado y funcional.
-                  </li>
+                  <li>Necesidad urgente de un sistema centralizado y funcional.</li>
                 </ul>
                 TODO FOTO
                 <h3>2. Definir – Investigación</h3>
@@ -177,17 +139,15 @@ const SECTION_5 = INK_PROJECT.navItems.get(InkNavSections.SECTION_5);
                 <ul>
                   <li>
                     <strong>Usuario →</strong>
-                    amante de los tatuajes, viaja y quiere encontrar estilos/artistas
-                    fácilmente en distintas ciudades. Frustración: tiempo perdido
-                    en la búsqueda.
+                    amante de los tatuajes, viaja y quiere encontrar estilos/artistas fácilmente en distintas
+                    ciudades. Frustración: tiempo perdido en la búsqueda.
                   </li>
                 </ul>
                 <ul>
                   <li>
                     <strong>Tatuador →</strong>
-                    profesional joven que dedica más horas a responder mensajes y
-                    organizar citas que a tatuar. Frustración: falta de herramientas
-                    organizativas.
+                    profesional joven que dedica más horas a responder mensajes y organizar citas que
+                    a tatuar. Frustración: falta de herramientas organizativas.
                   </li>
                 </ul>
 
@@ -197,16 +157,15 @@ const SECTION_5 = INK_PROJECT.navItems.get(InkNavSections.SECTION_5);
                 <ul>
                   <li>
                     <strong>Usuario →</strong>
-                    busca estilo en redes → contacta por DM → disponibilidad limitada
-                    → frustración → renuncia o elige un artista no especializado.
+                    busca estilo en redes → contacta por DM → disponibilidad limitada → frustración →
+                    renuncia o elige un artista no especializado.
                   </li>
                 </ul>
                 <ul>
                   <li>
                     <strong>Tatuador →</strong>
-                    atiende consultas por Instagram → da presupuestos manuales →
-                    gestiona citas en caos → cancelaciones → pérdida de tiempo y
-                    productividad.
+                    atiende consultas por Instagram → da presupuestos manuales → gestiona citas en caos
+                    → cancelaciones → pérdida de tiempo y productividad.
                   </li>
                 </ul>
                 TODO FOTO
@@ -216,17 +175,15 @@ const SECTION_5 = INK_PROJECT.navItems.get(InkNavSections.SECTION_5);
                 <ul>
                   <li>Limitaciones de localización (solo grandes ciudades).</li>
                   <li>
-                    Funcionalidades mal planteadas (reservar cita directa sin
-                    hablar con tatuador).
+                    Funcionalidades mal planteadas (reservar cita directa sin hablar con tatuador).
                   </li>
                   <li>Poco adaptadas a las dinámicas reales del sector.</li>
                 </ul>
                 TODO FOTO
                 <p><strong>Propuesta de valor</strong></p>
                 <p>
-                  <strong>INK centraliza el proceso →</strong>búsqueda de
-                  estilos, portfolios de artistas, presupuestos, reservas y
-                  pagos, todo en un único flujo.
+                  <strong>INK centraliza el proceso →</strong>búsqueda de estilos, portfolios de
+                  artistas, presupuestos, reservas y pagos, todo en un único flujo.
                 </p>
                 TODO FOTO
                 <p>
@@ -275,13 +232,10 @@ const SECTION_5 = INK_PROJECT.navItems.get(InkNavSections.SECTION_5);
                     <li>Solicitud → presupuesto → señal → cita confirmada.</li>
                     <li>Calendario organizado (para usuario y tatuador).</li>
                   </ul>
+                  <p>Perfil de usuario: historial de tatuajes, citas, reservas, favoritos.</p>
                   <p>
-                    Perfil de usuario: historial de tatuajes, citas, reservas,
-                    favoritos.
-                  </p>
-                  <p>
-                    Perfil del tatuador: sincronización con Instagram, gestión
-                    de agenda, organización de citas.
+                    Perfil del tatuador: sincronización con Instagram, gestión de agenda,
+                    organización de citas.
                   </p>
                   TODO FOTO
                   <p><strong>3. Prototipar – Idear</strong></p>
@@ -295,9 +249,7 @@ const SECTION_5 = INK_PROJECT.navItems.get(InkNavSections.SECTION_5);
                   <ul>
                     <li>Galería de estilos.</li>
                     <li>Listado de artistas por ubicación.</li>
-                    <li>
-                      Perfil de artista con diseños, citas y presupuestos.
-                    </li>
+                    <li>Perfil de artista con diseños, citas y presupuestos.</li>
                     <li>Perfil de usuario con historial y reservas.</li>
                   </ul>
                   TODO FOTO TODO FOTO TODO FOTO TODO FOTO TODO VIDEO
@@ -311,8 +263,7 @@ const SECTION_5 = INK_PROJECT.navItems.get(InkNavSections.SECTION_5);
                   <ul>
                     <li>
                       <strong>Validación de hipótesis →</strong>
-                      tanto tatuadores como usuarios encontraron valor inmediato
-                      en la propuesta.
+                      tanto tatuadores como usuarios encontraron valor inmediato en la propuesta.
                     </li>
                   </ul>
                   TODO FOTO
@@ -330,19 +281,16 @@ const SECTION_5 = INK_PROJECT.navItems.get(InkNavSections.SECTION_5);
                   </ul>
                   <ul>
                     <li>
-                      <strong
-                        >La app INK ofrece una solución equilibrada y viable:</strong
-                      >
-                      organiza el caos de citas, da visibilidad a artistas y ayuda
-                      al usuario a encontrar su tatuaje ideal.
+                      <strong>La app INK ofrece una solución equilibrada y viable:</strong>
+                      organiza el caos de citas, da visibilidad a artistas y ayuda al usuario a encontrar
+                      su tatuaje ideal.
                     </li>
                   </ul>
                   <ul>
                     <li>
                       <strong>Insight clave:</strong>
-                      las apps existentes no funcionan porque no comprenden la dinámica
-                      real del tatuaje (subjetividad, personalización y necesidad
-                      de diálogo previo).
+                      las apps existentes no funcionan porque no comprenden la dinámica real del tatuaje
+                      (subjetividad, personalización y necesidad de diálogo previo).
                     </li>
                   </ul>
                   FALTA FUTURIBLES
