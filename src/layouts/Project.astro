@@ -227,6 +227,10 @@ const { title, rol, duration, typeOfProject, tools, link, navItems } = Astro.pro
     @apply flex flex-col gap-4 sm:gap-6;
   }
 
+  :global(main.project-content img) {
+    @apply rounded-sm;
+  }
+
   :global(main.project-content section strong) {
     @apply font-semibold;
   }
