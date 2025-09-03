@@ -1,4 +1,5 @@
 ---
+import { CONFIG } from "@/config"
 import type { IconName } from "@components/Icon.astro"
 import Icon from "@components/Icon.astro"
 
@@ -10,27 +11,30 @@ export type NavLink = {
 }
 
 export const NAV_LINKS: NavLink[] = [
-  { href: "/", label: "Home", icon: "house-simple" },
+  { href: `${CONFIG.base}/`, label: "Home", icon: "house-simple" },
   {
-    href: "/projects",
+    href: `${CONFIG.base}/projects`,
     label: "Proyectos",
     icon: "kanban",
     children: [
-      { href: "/projects/cipher", label: "Cipher" },
-      { href: "/projects/fas", label: "Fas" },
-      { href: "/projects/carrefour", label: "Carrefour" },
-      { href: "/projects/banc-sabadell", label: "Banc Sabadell" },
-      { href: "/projects/freelance", label: "Freelance" },
+      { href: `${CONFIG.base}/projects/cipher`, label: "Cipher" },
+      { href: `${CONFIG.base}/projects/fas`, label: "Fas" },
+      { href: `${CONFIG.base}/projects/carrefour`, label: "Carrefour" },
+      { href: `${CONFIG.base}/projects/banc-sabadell`, label: "Banc Sabadell" },
+      { href: `${CONFIG.base}/projects/freelance`, label: "Freelance" },
     ],
   },
-  { href: "/about", label: "Sobre mi", icon: "user" },
-  { href: "/contact", label: "Contacto", icon: "paper-plane-tilt" },
+  { href: `${CONFIG.base}/about`, label: "Sobre mi", icon: "user" },
+  { href: `${CONFIG.base}/contact`, label: "Contacto", icon: "paper-plane-tilt" },
 ]
 const { pathname } = Astro.url
 ---
 
 <!-- 48px height of menu -->
-<nav class="hidden sm:flex min-h-12 font-inter items-center fixed left-0 w-dvw z-10 bg-white">
+<nav
+  id="menu-nav"
+  class="hidden sm:flex min-h-12 font-inter items-center fixed left-0 top-0 w-dvw z-40 bg-white"
+>
   <ul class="flex space-x-4 w-fit mx-auto relative">
     {
       NAV_LINKS.map((navItem) => (
@@ -41,7 +45,10 @@ const { pathname } = Astro.url
           <a
             href={navItem.href}
             class:list={[
-              pathname === navItem.href || (navItem.href !== "/" && pathname.includes(navItem.href))
+              pathname === navItem.href ||
+              (navItem.href !== "/" &&
+                navItem.href !== CONFIG.base + "/" &&
+                pathname.includes(navItem.href))
                 ? "font-bold"
                 : "",
               navItem.children && "flex justify-between items-center pointer-events-none",

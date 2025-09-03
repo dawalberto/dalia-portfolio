@@ -1,8 +1,9 @@
 ---
+import { CONFIG } from "@/config"
 import { NAV_LINKS } from "../DesktopNav.astro"
 
 const projectsHref = new Map(
-  NAV_LINKS.filter((link) => link.href === "/projects").flatMap((projects) =>
+  NAV_LINKS.filter((link) => link.href === `${CONFIG.base}/projects`).flatMap((projects) =>
     (projects?.children || []).map((project) => [project.label, project.href])
   )
 )
@@ -51,7 +52,7 @@ const projects = [
 ]
 ---
 
-<section class="mt-10 sm:mt-28">
+<section>
   <div class="flex flex-col sm:flex-row gap-y-4 justify-between">
     <h1 class="sm:w-3/5 font-roboto sm:leading-14 text-xl sm:text-4xl font-bold text-main-0">
       Mi Viaje Creativo: Una Instantánea de Evolución y Aprendizaje

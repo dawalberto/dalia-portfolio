@@ -7,7 +7,10 @@ const description =
 ---
 
 <!-- Desktop version -->
-<section class="hidden mt-20 sm:mt-12 sm:grid h-full-without-menu content-end fhd:content-center">
+<section
+  id="front"
+  class="hidden mt-20 sm:mt-12 sm:grid h-full-without-menu-mobile sm:h-full-without-menu-desktop content-end fhd:content-center"
+>
   <div class="grid grid-cols-5 h-fit antialiased gap-y-12">
     <h1
       class="desktop col-span-3 self-end text-center tracking-wider font-playfair leading-20 md:leading-24 lg:leading-28 xl:leading-40 text-main-17"
@@ -28,10 +31,10 @@ const description =
   </div>
 </section>
 <!-- Mobile version -->
-<section class="block sm:hidden">
+<section id="front" class="block sm:hidden">
   <div class="flex gap-1">
     <div class="flex flex-col flex-1">
-      <h1 class="font-inter flex-1 text-4xl sm:text-5xl leading-12 tracking-wider text-main-17">
+      <h1 class="font-playfair flex-1 text-[2.6rem] leading-12 tracking-wider text-main-17">
         Product Designer
       </h1>
       <img

@@ -19,18 +19,21 @@ const { title, rol, duration, typeOfProject, tools, link, navItems } = Astro.pro
 
 <Layout>
   <article>
-    <header class="flex flex-col font-roboto text-4xl mt-8 border-b border-[#cccccc] pb-9">
+    <header
+      project-header
+      class="flex flex-col font-roboto text-3xl sm:text-4xl sm:mt-8 border-b border-[#cccccc] pb-2 sm:pb-8"
+    >
       <h1
         transition:animate={slide({
           duration: 300,
         })}
-        class="flex gap-4 items-center pb-6 font-bold font-playfair text-main-0"
+        class="flex gap-4 items-center pb-6 font-bold font-playfair text-main-0 text-pretty"
       >
         <span>{title}</span>
       </h1>
       <div
         project-info
-        class="flex flex-col gap-y-2 text-main-0 visible text-xl max-h-52 transform transition-all duration-300 ease-in-out"
+        class="flex flex-col gap-y-2 text-main-0 visible text-base sm:text-xl max-h-52 transform transition-all duration-300 ease-in-out"
       >
         <h2><span class="font-bold">Rol:</span> <span class="opacity-85">{rol}</span></h2>
         <h2>
@@ -52,7 +55,7 @@ const { title, rol, duration, typeOfProject, tools, link, navItems } = Astro.pro
                 <Icon icon="link" />
               </span>
               <a
-                class="opacity-85 group-hover:text-indigo-800"
+                class="opacity-85 group-hover:underline text-main-17"
                 href={`https://${link}`}
                 target="_blank"
               >
@@ -98,53 +101,83 @@ const { title, rol, duration, typeOfProject, tools, link, navItems } = Astro.pro
 </Layout>
 
 <script>
-  const projectContentContainer = document.querySelector("[project-content]") as HTMLElement | null
-  const projectInfoContainer = document.querySelector("[project-info]") as HTMLElement | null
-  const projectAsideContainer = document.querySelector("[project-aside]") as HTMLElement | null
-
-  projectContentContainer?.addEventListener("scroll", () => {
-    if (!projectContentContainer || !projectInfoContainer || !projectAsideContainer) return
-    const { scrollTop } = projectContentContainer
-
-    if (scrollTop > 125) {
-      projectInfoContainer.classList.replace("max-h-52", "max-h-0")
-      projectInfoContainer.classList.replace("text-main-0", "text-white")
-      projectInfoContainer.classList.replace("visible", "invisible")
-      projectContentContainer.classList.replace("mt-8", "mt-0")
-      projectAsideContainer.classList.replace("mt-8", "mt-0")
-    } else {
-      projectInfoContainer.classList.replace("max-h-0", "max-h-52")
-      projectInfoContainer.classList.replace("text-white", "text-main-0")
-      projectInfoContainer.classList.replace("invisible", "visible")
-      projectContentContainer.classList.replace("mt-0", "mt-8")
-      projectAsideContainer.classList.replace("mt-0", "mt-8")
-    }
+  document.addEventListener("astro:after-swap", () => {
+    initProjectLayout()
   })
 
-  // Active navItem 👇
-  const sections = document.querySelectorAll("main[project-content] section[id]")
-  const navLinks = document.querySelectorAll("aside[project-aside] nav a")
+  function initProjectLayout() {
+    const projectContentContainer = document.querySelector("[project-content]")
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          // Quitamos "active" de todos
-          navLinks.forEach((link) => link.classList.remove("active"))
-          // Buscamos el link que apunta a la sección visible
-          const id = entry.target.getAttribute("id")
-          const activeLink = document.querySelector(`aside[project-aside] nav a[href="#${id}"]`)
-          if (activeLink) activeLink.classList.add("active")
+    if (!projectContentContainer) return
+
+    projectContentContainer.addEventListener("scroll", () => {
+      projectContentContainer?.addEventListener("scroll", () => {
+        const projectInfoContainer = document.querySelector("[project-info]") as HTMLElement | null
+        const projectAsideContainer = document.querySelector(
+          "[project-aside]"
+        ) as HTMLElement | null
+        const projectHeaderContainer = document.querySelector(
+          "[project-header]"
+        ) as HTMLElement | null
+
+        if (
+          !projectContentContainer ||
+          !projectInfoContainer ||
+          !projectAsideContainer ||
+          !projectHeaderContainer
+        ) {
+          return
+        }
+
+        const { scrollTop } = projectContentContainer
+        if (scrollTop > 125) {
+          projectInfoContainer.classList.replace("max-h-52", "max-h-0")
+          projectInfoContainer.classList.replace("text-main-0", "text-white")
+          projectInfoContainer.classList.replace("visible", "invisible")
+          projectContentContainer.classList.replace("mt-8", "mt-0")
+          projectAsideContainer.classList.replace("mt-8", "mt-0")
+          projectHeaderContainer.classList.replace("pb-2", "pb-0")
+          projectHeaderContainer.classList.replace("text-3xl", "text-xl")
+          projectHeaderContainer.classList.replace("sm:mt-8", "sm:mt-4")
+          projectHeaderContainer.classList.replace("sm:pb-8", "sm:pb-4")
+          projectHeaderContainer.querySelector("h1")?.classList.replace("pb-6", "pb-2")
+        } else {
+          projectInfoContainer.classList.replace("max-h-0", "max-h-52")
+          projectInfoContainer.classList.replace("text-white", "text-main-0")
+          projectInfoContainer.classList.replace("invisible", "visible")
+          projectContentContainer.classList.replace("mt-0", "mt-8")
+          projectAsideContainer.classList.replace("mt-0", "mt-8")
+          projectHeaderContainer.classList.replace("pb-0", "pb-2")
+          projectHeaderContainer.classList.replace("text-xl", "text-3xl")
+          projectHeaderContainer.classList.replace("sm:mt-4", "sm:mt-8")
+          projectHeaderContainer.classList.replace("sm:pb-4", "sm:pb-8")
+          projectHeaderContainer.querySelector("h1")?.classList.replace("pb-2", "pb-6")
         }
       })
-    },
-    {
-      root: document.querySelector("main[project-content]"), // scroll container
-      threshold: 0.6, // 60% de visibilidad
-    }
-  )
+    })
 
-  sections.forEach((section) => observer.observe(section))
+    const sections = document.querySelectorAll("main[project-content] section[id]")
+    const navLinks = document.querySelectorAll("aside[project-aside] nav a")
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            navLinks.forEach((link) => link.classList.remove("active"))
+            const id = entry.target.getAttribute("id")
+            const activeLink = document.querySelector(`aside[project-aside] nav a[href="#${id}"]`)
+            if (activeLink) activeLink.classList.add("active")
+          }
+        })
+      },
+      { root: projectContentContainer, threshold: 0.6 }
+    )
+
+    sections.forEach((section) => observer.observe(section))
+  }
+
+  // Inicialización al primer render
+  initProjectLayout()
 </script>
 
 <style>
@@ -152,7 +185,7 @@ const { title, rol, duration, typeOfProject, tools, link, navItems } = Astro.pro
 
   article {
     margin: 0;
-    height: var(--spacing-full-without-menu); /* Toda la ventana */
+    height: var(--spacing-full-without-menu-desktop); /* Toda la ventana */
     display: grid;
     grid-template-rows: auto 1fr;
     grid-template-columns: 200px 1fr; /* Sidebar 200px + body resto */
@@ -187,11 +220,11 @@ const { title, rol, duration, typeOfProject, tools, link, navItems } = Astro.pro
   }
 
   :global(main.project-content > div) {
-    @apply flex flex-col gap-11 text-xl font-roboto text-pretty text-main-0 leading-7;
+    @apply flex flex-col gap-11 text-lg sm:text-xl font-roboto text-pretty text-main-0 leading-8;
   }
 
   :global(main.project-content section) {
-    @apply flex flex-col gap-6;
+    @apply flex flex-col gap-4 sm:gap-6;
   }
 
   :global(main.project-content section strong) {
@@ -199,14 +232,44 @@ const { title, rol, duration, typeOfProject, tools, link, navItems } = Astro.pro
   }
 
   :global(main.project-content section h2) {
-    @apply flex items-center gap-1.5 text-2xl font-bold;
+    @apply flex items-center gap-1.5 text-xl sm:text-2xl font-bold;
+  }
+
+  :global(main.project-content section h2 svg) {
+    @apply flex-none self-start mt-1;
   }
 
   :global(main.project-content section h3) {
-    @apply flex items-center gap-1.5 text-xl font-bold;
+    @apply flex items-center gap-1.5 text-lg sm:text-xl font-bold;
+  }
+
+  :global(main.project-content section h3 svg) {
+    @apply flex-none self-start mt-1;
   }
 
   :global(main.project-content section ul) {
     @apply list-disc list-outside ml-6;
+  }
+
+  :global(main.project-content section ol) {
+    @apply list-decimal list-outside ml-6;
+  }
+
+  @media (max-width: theme(screens.sm)) {
+    article {
+      height: var(--spacing-full-without-menu-mobile);
+      grid-template-columns: 1fr; /* Only one column */
+      grid-template-areas:
+        "header"
+        "body";
+    }
+
+    aside[project-aside] {
+      display: none; /* Hide sidebar */
+    }
+
+    main[project-content] {
+      padding-inline: 0;
+    }
   }
 </style>

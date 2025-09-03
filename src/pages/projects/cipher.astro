@@ -2,6 +2,21 @@
 import Icon from "@/components/Icon.astro"
 import { CIPHER_PROJECT, CipherNavSections } from "@/constants"
 import Project from "@/layouts/Project.astro"
+import cipherContentImage10 from "@assets/images/cipher-content-10.png"
+import cipherContentImage11 from "@assets/images/cipher-content-11.png"
+import cipherContentImage12 from "@assets/images/cipher-content-12.png"
+import cipherContentImage13 from "@assets/images/cipher-content-13.png"
+import cipherContentImage14 from "@assets/images/cipher-content-14.png"
+import cipherContentImage15 from "@assets/images/cipher-content-15.png"
+import cipherContentImage2 from "@assets/images/cipher-content-2.png"
+import cipherContentImage3 from "@assets/images/cipher-content-3.png"
+import cipherContentImage4 from "@assets/images/cipher-content-4.png"
+import cipherContentImage5 from "@assets/images/cipher-content-5.png"
+import cipherContentImage6 from "@assets/images/cipher-content-6.png"
+import cipherContentImage7 from "@assets/images/cipher-content-7.png"
+import cipherContentImage8 from "@assets/images/cipher-content-8.png"
+import cipherContentImage9 from "@assets/images/cipher-content-9.png"
+import cipherContentImage1 from "@assets/images/cipher-content.png"
 import processImage from "@assets/images/process.jpg"
 
 const SECTION_1 = CIPHER_PROJECT.navItems.get(CipherNavSections.SECTION_1)
@@ -176,7 +191,18 @@ const SECTION_9 = CIPHER_PROJECT.navItems.get(CipherNavSections.SECTION_9)
           microinteracciones bien calibradas mejoran notablemente la experiencia.
         </li>
       </ul>
-      TO DO FOTO
+      <div class="flex flex-col sm:flex-row gap-6">
+        <div class="flex justify-between w-full sm:w-2/5">
+          <img src={cipherContentImage1.src} class="w-1/2 h-auto" alt="project images" />
+          <img src={cipherContentImage2.src} class="w-1/2 h-auto" alt="project images" />
+        </div>
+        <div class="flex justify-between w-full sm:w-3/5">
+          <img src={cipherContentImage3.src} class="w-full h-auto" alt="project images" />
+        </div>
+      </div>
+      <div class="w-full sm:w-2/5 mt-6">
+        <img src={cipherContentImage4.src} class="w-full h-auto" alt="project images" />
+      </div>
     </section>
     <section id={CipherNavSections.SECTION_5}>
       <h2>
@@ -192,7 +218,14 @@ const SECTION_9 = CIPHER_PROJECT.navItems.get(CipherNavSections.SECTION_9)
         <li>Jerarquización clara y lógica de módulos.</li>
         <li>Simplificación visual de las rutas del usuario dentro del sistema.</li>
       </ul>
-      TO DO FOTO
+      <p class="italic">
+        *Las imagenes aparecerán borrosas por temas de confidencialidad con la empresa
+      </p>
+      <div class="flex flex-col gap-6">
+        <img src={cipherContentImage5.src} class="w-full h-auto" alt="project images" />
+        <img src={cipherContentImage6.src} class="w-full h-auto" alt="project images" />
+        <img src={cipherContentImage7.src} class="w-full h-auto" alt="project images" />
+      </div>
     </section>
     <section id={CipherNavSections.SECTION_6}>
       <h2>
@@ -207,7 +240,7 @@ const SECTION_9 = CIPHER_PROJECT.navItems.get(CipherNavSections.SECTION_9)
         <li>Estructura persistente de navegación y cabecera.</li>
         <li>Flujos de creación y edición más claros.</li>
       </ul>
-      TO DO FOTO
+      <img src={cipherContentImage15.src} class="w-full h-auto" alt="project images" />
     </section>
     <section id={CipherNavSections.SECTION_7}>
       <h2>
@@ -225,9 +258,19 @@ const SECTION_9 = CIPHER_PROJECT.navItems.get(CipherNavSections.SECTION_9)
         <li>Estados de interacción cubiertos (hover, error, loading, etc.).</li>
         <li>Documentación accesible para el equipo de desarrollo.</li>
       </ul>
-      TO DO FOTO
+      <div class="flex flex-col gap-6 w-full sm:w-2/3">
+        <img src={cipherContentImage8.src} class="w-full h-auto" alt="project images" />
+        <div class="flex flex-col sm:flex-row justify-between gap-6">
+          <img src={cipherContentImage9.src} class="w-full sm:w-1/2 h-auto" alt="project images" />
+          <img src={cipherContentImage10.src} class="w-full sm:w-1/2 h-auto" alt="project images" />
+        </div>
+        <div class="flex flex-col sm:flex-row justify-between gap-6">
+          <img src={cipherContentImage11.src} class="w-full sm:w-1/2 h-auto" alt="project images" />
+          <img src={cipherContentImage12.src} class="w-full sm:w-1/2 h-auto" alt="project images" />
+        </div>
+      </div>
       <h3>
-        <Icon icon="brain" />TO DO LUNA
+        <Icon icon="moon" />
         <span>Modo oscuro</span>
       </h3>
       <ul>
@@ -237,7 +280,11 @@ const SECTION_9 = CIPHER_PROJECT.navItems.get(CipherNavSections.SECTION_9)
         <li>Color tokens adaptados para ambos modos.</li>
         <li>Testing con usuarios técnicos en sesiones prolongadas.</li>
       </ul>
-      TO DO FOTO
+      <img src={cipherContentImage13.src} class="w-full h-auto" alt="project images" />
+      <img src={cipherContentImage14.src} class="w-full h-auto" alt="project images" />
+      <p class="italic">
+        *No aparecen las pantallas finales por clausula de confidencialidad de la empresa
+      </p>
     </section>
     <section id={CipherNavSections.SECTION_8}>
       <h2>
