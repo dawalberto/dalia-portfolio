@@ -70,28 +70,65 @@ const projects = [
       projects.map((project) => (
         <a
           href={project.href}
-          class="relative sm:min-h-40 group p-8 bg-[#F9F9F9] flex w-full justify-between cursor-pointer transform transition duration-300 hover:drop-shadow active:drop-shadow-none"
+          class="project rounded-xs relative sm:min-h-40 group p-8 bg-[#F9F9F9] flex w-full justify-between cursor-pointer hover:shadow-md transform transition duration-300"
         >
           <div>
             <span class="absolute top-5 right-5 block sm:hidden animate-pulse">
               <Icon icon="arrow-square-in" />
             </span>
-            <h2 class="font-roboto font-bold text-base sm:text-2xl">
-              <span class="text-main-17 group-hover:text-main-0">{project.title}</span>
-              <span class="text-main-0 group-hover:text-main-17"> - {project.role}</span>
+            <h2 class="font-roboto font-bold text-base sm:text-2xl group-hover:opacity-40 transform transition duration-300">
+              <span class="text-main-17">{project.title}</span>
+              <span class="text-main-0"> - {project.role}</span>
             </h2>
             <h3 class="block sm:hidden font-roboto font-bold text-sm text-[#7E7E7E]">
               {project.year}
             </h3>
-            <p class="font-roboto mt-2 sm:mt-3 text-sm sm:max-w-4/5 sm:text-base sm:font-medium leading-6 text-main-17">
+            <p class="font-roboto mt-2 sm:mt-3 text-sm sm:max-w-4/5 sm:text-base sm:font-medium leading-6 text-main-17 group-hover:opacity-10 transform transition duration-300">
               {project.description}
             </p>
           </div>
-          <h3 class="hidden sm:flex items-center w-fit text-nowrap font-roboto font-bold text-3xl text-[#7E7E7E]">
+          <h3 class="hidden sm:flex items-center w-fit text-nowrap font-roboto font-bold text-3xl text-[#7E7E7E] group-hover:opacity-10 transform transition duration-300">
             {project.year}
           </h3>
+          <div class="wave">
+            <div class="absolute bottom-2 left-1/2 -translate-x-1/2 font-roboto-condensed text-xl flex gap-2 items-center text-white">
+              <span>Sumérgete en el proyecto</span>
+              <Icon icon="arrow-square-in" />
+            </div>
+          </div>
         </a>
       ))
     }
   </div>
 </section>
+
+<style>
+  .project {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+  }
+  .wave {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background: url(../../assets/images/wave.svg);
+    background-size: 200% 100%;
+    top: 100%;
+    left: 0;
+    animation: wave 3s linear infinite;
+    transition: 0.5s;
+  }
+  @keyframes wave {
+    from {
+      background-position-x: 0;
+    }
+    to {
+      background-position-x: 200%;
+    }
+  }
+  .project:hover .wave {
+    top: 50%;
+  }
+</style>
