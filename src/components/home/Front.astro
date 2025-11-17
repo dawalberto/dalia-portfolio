@@ -1,6 +1,5 @@
 ---
 import daliaImage from "@assets/images/dalia-inicio.jpg"
-import signatureImage from "@assets/images/signature.png"
 
 const description =
   "Diseñadora de productos digitales con superpoder para contar historias épicas — aquellas que conectan. Detecto tus dolores de cabeza, los convierto en creatividad y diseño soluciones que cambian las reglas del juego. Porque el buen diseño no es sólo estético: transforma, emociona y hace tu día (y tu trabajo) más humano."
@@ -22,12 +21,10 @@ const description =
       src={daliaImage.src}
       alt="Dalia"
     />
-    <img
-      class="col-span-3 bg-transparent -mt-8 -ml-10 h-auto max-w-52 justify-self-center rotate-25"
-      src={signatureImage.src}
-      alt="Dalia's signature"
-    />
-    <p class="col-span-2 font-roboto text-pretty leading-10 text-main-0">{description}</p>
+    <div class="col-span-3"></div>
+    <p class="col-span-2 font-roboto text-pretty leading-10 text-main-0">
+      {description}
+    </p>
   </div>
 </section>
 <!-- Mobile version -->
@@ -37,11 +34,7 @@ const description =
       <h1 class="font-playfair flex-1 text-[2.6rem] leading-12 tracking-wider text-main-17">
         Product Designer
       </h1>
-      <img
-        class="h-auto w-2/5 rotate-30 self-center mt-2"
-        src={signatureImage.src}
-        alt="Dalia's signature"
-      />
+      <div></div>
     </div>
     <img class="h-auto w-1/2 rounded-2xl object-cover" src={daliaImage.src} alt="Dalia" />
   </div>
