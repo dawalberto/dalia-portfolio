@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Banc Sabadell | Dalia Lopez Rubio</title>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <style>
+      .project-header {
+        padding-top: 15vh;
+        padding-bottom: 5vh;
+        border-bottom: 1px solid var(--border-color);
+      }
+      .project-title {
+        font-size: 8vw;
+        line-height: 0.9;
+        margin-bottom: 2rem;
+        text-transform: uppercase;
+      }
+      .project-meta {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        margin-bottom: 4rem;
+        font-size: 1.2rem;
+      }
+      .meta-item h3 {
+        font-size: 1rem;
+        color: var(--accent-color);
+        margin-bottom: 0.5rem;
+      }
+      .project-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 4rem 2rem;
+      }
+      .content-section {
+        margin-bottom: 6rem;
+      }
+      .content-section h2 {
+        font-size: 3rem;
+        color: var(--accent-color);
+        margin-bottom: 2rem;
+      }
+      .content-section h3 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        margin-top: 3rem;
+      }
+      .content-section p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+        max-width: 800px;
+      }
+      .content-section ul {
+        list-style: none;
+        margin-bottom: 2rem;
+      }
+      .content-section li {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        padding-left: 1.5rem;
+        position: relative;
+      }
+      .content-section li::before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        color: var(--accent-color);
+      }
+      .project-image {
+        width: 100%;
+        height: auto;
+        margin: 3rem 0;
+        border: 1px solid var(--border-color);
+        filter: grayscale(100%);
+        transition: filter 0.3s ease;
+      }
+      .project-image:hover {
+        filter: grayscale(0%);
+      }
+      .back-nav {
+        position: fixed;
+        top: 2rem;
+        left: 2rem;
+        z-index: 100;
+      }
+      .back-btn {
+        color: var(--text-color);
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        mix-blend-mode: difference;
+      }
+      .back-btn:hover {
+        color: var(--accent-color);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cursor-follower"></div>
+
+    <nav class="back-nav">
+      <a href="../index.html" class="back-btn" data-i18n="project.back"
+        >← Back</a
+      >
+      <div class="lang-switch" style="margin-left: 2rem; display: inline-block">
+        <button class="lang-btn" data-lang="en">EN</button>
+        <span class="separator">/</span>
+        <button class="lang-btn" data-lang="es">ES</button>
+      </div>
+    </nav>
+
+    <header class="project-header">
+      <div style="padding: 0 2rem">
+        <h1 class="project-title" data-i18n="sabadell.title">
+          Banc Sabadell<br />Digital Transformation
+        </h1>
+        <div class="project-meta">
+          <div class="meta-item">
+            <h3 data-i18n="project.role">ROLE</h3>
+            <p data-i18n="sabadell.role_desc">UX/UI Designer</p>
+          </div>
+          <div class="meta-item">
+            <h3 data-i18n="project.duration">DURATION</h3>
+            <p data-i18n="sabadell.duration_desc">8 Months</p>
+          </div>
+          <div class="meta-item">
+            <h3 data-i18n="project.type">TYPE</h3>
+            <p data-i18n="sabadell.type_desc">Banking App Redesign</p>
+          </div>
+          <div class="meta-item">
+            <h3 data-i18n="project.tools">TOOLS</h3>
+            <p>Sketch, InVision, Zeplin</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="project-content">
+      <section class="content-section">
+        <h2 data-i18n="project.challenge">THE CHALLENGE</h2>
+        <p data-i18n="sabadell.challenge_text">
+          Banc Sabadell needed to modernize its digital presence to compete with
+          new fintech players. The goal was to simplify complex banking
+          operations and provide a more user-centric experience, reducing
+          friction in daily tasks.
+        </p>
+        <ul>
+          <li data-i18n="sabadell.challenge_list_1">
+            Simplify the onboarding process for new customers.
+          </li>
+          <li data-i18n="sabadell.challenge_list_2">
+            Redesign the transfer and payment flows to be more intuitive.
+          </li>
+          <li data-i18n="sabadell.challenge_list_3">
+            Integrate a personal finance management tool.
+          </li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2 data-i18n="project.benchmark">BENCHMARK</h2>
+        <p data-i18n="sabadell.benchmark_text">
+          Analyzed competitors like Revolut, N26, and traditional banks
+          undergoing digital transformation. Key findings included:
+        </p>
+        <ul>
+          <li data-i18n="sabadell.benchmark_list_1">
+            Minimalist interfaces with clear calls to action perform better.
+          </li>
+          <li data-i18n="sabadell.benchmark_list_2">
+            Real-time notifications and spending categorization are highly
+            valued.
+          </li>
+          <li data-i18n="sabadell.benchmark_list_3">
+            Biometric login is now a standard expectation.
+          </li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2 data-i18n="project.ia">INFORMATION ARCHITECTURE</h2>
+        <p data-i18n="sabadell.ia_text">
+          Restructured the app's navigation to prioritize the most frequent
+          actions:
+        </p>
+        <ul>
+          <li data-i18n="sabadell.ia_list_1">
+            Dashboard with customizable widgets for quick access.
+          </li>
+          <li data-i18n="sabadell.ia_list_2">
+            Unified "Move Money" center for all types of transfers.
+          </li>
+          <li data-i18n="sabadell.ia_list_3">
+            Contextual help and support available from any screen.
+          </li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2 data-i18n="project.final_screens">FINAL SCREENS & DESIGN SYSTEM</h2>
+        <p data-i18n="sabadell.final_text">
+          Delivered a complete set of high-fidelity screens and a comprehensive
+          component library.
+        </p>
+        <ul>
+          <li data-i18n="sabadell.final_list_1">
+            Clean, modern visual style aligned with the brand's new direction.
+          </li>
+          <li data-i18n="sabadell.final_list_2">
+            Interactive prototypes for user testing and stakeholder approval.
+          </li>
+          <li data-i18n="sabadell.final_list_3">
+            Detailed documentation for the development team.
+          </li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2 data-i18n="project.conclusions">CONCLUSIONS</h2>
+        <ul>
+          <li data-i18n="sabadell.conclusions_list_1">
+            User satisfaction scores increased by 25% after the redesign.
+          </li>
+          <li data-i18n="sabadell.conclusions_list_2">
+            Task completion time for transfers was reduced by 40%.
+          </li>
+          <li data-i18n="sabadell.conclusions_list_3">
+            The new design system accelerated future feature development.
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer id="contact">
+      <div class="footer-content">
+        <h2 data-i18n="footer.title">READY TO<br />CHANGE THE GAME?</h2>
+        <a href="mailto:dalialopezrubio@gmail.com" class="email-btn"
+          >dalialopezrubio@gmail.com</a
+        >
+      </div>
+    </footer>
+
+    <script src="../assets/js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+{
+    "name": "Dalia Lopez Rubio - Product Designer",
+    "short_name": "DLR Portfolio",
+    "description": "Digital product designer with a superpower for telling epic stories that connect",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#0a0a0a",
+    "theme_color": "#ccff00",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "/favicon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/apple-touch-icon.svg",
+            "sizes": "180x180",
+            "type": "image/svg+xml"
+        }
+    ],
+    "categories": [
+        "design",
+        "portfolio",
+        "ux",
+        "ui"
+    ],
+    "lang": "en",
+    "dir": "ltr"
+}
