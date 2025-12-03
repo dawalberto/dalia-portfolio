@@ -6,6 +6,7 @@
 // import Front from "@components/home/Front.astro"
 // import MyCreativeTrip from "@components/home/MyCreativeTrip.astro"
 // import Layout from "@layouts/Layout.astro"
+import { CONFIG } from "@/config"
 import BrutalistLayout from "@layouts/Brutalist.astro"
 ---
 
@@ -34,7 +35,7 @@ import BrutalistLayout from "@layouts/Brutalist.astro"
 
       <div class="job-list">
         <!-- Job 1 -->
-        <article class="job-item" onclick="window.location.href='projects/cipher.html'">
+        <article class="job-item" onclick={`window.location.href='${CONFIG.base}/projects/cipher'`}>
           <div class="job-header">
             <span class="year">2023 — 2025</span>
             <h3 class="company">Cipher (Prosegur)</h3>
@@ -50,7 +51,7 @@ import BrutalistLayout from "@layouts/Brutalist.astro"
         </article>
 
         <!-- Job 2 -->
-        <article class="job-item" onclick="window.location.href='projects/fas.html'">
+        <article class="job-item" onclick={`window.location.href='${CONFIG.base}/projects/fas'`}>
           <div class="job-header">
             <span class="year">2023</span>
             <h3 class="company">FAS (Federación Artesanal de Sevilla)</h3>
@@ -67,7 +68,10 @@ import BrutalistLayout from "@layouts/Brutalist.astro"
         </article>
 
         <!-- Job 3 -->
-        <article class="job-item" onclick="window.location.href='projects/carrefour.html'">
+        <article
+          class="job-item"
+          onclick={`window.location.href='${CONFIG.base}/projects/carrefour'`}
+        >
           <div class="job-header">
             <span class="year">2022 — 2023</span>
             <h3 class="company">Talento Mobile - Carrefour</h3>
@@ -83,7 +87,10 @@ import BrutalistLayout from "@layouts/Brutalist.astro"
         </article>
 
         <!-- Job 4 -->
-        <article class="job-item" onclick="window.location.href='projects/banc-sabadell.html'">
+        <article
+          class="job-item"
+          onclick={`window.location.href='${CONFIG.base}/projects/banc-sabadell'`}
+        >
           <div class="job-header">
             <span class="year">2021 — 2022</span>
             <h3 class="company">Eunoia Digital - Banc Sabadell</h3>
@@ -99,7 +106,10 @@ import BrutalistLayout from "@layouts/Brutalist.astro"
         </article>
 
         <!-- Job 5 -->
-        <article class="job-item" onclick="window.location.href='projects/freelance.html'">
+        <article
+          class="job-item"
+          onclick={`window.location.href='${CONFIG.base}/projects/freelance'`}
+        >
           <div class="job-header">
             <span class="year">2021 — 2022</span>
             <h3 class="company">Freelance</h3>
