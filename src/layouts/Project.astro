@@ -21,13 +21,13 @@ const { title, rol, duration, typeOfProject, tools, link, navItems } = Astro.pro
   <article>
     <header
       project-header
-      class="flex flex-col font-roboto text-3xl sm:text-4xl sm:mt-8 border-b border-[#cccccc] pb-2 sm:pb-8"
+      class="flex flex-col text-3xl sm:text-4xl sm:mt-6 border-b border-[#cccccc] pb-2 sm:pb-8"
     >
       <h1
         transition:animate={slide({
           duration: 300,
         })}
-        class="flex gap-4 items-center pb-6 font-bold font-playfair text-main-0 text-pretty"
+        class="flex gap-4 items-center pb-6 font-bold text-main-0 text-pretty"
       >
         <span>{title}</span>
       </h1>
@@ -66,16 +66,13 @@ const { title, rol, duration, typeOfProject, tools, link, navItems } = Astro.pro
         }
       </div>
     </header>
-    <aside
-      project-aside
-      class="font-roboto text-base mt-8 transform transition-all duration-300 ease-in-out"
-    >
+    <aside project-aside class="text-base mt-8 transform transition-all duration-300 ease-in-out">
       <nav class="py-2">
         <ul class="flex flex-col gap-y-1">
           {
             navItems &&
               Array.from(navItems.entries()).map(([key, item]) => (
-                <li class="group hover:bg-[#F1F1F1] leading-6 py-3 px-2 rounded-md transform transition duration-200">
+                <li class="group hover:bg-[var(--accent-color)] hover:text-white leading-6 py-3 px-2 transform transition duration-200">
                   <a
                     href={`#${key}`}
                     class="flex gap-2 items-start opacity-40 group-hover:opacity-100 group-hover:font-bold"
@@ -340,11 +337,11 @@ const { title, rol, duration, typeOfProject, tools, link, navItems } = Astro.pro
   :global(nav a.active) {
     opacity: 1 !important;
     font-weight: bold !important;
-    color: var(--color-main-17, #1f2937);
+    /* color: var(#ffff, #1f2937); */
   }
 
   :global(main.project-content > div) {
-    @apply flex flex-col gap-11 text-lg sm:text-xl font-roboto text-pretty text-main-0 leading-8;
+    @apply flex flex-col gap-11 text-lg sm:text-xl  text-pretty text-main-0 leading-8;
   }
 
   :global(main.project-content section) {

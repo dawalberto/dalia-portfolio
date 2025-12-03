@@ -8,10 +8,6 @@
   --spacing-full-without-menu-mobile: calc(100dvh - 30 * var(--spacing));
   /* 12 from margin top + 10 from layout bottom margin in Layout */
   --spacing-full-without-menu-desktop: calc(100dvh - 22 * var(--spacing));
-  --font-playfair: "Playfair", sans-serif;
-  --font-inter: "Inter", sans-serif;
-  --font-roboto: "Roboto", sans-serif;
-  --font-roboto-condensed: "Roboto Condensed", sans-serif;
   --breakpoint-fhd: 1920px;
   --breakpoint-4k: 1440px;
 
@@ -27,4 +23,18 @@
       animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
     }
   }
+}
+
+:root {
+  --bg-color: #ffffff;
+  --text-color: #2e2e2e;
+  --accent-color: #d78eff; /* Acid Lime */
+  --border-color: #333;
+  --font-main: "Space Grotesk", sans-serif;
+}
+
+body {
+  color: var(--text-color);
+  font-family: var(--font-main);
+  overflow-x: hidden;
 }
