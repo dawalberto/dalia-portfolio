@@ -1,41 +1,146 @@
 ---
-import DesktopIllustrations from "@/components/home/DesktopIllustrations.astro"
-import MobileIllustrations from "@/components/home/MobileIllustrations.astro"
-import Reviews from "@/components/home/Reviews.astro"
-import DesignTrilogy from "@components/home/DesignTrilogy.astro"
-import Front from "@components/home/Front.astro"
-import MyCreativeTrip from "@components/home/MyCreativeTrip.astro"
-import Layout from "@layouts/Layout.astro"
+// import DesktopIllustrations from "@/components/home/DesktopIllustrations.astro"
+// import MobileIllustrations from "@/components/home/MobileIllustrations.astro"
+// import Reviews from "@/components/home/Reviews.astro"
+// import DesignTrilogy from "@components/home/DesignTrilogy.astro"
+// import Front from "@components/home/Front.astro"
+// import MyCreativeTrip from "@components/home/MyCreativeTrip.astro"
+// import Layout from "@layouts/Layout.astro"
+import BrutalistLayout from "@layouts/Brutalist.astro"
 ---
 
-<Layout>
-  <!-- <Preloader />
-  <Introduction /> -->
-  <article>
-    <Front />
-    <div class="flex flex-col mt-10 gap-10 sm:gap-28">
-      <Reviews />
-      <DesignTrilogy />
-      <MyCreativeTrip />
-      <DesktopIllustrations />
-      <MobileIllustrations />
+<BrutalistLayout title="Dalia Lopez Rubio | Product Designer">
+  <header class="hero">
+    <nav>
+      <span class="logo">DLR</span>
+      <div class="nav-right">
+        <a href="#contact" class="contact-link" data-i18n="nav.contact">Hablemos</a>
+      </div>
+    </nav>
+    <div class="hero-content">
+      <h1 class="reveal-text">DALIA<br />LOPEZ<br />RUBIO</h1>
+      <div class="role-badge" data-i18n="hero.role">DISEÑADORA DE PRODUCTO</div>
+      <p class="bio" data-i18n="hero.bio">
+        Diseñadora de producto digital con un superpoder para contar historias épicas que conectan.
+        Detecto tus dolores de cabeza, los convierto en creatividad y diseño soluciones que cambian
+        las reglas del juego.
+      </p>
     </div>
-    <!-- <script>
-      import("../scripts/intro").then((mod) => mod.initIntro())
+  </header>
 
-      document.addEventListener("astro:after-swap", () => {
-        import("../scripts/intro").then((mod) => mod.initIntro())
-      })
+  <main>
+    <section class="experience" id="work">
+      <h2 class="section-title" data-i18n="work.title">TRABAJOS SELECCIONADOS</h2>
 
-      window.addEventListener("load", () => {
-        const preloader = document.getElementById("preloader")
-        if (preloader) {
-          // Puedes hacer un fade out suave
-          preloader.style.transition = "opacity 1s ease"
-          preloader.style.opacity = "0"
-          setTimeout(() => preloader.remove(), 1000) // eliminar del DOM
-        }
-      })
-    </script> -->
-  </article>
-</Layout>
+      <div class="job-list">
+        <!-- Job 1 -->
+        <article class="job-item" onclick="window.location.href='projects/cipher.html'">
+          <div class="job-header">
+            <span class="year">2023 — 2025</span>
+            <h3 class="company">Cipher (Prosegur)</h3>
+          </div>
+          <div class="job-details">
+            <span class="role" data-i18n="hero.role">Diseñadora de Producto</span>
+            <p class="description" data-i18n="work.job1">
+              Rediseño completo de la plataforma, incluyendo la creación del sistema de diseño desde
+              cero, definición de la arquitectura de información y flujos, realización de tests con
+              usuarios y mejora de la colaboración dentro del equipo de diseño.
+            </p>
+          </div>
+        </article>
+
+        <!-- Job 2 -->
+        <article class="job-item" onclick="window.location.href='projects/fas.html'">
+          <div class="job-header">
+            <span class="year">2023</span>
+            <h3 class="company">FAS (Federación Artesanal de Sevilla)</h3>
+          </div>
+          <div class="job-details">
+            <span class="role" data-i18n="work.role.uxui">Diseñadora UX/UI</span>
+            <p class="description" data-i18n="work.job2">
+              Rediseño de la página web de la federación con una arquitectura de información clara y
+              una usabilidad refinada. Además, gestioné sus redes sociales, conectando la artesanía
+              sevillana con usuarios y comunidad digital a través de contenido creativo y
+              consistente.
+            </p>
+          </div>
+        </article>
+
+        <!-- Job 3 -->
+        <article class="job-item" onclick="window.location.href='projects/carrefour.html'">
+          <div class="job-header">
+            <span class="year">2022 — 2023</span>
+            <h3 class="company">Talento Mobile - Carrefour</h3>
+          </div>
+          <div class="job-details">
+            <span class="role" data-i18n="work.role.uxui">Diseñadora UX/UI</span>
+            <p class="description" data-i18n="work.job3">
+              Aplicación de arquitectura de información para web, app y diseños responsive. Creación
+              de wireframes y prototipos de interacción. Desarrollo de un sistema de diseño
+              cohesivo.
+            </p>
+          </div>
+        </article>
+
+        <!-- Job 4 -->
+        <article class="job-item" onclick="window.location.href='projects/banc-sabadell.html'">
+          <div class="job-header">
+            <span class="year">2021 — 2022</span>
+            <h3 class="company">Eunoia Digital - Banc Sabadell</h3>
+          </div>
+          <div class="job-details">
+            <span class="role" data-i18n="work.role.ux">Diseñadora UX</span>
+            <p class="description" data-i18n="work.job4">
+              Rediseño completo de la plataforma, incluyendo la creación del sistema de diseño desde
+              cero, definición de arquitectura de información y flujos, realización de tests con
+              usuarios y optimización de la colaboración dentro del equipo de diseño.
+            </p>
+          </div>
+        </article>
+
+        <!-- Job 5 -->
+        <article class="job-item" onclick="window.location.href='projects/freelance.html'">
+          <div class="job-header">
+            <span class="year">2021 — 2022</span>
+            <h3 class="company">Freelance</h3>
+          </div>
+          <div class="job-details">
+            <span class="role" data-i18n="work.role.uxui">Diseñadora UX/UI</span>
+            <p class="description" data-i18n="work.job5">
+              Investigación en profundidad (benchmarking, netnografía, encuestas, entrevistas, user
+              personas), metodologías ágiles (Design Thinking, Lean), testing (Maze, Userzoom) y
+              prototipado multiplataforma con sistemas visuales UI.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="philosophy">
+      <div class="marquee">
+        <span data-i18n="philosophy.marquee">
+          EL DISEÑO NO ES SOLO ESTÉTICA — TRANSFORMA — INSPIRA — CONECTA —
+        </span>
+        <span data-i18n="philosophy.marquee">
+          EL DISEÑO NO ES SOLO ESTÉTICA — TRANSFORMA — INSPIRA — CONECTA —
+        </span>
+      </div>
+    </section>
+
+    <footer id="contact">
+      <div class="footer-content">
+        <h2 data-i18n="footer.title">¿LISTA PARA<br />CAMBIAR LAS REGLAS?</h2>
+
+        <a href="mailto:dalialopezrubio@gmail.com" class="email-btn">dalialopezrubio@gmail.com</a>
+        <div class="socials">
+          <a href="tel:+34659020036">+34 659 020 036</a>
+          <a
+            href="https://www.linkedin.com/in/dalia-lopez-rubio"
+            target="_blank"
+            rel="noopener noreferrer">LinkedIn</a
+          >
+        </div>
+      </div>
+    </footer>
+  </main>
+</BrutalistLayout>
