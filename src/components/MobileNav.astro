@@ -1,0 +1,233 @@
+---
+import { CONFIG } from "@/config"
+import { NAV_LINKS } from "./DesktopNav.astro"
+import Icon, { type IconName } from "./Icon.astro"
+import daliaImage from "@assets/images/dalia-inicio.jpg"
+import type { Project } from "@/constants"
+import { CIPHER_PROJECT } from "@/constants"
+import { FAS_PROJECT } from "@/constants"
+import { CARREFOUR_PROJECT } from "@/constants"
+import { BANC_SABADELL_PROJECT } from "@/constants"
+import type { CipherNavSections } from "@/constants"
+import type { FasNavSections } from "@/constants"
+import type { BancSabadellNavSections } from "@/constants"
+import type { CarrefourNavSections } from "@/constants"
+
+const { pathname } = Astro.url
+const splittedPathname = pathname.split("/").filter(Boolean)
+const currentPage = splittedPathname[splittedPathname.length - 1] as Project
+
+const projectsNavigationPageKey = (
+  NAV_LINKS.filter(({ href }) => href === `${CONFIG.base}/projects`)[0]?.children || []
+).map((item) => item.href.replace(`${CONFIG.base}/projects/`, "")) as Project[]
+
+const inProjectPage = projectsNavigationPageKey.includes(currentPage)
+
+let projectNavItems: [
+  CipherNavSections | FasNavSections | CarrefourNavSections | BancSabadellNavSections,
+  {
+    title: string
+    icon: IconName
+  },
+][] = []
+
+if (inProjectPage) {
+  switch (currentPage) {
+    case "cipher":
+      projectNavItems = Array.from(CIPHER_PROJECT.navItems)
+      break
+    case "fas":
+      projectNavItems = Array.from(FAS_PROJECT.navItems)
+      break
+    case "carrefour":
+      projectNavItems = Array.from(CARREFOUR_PROJECT.navItems)
+      break
+    case "banc-sabadell":
+      projectNavItems = Array.from(BANC_SABADELL_PROJECT.navItems)
+      break
+  }
+}
+---
+
+<div id="menu-nav" class="relative block sm:hidden z-40">
+  <input type="checkbox" id="nav-toggle" class="peer hidden" />
+  <div
+    class="fixed top-0 left-0 w-dvw flex items-center justify-start py-4 px-4 bg-white border-b border-zinc-200"
+  >
+    <label for="nav-toggle" class="inline-flex items-center">
+      <span class="sr-only">Toggle navigation</span>
+      <Icon icon="list" size="32px" />
+    </label>
+  </div>
+
+  <!-- Overlay para cerrar el menú -->
+  <label
+    for="nav-toggle"
+    class="fixed inset-0 bg-gray-400/30 backdrop-blur-xs transition-opacity opacity-0 invisible peer-checked:visible peer-checked:opacity-100 z-30 cursor-pointer"
+  ></label>
+
+  <aside
+    class="fixed top-0 left-0 z-40 w-[70vw] h-dvh font-medium  text-sm text-[#757575] transition-transform -translate-x-full peer-checked:translate-x-0"
+    aria-label="Sidebar"
+  >
+    <div class="h-full overflow-y-auto p-6 bg-white rounded-r-2xl border-r-2 border-gray-300">
+      <a href={CONFIG.base || "/"} class="flex items-center gap-3">
+        <img class="w-12 h-12 rounded-full object-cover" src={daliaImage.src} alt="Dalia López" />
+        <div class="flex flex-col gap-1">
+          <span class="text-[10px] leading-3 tracking-wider">PRODUCT DESIGNER</span>
+          <span class='leading-5"'>Dalia López</span>
+        </div>
+      </a>
+
+      <span class="block h-0.5 bg-[#F6F6F6] my-6" />
+
+      {
+        inProjectPage && projectNavItems.length !== 0 && (
+          <div class="px-3">
+            <label class="text-[10px] leading-3 tracking-wider">ÍNDICE</label>
+            <ul class="leading-5 mt-3">
+              {projectNavItems.map(([href, { icon, title }]) => (
+                <li>
+                  <a href={`#${href}`} class="flex gap-2 py-2.5 px-1">
+                    {icon && <span class="flex-none self-start mt-1"><Icon icon={icon} /></span>}
+                    {title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+      <span class="block h-0.5 bg-[#F6F6F6] my-6" />
+        )
+      }
+
+      <div class="px-3">
+        <label class="text-[10px] leading-3 tracking-wider">MENU</label>
+        <ul class="leading-5 mt-3">
+          {
+            NAV_LINKS.map((navItem, i) => {
+              const isParentActive =
+                pathname === navItem.href ||
+                (navItem.href !== "/" &&
+                  navItem.href !== CONFIG.base + "/" &&
+                  pathname.startsWith(navItem.href + "/"))
+
+              return (
+                <li>
+                  {navItem.children?.length ? (
+                    <>
+                      {/* Disparador SIN href: no navega */}
+                      <button
+                        type="button"
+                        class:list={[
+                          "py-2.5 px-1 w-full flex items-center justify-between gap-2",
+                          isParentActive ? "font-bold" : "",
+                        ]}
+                        data-toggle={`submenu-${i}`}
+                        aria-controls={`submenu-${i}`}
+                        aria-expanded={isParentActive ? "true" : "false"}
+                      >
+                        <div class="flex items-center gap-2">
+                          {navItem.icon && <Icon icon={navItem.icon} />}
+                          <span>{navItem.label}</span>
+                        </div>
+                        <span data-chevron class="transition-transform duration-300">
+                          <Icon icon="caret-down-filled" />
+                        </span>
+                      </button>
+
+                      {/* Submenu */}
+                      <ul
+                        id={`submenu-${i}`}
+                        data-submenu
+                        class:list={[
+                          "mt-2 space-y-2 text-xs border-l-2 border-[#F6F6F6] ml-4",
+                          isParentActive ? "" : "hidden",
+                        ]}
+                      >
+                        {navItem.children.map((child) => (
+                          <li class="flex items-center gap-2">
+                            <span class="text-[#F6F6F6] font-semibold">-</span>
+                            <a
+                              href={child.href}
+                              class:list={[
+                                "block py-1",
+                                pathname === child.href ? "font-bold" : "",
+                              ]}
+                            >
+                              {child.label}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </>
+                  ) : (
+                    // Regular Nav Item
+                    <a
+                      href={navItem.href}
+                      class:list={[
+                        "flex items-center gap-2 py-2.5 px-1",
+                        pathname === navItem.href ||
+                        (navItem.href !== "/" &&
+                          navItem.href !== CONFIG.base + "/" &&
+                          pathname.includes(navItem.href))
+                          ? "font-bold"
+                          : "",
+                      ]}
+                    >
+                      {navItem.icon && <span class="flex-none"><Icon icon={navItem.icon} /></span>}
+                      {navItem.label}
+                    </a>
+                  )}
+                </li>
+              )
+            })
+          }
+        </ul>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<script>
+  // Bloquear scroll del body cuando el menú está abierto
+  const checkbox = document.getElementById("nav-toggle") as HTMLInputElement | null
+
+  checkbox?.addEventListener("change", (e) => {
+    if (e.target instanceof HTMLInputElement) {
+      document.body.style.overflow = e.target.checked ? "hidden" : ""
+    }
+  })
+
+  // Delegación: abrir/cerrar submenús
+  document.addEventListener("click", (ev) => {
+    const target = ev.target
+    if (!(target instanceof Element)) return
+
+    const checkbox = document.getElementById("nav-toggle") as HTMLInputElement | null
+
+    // Toggle de submenús
+    const btn = target.closest<HTMLElement>("[data-toggle]")
+    if (btn) {
+      const id = btn.getAttribute("data-toggle")
+      if (!id) return
+
+      const submenu = document.getElementById(id)
+      if (!submenu) return
+
+      const isOpen = btn.getAttribute("aria-expanded") === "true"
+      btn.setAttribute("aria-expanded", String(!isOpen))
+      submenu.classList.toggle("hidden")
+
+      const chevron = btn.querySelector<HTMLElement>("[data-chevron]")
+      chevron?.classList.toggle("rotate-90")
+      return
+    }
+
+    // 🔑 Cerrar menú al hacer click en cualquier link del aside
+    const link = target.closest("a[href]")
+    if (link && checkbox) {
+      checkbox.checked = false
+      document.body.style.overflow = "" // restaurar scroll
+    }
+  })
+</script>

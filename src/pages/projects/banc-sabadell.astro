@@ -1,0 +1,384 @@
+---
+import Icon from "@/components/Icon.astro"
+import { BANC_SABADELL_PROJECT, BancSabadellNavSections } from "@/constants"
+import Project from "@/layouts/Project.astro"
+import sabadellContentImage1 from "@assets/images/sabadell-content-1.jpg"
+import sabadellContentImage2 from "@assets/images/sabadell-content-2.png"
+import sabadellContentImage3 from "@assets/images/sabadell-content-3.jpg"
+import sabadellContentImage4 from "@assets/images/sabadell-content-4.jpg"
+import sabadellContentImage5 from "@assets/images/sabadell-content-5.jpg"
+import sabadellContentImage6 from "@assets/images/sabadell-content-6.jpg"
+import sabadellContentImage7 from "@assets/images/sabadell-content-7.jpg"
+import sabadellContentImage8 from "@assets/images/sabadell-content-8.jpg"
+import sabadellContentImage9 from "@assets/images/sabadell-content-9.jpg"
+
+const SECTION_1 = BANC_SABADELL_PROJECT.navItems.get(BancSabadellNavSections.SECTION_1)
+const SECTION_2 = BANC_SABADELL_PROJECT.navItems.get(BancSabadellNavSections.SECTION_2)
+const SECTION_3 = BANC_SABADELL_PROJECT.navItems.get(BancSabadellNavSections.SECTION_3)
+const SECTION_4 = BANC_SABADELL_PROJECT.navItems.get(BancSabadellNavSections.SECTION_4)
+const SECTION_5 = BANC_SABADELL_PROJECT.navItems.get(BancSabadellNavSections.SECTION_5)
+const SECTION_6 = BANC_SABADELL_PROJECT.navItems.get(BancSabadellNavSections.SECTION_6)
+const SECTION_7 = BANC_SABADELL_PROJECT.navItems.get(BancSabadellNavSections.SECTION_7)
+const SECTION_8 = BANC_SABADELL_PROJECT.navItems.get(BancSabadellNavSections.SECTION_8)
+const SECTION_9 = BANC_SABADELL_PROJECT.navItems.get(BancSabadellNavSections.SECTION_9)
+---
+
+<Project
+  title={BANC_SABADELL_PROJECT.title}
+  rol={BANC_SABADELL_PROJECT.rol}
+  duration={BANC_SABADELL_PROJECT.duration}
+  typeOfProject={BANC_SABADELL_PROJECT.typeOfProject}
+  tools={BANC_SABADELL_PROJECT.tools}
+  navItems={BANC_SABADELL_PROJECT.navItems}
+>
+  <div>
+    <section id={BancSabadellNavSections.SECTION_1}>
+      <h2>
+        {SECTION_1?.icon && <Icon icon={SECTION_1.icon} />}
+        <span>{SECTION_1?.title}</span>
+      </h2>
+      <p>
+        Cuando llegué al proyecto, no existía un equipo formalmente establecido ni una estrategia
+        digital definida para este servicio. El flujo de solicitud de préstamos personales era
+        exclusivamente presencial, lo que generaba fricciones para los clientes y limitaba las
+        oportunidades de negocio en un contexto donde la banca online ya estaba en crecimiento.
+      </p>
+      <p>
+        El desafío consistía en trasladar un proceso complejo, con implicaciones legales y
+        financieras, al entorno digital, asegurando que resultara comprensible, confiable y
+        eficiente tanto para el usuario como para el banco. Esto implicaba diseñar desde cero la
+        experiencia completa, creando cada paso del recorrido del cliente, desde la simulación de la
+        oferta hasta la confirmación final, y desarrollando prototipos interactivos que sirvieran
+        tanto para las pruebas de usuario como para guiar el trabajo del equipo de desarrollo.
+      </p>
+      <p>
+        Además, debía realizar testeos continuos de usabilidad y funcionalidad en todas las fases
+        del proyecto, tanto en UX como en UI, utilizando UserZoom para obtener datos cualitativos y
+        cuantitativos. Posteriormente, elaboraba informes detallados que yo misma presentaba a las
+        áreas de negocio, justificando con evidencias cada ajuste propuesto y facilitando la toma de
+        decisiones.
+      </p>
+      <h3>Conceptos clave para alcanzar el objetivo:</h3>
+      <ul>
+        <li>
+          Transformar un servicio presencial en un producto digital sin pérdida de claridad ni
+          confianza.
+        </li>
+        <li>
+          Diseñar una experiencia que equilibre simplicidad de uso con cumplimiento normativo.
+        </li>
+        <li>Minimizar el esfuerzo cognitivo en cada paso para reducir abandonos.</li>
+        <li>Garantizar accesibilidad y consistencia visual en todos los dispositivos.</li>
+        <li>Facilitar la comprensión de términos y condiciones sin sobrecargar al usuario.</li>
+        <li>
+          Crear prototipos de alta fidelidad que sirvieran como referencia directa para desarrollo.
+        </li>
+      </ul>
+    </section>
+    <section id={BancSabadellNavSections.SECTION_2}>
+      <h2>
+        {SECTION_2?.icon && <Icon icon={SECTION_2.icon} />}
+        <span>{SECTION_2?.title}</span>
+      </h2>
+      <ul>
+        <li>Análisis profundo de las condiciones del producto y requisitos regulatorios.</li>
+        <li>
+          Definición de arquitectura de información para un recorrido lógico y libre de obstáculos.
+        </li>
+        <li>Diseño de flujos y wireframes desde cero para desktop y mobile.</li>
+        <li>Creación de prototipos navegables para testeo con usuarios y entrega a desarrollo.</li>
+        <li>Testeo iterativo con UserZoom.</li>
+        <li>Generación de informes accionables con datos cruzados.</li>
+        <li>Presentación y validación con stakeholders de negocio.</li>
+        <li>Implementación gradual de mejoras validadas.</li>
+      </ul>
+      <img src={sabadellContentImage1.src} class="w-full h-auto" alt="project images" />
+    </section>
+    <section id={BancSabadellNavSections.SECTION_3}>
+      <h2>
+        {SECTION_3?.icon && <Icon icon={SECTION_3.icon} />}
+        <span>{SECTION_3?.title}</span>
+      </h2>
+      <ul>
+        <li>Estudio del comportamiento de usuarios en entornos financieros digitales.</li>
+        <li>Análisis de prácticas comunes en banca online y fintechs.</li>
+        <li>Evaluación del flujo presencial existente para identificar barreras a digitalizar.</li>
+      </ul>
+      <img src={sabadellContentImage2.src} class="w-full h-auto" alt="project images" />
+    </section>
+    <section id={BancSabadellNavSections.SECTION_4}>
+      <h2>
+        {SECTION_4?.icon && <Icon icon={SECTION_4.icon} />}
+        <span>{SECTION_4?.title}</span>
+      </h2>
+      <p>Comparativa de flujos con competidores y referentes:</p>
+      <ul>
+        <li>
+          <strong>BBVA, ING, Openbank:</strong>
+          procesos simplificados con simuladores claros y feedback inmediato.
+        </li>
+        <li>
+          <strong>Fintonic, Bnext :</strong>
+          enfoque mobile-first, pasos mínimos y comunicación directa.
+        </li>
+        <li>
+          <strong>Banc Sabadell (estado inicial):</strong>
+          ausencia de canal online para préstamos personales.
+        </li>
+      </ul>
+    </section>
+    <section id={BancSabadellNavSections.SECTION_5}>
+      <h2>
+        {SECTION_5?.icon && <Icon icon={SECTION_5.icon} />}
+        <span>{SECTION_5?.title}</span>
+      </h2>
+      <p>
+        El diseño de la arquitectura de información buscó minimizar el número de pasos sin
+        sacrificar claridad ni cumplimiento legal, dividiendo el flujo en bloques lógicos que
+        facilitaran la comprensión y el avance del usuario.
+      </p>
+      <p>Estructura detallada del flujo:</p>
+      <ol>
+        <li>
+          <strong>Pantalla de bienvenida</strong>
+          <br />
+          <ul>
+            <li>Breve explicación del proceso y requisitos básicos.</li>
+            <li>Llamada a la acción clara (“Comenzar solicitud”).</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Simulación de préstamo</strong>
+          <br />
+          <ul>
+            <li>Selección de importe y plazo mediante sliders o campos numéricos.</li>
+            <li>Cálculo instantáneo de la cuota mensual.</li>
+            <li>Posibilidad de ajustar valores antes de continuar.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Resumen de condiciones</strong>
+          <br />
+          <ul>
+            <li>Intereses, comisiones y TAE visualizados de forma clara.</li>
+            <li>Desglose del coste total.</li>
+            <li>Botón de “Aceptar y continuar” que confirma la comprensión del usuario.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Formulario de datos personales</strong>
+          <br />
+          <ul>
+            <li>Solicitud de datos imprescindibles (nombre, DNI, contacto, empleo, ingresos).</li>
+            <li>Validación instantánea de formato y coherencia de datos.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Documentación y validación</strong>
+          <br />
+          <ul>
+            <li>Subida de documentos (nóminas, identificación).</li>
+            <li>Confirmación de recepción y revisión.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Aceptación legal</strong>
+          <br />
+          <ul>
+            <li>
+              Casillas de aceptación para términos, condiciones y consentimiento de tratamiento de
+              datos.
+            </li>
+            <li>Acceso a documentos legales en formato descargable.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Confirmación final</strong>
+          <br />
+          <ul>
+            <li>Mensaje claro de aprobación o estado “en revisión”.</li>
+            <li>Información sobre próximos pasos.</li>
+          </ul>
+        </li>
+      </ol>
+    </section>
+    <section id={BancSabadellNavSections.SECTION_6}>
+      <h2>
+        {SECTION_6?.icon && <Icon icon={SECTION_6.icon} />}
+        <span>{SECTION_6?.title}</span>
+      </h2>
+      <ul>
+        <li>
+          Desarrollo de wireframes de baja y media fidelidad para validar la jerarquía visual y el
+          recorrido del usuario.
+        </li>
+        <li>
+          Gracias a la existencia del sistema de diseño Galatea, incluso en la fase de wireframes de
+          UX se trabajaba directamente con los componentes finales del sistema, lo que permitía:
+          <br />
+          <ul>
+            <li>Asegurar consistencia visual desde las primeras etapas.</li>
+            <li>
+              Reducir el trabajo posterior del equipo de UI, ya que muchos elementos quedaban
+              prácticamente listos para la fase visual.
+            </li>
+            <li>
+              Acelerar la validación con negocio y usuarios, al mostrar prototipos más cercanos al
+              producto final.
+            </li>
+          </ul>
+        </li>
+        <li>Versiones adaptadas a desktop y responsive.</li>
+        <li>Componentes flexibles para iteraciones rápidas sin romper la coherencia del diseño.</li>
+      </ul>
+      <img src={sabadellContentImage3.src} class="w-full h-auto" alt="project images" />
+      <div class="flex items-center sm:justify-between sm:gap-10 gap-6">
+        <img src={sabadellContentImage4.src} class="w-[30%] h-auto" alt="project images" />
+        <img src={sabadellContentImage5.src} class="w-[30%] h-auto" alt="project images" />
+        <img src={sabadellContentImage6.src} class="w-[30%] h-auto" alt="project images" />
+      </div>
+      <p class="confidence italic font-semibold">
+        *Para respetar acuerdos de confidencialidad, algunas imágenes se presentan con un ligero
+        difuminado.
+      </p>
+    </section>
+    <section id={BancSabadellNavSections.SECTION_7}>
+      <h2>
+        {SECTION_7?.icon && <Icon icon={SECTION_7.icon} />}
+        <span>{SECTION_7?.title}</span>
+      </h2>
+      <p>
+        El flujo de trabajo incluía varias iteraciones controladas para garantizar que cada fase del
+        diseño cumpliera los objetivos de usabilidad y negocio:
+      </p>
+      <ol>
+        <li>
+          <strong>Prototipado UX inicial</strong>
+          <ul>
+            <li>
+              Creación de prototipos interactivos centrados exclusivamente en la parte de UX, con
+              foco en arquitectura de la información, recorridos y microinteracciones clave.
+            </li>
+            <li>
+              Estos prototipos se testeaban en UserZoom con usuarios reales siguiendo tareas
+              representativas (“Simula un préstamo de 10.000 € a 5 años”).
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Testeo y reporte a negocio</strong>
+          <ul>
+            <li>Recopilación de datos cualitativos y cuantitativos del test.</li>
+            <li>
+              Elaboración de un informe detallado con hallazgos, puntos de fricción y oportunidades
+              de mejora.
+            </li>
+            <li>Presentación del informe a negocio para validar los cambios propuestos.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Prototipado UI</strong>
+          <ul>
+            <li>
+              Una vez aprobado el flujo y estructura de UX, se desarrollaba la UI completa
+              (componentes visuales, estilos, iconografía, etc.).
+            </li>
+            <li>
+              Se creaba un nuevo prototipo en alta fidelidad que integraba la parte visual
+              definitiva.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Testeo final</strong>
+          <ul>
+            <li>
+              Se testeaba nuevamente con usuarios la versión UI para validar que superara el
+              porcentaje de success rate establecido como objetivo del proyecto.
+            </li>
+            <li>
+              Si los resultados eran satisfactorios, se elaboraba un informe final y se presentaba a
+              negocio para aprobación definitiva.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Documento de interacción para desarrollo</strong>
+          <ul>
+            <li>
+              Tras recibir el visto bueno de negocio, se preparaba el documento de interacción
+              (hand-off) para desarrolladores, detallando comportamiento de componentes, flujos y
+              reglas de interacción.
+            </li>
+            <li>
+              Este documento aseguraba que la implementación técnica mantuviera la experiencia
+              definida y validada en las fases previas.
+            </li>
+          </ul>
+        </li>
+      </ol>
+      <img src={sabadellContentImage7.src} class="w-full h-auto" alt="project images" />
+      <img src={sabadellContentImage8.src} class="w-full h-auto" alt="project images" />
+      <img src={sabadellContentImage9.src} class="w-full h-auto" alt="project images" />
+      <p class="confidence italic font-semibold">
+        *Para respetar acuerdos de confidencialidad, algunas imágenes se presentan con un ligero
+        difuminado.
+      </p>
+    </section>
+    <section id={BancSabadellNavSections.SECTION_8}>
+      <h2>
+        {SECTION_8?.icon && <Icon icon={SECTION_8.icon} />}
+        <span>{SECTION_8?.title}</span>
+      </h2>
+      <ul>
+        <li>Creación de un flujo digital desde cero que antes no existía.</li>
+        <li>Diseño adaptado a diferentes dispositivos y validado con datos reales.</li>
+        <li>
+          Prototipos funcionales que sirvieron como documento de referencia para el equipo de
+          desarrollo.
+        </li>
+        <li>Integración de insights en cada iteración para minimizar riesgos de lanzamiento.</li>
+      </ul>
+      <h2>
+        <Icon icon="rocket-launch" />
+        <span class="capitalize">{SECTION_8?.title.split(" ")[2]}</span>
+      </h2>
+      <ul>
+        <li>Validación automática de identidad y documentación.</li>
+        <li>Personalización de la oferta según perfil de usuario.</li>
+        <li>Simulador con comparativa de cuotas y plazos más visual.</li>
+      </ul>
+    </section>
+    <section id={BancSabadellNavSections.SECTION_9}>
+      <h2>
+        {SECTION_9?.icon && <Icon icon={SECTION_9.icon} />}
+        <span>{SECTION_9?.title}</span>
+      </h2>
+      <p>
+        Este proyecto me permitió afrontar el reto de construir un producto digital sin estructura
+        previa, aprendiendo a traducir un proceso físico a un entorno online de manera clara, segura
+        y eficiente.
+      </p>
+      <ul class="custom-list">
+        <li>
+          💎 Fortalecí mi habilidad para analizar y testear tanto UX como UI, interpretando datos
+          para tomar decisiones fundamentadas.
+        </li>
+        <li>
+          💎 Mejoré mi capacidad de crear prototipos que aceleraran la validación y la
+          implementación técnica.
+        </li>
+        <li>
+          💎 Desarrollé experiencia al presentar hallazgos complejos a áreas de negocio de forma
+          comprensible y orientada a resultados.
+        </li>
+      </ul>
+      <p>⏳ Adversidades:</p>
+      <ul>
+        <li>Ausencia inicial de equipo y referentes digitales.</li>
+        <li>Limitaciones legales que condicionaban la experiencia.</li>
+        <li>Necesidad de equilibrar rapidez de entrega con rigurosidad en la validación.</li>
+      </ul>
+    </section>
+  </div>
+</Project>

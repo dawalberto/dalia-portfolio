@@ -1,0 +1,62 @@
+---
+import { CONFIG } from "@/config"
+import Layout from "@/layouts/Layout.astro"
+import freelanceImage1 from "@assets/images/freelance-1.jpg"
+import freelanceImage2 from "@assets/images/freelance-2.jpg"
+import freelanceImage3 from "@assets/images/freelance-3.jpg"
+import freelanceImage4 from "@assets/images/freelance-4.jpg"
+
+const projectLinkContainerClass =
+  "group rounded-xs w-full max-h-30 sm:max-h-none h-auto overflow-hidden relative cursor-pointer"
+const projectImgClass =
+  "w-full h-auto group-hover:scale-125 transform transition duration-300 ease-in-out"
+const projectOverlayClass =
+  "absolute top-0 left-0 opacity-70 sm:opacity-0 group-hover:opacity-70 w-full h-full bg-[#D9D9D9] transform transition duration-300 ease-in-out"
+const projectTitleClass =
+  "absolute top-1/2 left-1/2 text-center sm:translate-y-96 group-hover:-translate-y-1/2 -translate-y-1/2 -translate-x-1/2 transform transition duration-300 ease-in-out"
+---
+
+<Layout>
+  <h1 class="text-3xl mt-6 text-main-0">Freelance</h1>
+  <div
+    class="flex flex-col gap-6 sm:gap-10 mt-6 sm:mt-8 font-bold text-xl sm:text-3xl leading-6 sm:leading-14"
+  >
+    <a
+      class={projectLinkContainerClass}
+      href={`${CONFIG.base}/projects/freelance/rebuilding-cities-gender-perspective`}
+    >
+      <img
+        src={freelanceImage1.src}
+        class={projectImgClass}
+        alt="freelance Reconstruction project preview"
+      />
+      <div class={projectOverlayClass}></div>
+      <h2 class={projectTitleClass}>Reconstrucción plaza macba</h2>
+    </a>
+    <div class="flex flex-col sm:flex-row gap-6">
+      <a class={projectLinkContainerClass} href={`${CONFIG.base}/projects/freelance/ink`}>
+        <img
+          src={freelanceImage2.src}
+          class={projectImgClass}
+          alt="freelance Ink project preview"
+        />
+        <div class={projectOverlayClass}></div>
+        <h2 class={projectTitleClass}>Proyecto Ink</h2>
+      </a>
+      <a class={projectLinkContainerClass} href={`${CONFIG.base}/projects/freelance/kingsugi`}>
+        <img
+          src={freelanceImage3.src}
+          class={projectImgClass}
+          alt="freelance Kingsugi project preview"
+        />
+        <div class={projectOverlayClass}></div>
+        <h2 class={projectTitleClass}>Proyecto Kingsugi</h2>
+      </a>
+    </div>
+    <a class={projectLinkContainerClass} href={`${CONFIG.base}/projects/freelance/atid`}>
+      <img src={freelanceImage4.src} class={projectImgClass} alt="freelance ATID project preview" />
+      <div class={projectOverlayClass}></div>
+      <h2 class={projectTitleClass}>Rediseño Atid</h2>
+    </a>
+  </div>
+</Layout>

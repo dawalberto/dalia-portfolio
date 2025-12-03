@@ -1,0 +1,67 @@
+---
+import Icon from "../Icon.astro"
+
+const reviews = [
+  {
+    description:
+      "Tuve el placer de trabajar con Dalia en su último proyecto y la recomiendo ampliamente por su talento y profesionalidad, sin dejar de ser una magnífica persona :). Destaca por su capacidad para generar soluciones creativas y disruptivas que van más allá de las convenciones tradicionales del diseño. Me quedo con su compromiso y dedicación al proyecto que, junto con su personalidad, la convierten en una colaboradora excepcional. Combina perfectamente habilidades técnicas avanzadas con un enfoque innovador que aporta gran valor a cualquier equipo.",
+    author: "Pepe Llopis Polvoreda",
+    position: "Global Cybersecurity Technology Researcher Lead | Cipher",
+  },
+  {
+    description:
+      "Trabajé con Dalia en el 2022 en un proyecto clave para un banco importante de España. Teníamos como objetivo diseñar un flujo end to end para solicitar un préstamo online. Dalia ya estaba trabajando en el proyecto cuando tomé el proyecto como Product Owner. Ella se ocupó de darme una buena bienvenida  y contexto sobre lo ya trabajado. Fue una excelente compañera que generó buen clima laboral. Además tiene pensamiento crítico para analizar y hacer propuestas.",
+    author: "Melany Masello",
+    position: "Product Owner | Banc Sabadell",
+  },
+  // ADRI
+  {
+    description:
+      "Dalia no solo es una gran diseñadora sino también una gran compañera de equipo. Es creativa y previsora, se esfuera por aplicar buenas prácticas y ofrecer la mejor experiencia al usuario y por mejorar continuamente. A la hora de trabajar en equipo ha sido un pilar en el que apoyarse en momentos de presión, facilitando el trabajo de los desarrolladores, sabiendo equilibrar las necesidades de los stakeholders y siendo proactiva y comprensiva.",
+    author: "Adrián Garzón",
+    position: "Team Lead | Cipher",
+  },
+  {
+    description:
+      "Dalia aporta a los equipos de trabajo iniciativa e implicación con una actitud súper colaborativa. Gracias a su inmenso background tiene un amplio conocimiento del sector, y a la hora de abordar los proyectos lo hace con un enfoque acertado. Es responsable y constante, con todo el afán por mejorar y gusto por el trabajo bien hecho. Es eficiente y se mueve con soltura en cualquiera de las fases del diseño de producto digital: research, conceptualización, visual y desarrollo. Transmite su pasión por lo que hace. Sin duda, una profesional brillante.",
+    author: "Olga Muñoz Ramos",
+    position: "Product Designer UX/UI | Formadora UX/UI y Figma",
+  },
+  {
+    description:
+      "Tuve la suerte de unirme a un proyecto de xMDR en el que Dalia Rubio trabajaba como diseñadora UI/UX. Desde el primer momento, colaborar con ella fue una experiencia fluida y enriquecedora. La solidez y claridad de su trabajo marcaron la base sobre la que el equipo de frontend pudo avanzar con confianza, y su capacidad para combinar estética con usabilidad fue clave para el éxito. Además, siempre mostró una gran disposición para colaborar y encontrar soluciones conjuntas.",
+    author: "Joan Peruchet",
+    position: "Frontend Team Lead | Cipher",
+  },
+  {
+    description:
+      "Es una persona muy humana y empatíca, siempre aporta un espacio y tiempo de relax, y al trabajar con ella puedes sientir el gusto que tiene por trabajar en equipo dando siempre lo mejor de sí misma.",
+    author: "Angela Nipitella",
+    position: "Product Designer UX/UI | Cipher",
+  },
+]
+---
+
+<section>
+  <h1 class="font-bold text-xl sm:text-4xl">Así suena trabajar conmigo</h1>
+  <div
+    class="flex w-full items-stretch gap-6 mt-8 overflow-auto justify-stretch sm:justify-between py-4 text-main-0"
+  >
+    {
+      reviews.map((review) => (
+        <div class="rounded-xl flex flex-col justify-between gap-6 min-w-4/5 sm:max-w-2xl sm:min-w-xl shadow-[0px_4px_10px_0px_#5252521A] p-3 sm:p-8">
+          <div class="w-full">
+            <span class="mx-auto w-fit block text-[#AFB7BA] rotate-180">
+              <Icon icon="quotes-fill" size="62px" />
+            </span>
+            <p class="text-sm mt-6 italic text-pretty">"{review.description}</p>
+          </div>
+          <div class="text-center">
+            <h2 class="font-semibold text-lg sm:text-xl">{review.author}</h2>
+            <h3 class="text-main-17 -condensed text-base font-normal">{review.position}</h3>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>

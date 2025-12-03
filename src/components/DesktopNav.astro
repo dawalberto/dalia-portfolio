@@ -1,0 +1,110 @@
+---
+import { CONFIG } from "@/config"
+import type { IconName } from "@components/Icon.astro"
+import Icon from "@components/Icon.astro"
+
+export type NavLink = {
+  href: string
+  label: string
+  icon?: IconName
+  children?: NavLink[]
+}
+
+export const NAV_LINKS: NavLink[] = [
+  { href: `${CONFIG.base}/`, label: "Home", icon: "house-simple" },
+  {
+    href: `${CONFIG.base}/projects`,
+    label: "Proyectos",
+    icon: "kanban",
+    children: [
+      { href: `${CONFIG.base}/projects/cipher`, label: "Cipher" },
+      { href: `${CONFIG.base}/projects/fas`, label: "Fas" },
+      { href: `${CONFIG.base}/projects/carrefour`, label: "Carrefour" },
+      { href: `${CONFIG.base}/projects/banc-sabadell`, label: "Banc Sabadell" },
+      { href: `${CONFIG.base}/projects/freelance`, label: "Freelance" },
+    ],
+  },
+  // { href: `${CONFIG.base}/about`, label: "Sobre mi", icon: "user" },
+  // { href: `${CONFIG.base}/contact`, label: "Contacto", icon: "paper-plane-tilt" },
+]
+const { pathname } = Astro.url
+---
+
+<!-- 48px height of menu -->
+<nav
+  id="menu-nav"
+  class="hidden sm:flex min-h-12 items-center fixed left-0 top-0 w-dvw z-40 bg-white"
+>
+  <ul class="flex space-x-4 w-fit mx-auto relative">
+    {
+      NAV_LINKS.map((navItem) => (
+        <li
+          class="min-w-36 px-5 py-3 text-center group"
+          class:list={navItem.children && "dropdown"}
+        >
+          <a
+            href={navItem.href}
+            class:list={[
+              pathname === navItem.href ||
+              (navItem.href !== "/" &&
+                navItem.href !== CONFIG.base + "/" &&
+                pathname.includes(navItem.href))
+                ? "font-bold"
+                : "",
+              navItem.children && "flex justify-between items-center pointer-events-none",
+            ]}
+            class="text-main-0 items-center group-hover:font-bold transform duration-200"
+          >
+            <span>{navItem.label}</span>
+            {navItem.children ? (
+              <span class="text-[#7E7E7E]  group-hover:rotate-90 group-hover:text-main-0 transform transition duration-300">
+                <Icon icon="caret-down-filled" />
+              </span>
+            ) : (
+              ""
+            )}
+          </a>
+          {navItem.children && (
+            <ul class="dropdown-content rounded-lg bg-[#F9F9F9]">
+              {navItem.children.map((child, i) => (
+                <li
+                  class="px-6 py-1"
+                  class:list={
+                    i !== 0 && i !== navItem?.children?.length ? "border-t border-gray-300" : ""
+                  }
+                >
+                  <a
+                    href={child.href}
+                    class:list={pathname === child.href ? "font-bold" : ""}
+                    class="w-full block h-full box-border text-main-0 text-sm hover:font-bold transform duration-200"
+                  >
+                    {child.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
+        </li>
+      ))
+    }
+  </ul>
+</nav>
+
+<style>
+  .dropdown-content {
+    position: absolute;
+    top: 100%;
+    min-width: 160px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s;
+    pointer-events: none;
+    text-align: left;
+  }
+
+  .dropdown:hover .dropdown-content {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+</style>

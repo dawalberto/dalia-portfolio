@@ -1,0 +1,272 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #2e2e2e;
+  --accent-color: #d78eff; /* Acid Lime */
+  --border-color: #333;
+  --font-main: "Space Grotesk", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: none; /* Custom cursor */
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-main);
+  overflow-x: hidden;
+  line-height: 1.2;
+}
+
+/* Custom Cursor */
+.cursor-follower {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: transform 0.1s ease;
+  transform: translate(-50%, -50%);
+}
+
+/* Typography */
+h1 {
+  font-size: 12vw;
+  font-weight: 700;
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 4rem;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  max-width: 60ch;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Header */
+.hero {
+  min-height: 100vh;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* border-bottom: 1px solid var(--border-color); */
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  color: #666;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 700;
+  padding: 0;
+  cursor: none; /* Keep custom cursor */
+  transition: color 0.3s ease;
+}
+
+.lang-btn:hover,
+.lang-btn.active {
+  color: var(--accent-color);
+}
+
+.separator {
+  color: #666;
+}
+
+.contact-link {
+  border: 1px solid var(--text-color);
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.contact-link:hover {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+  border-color: var(--accent-color);
+}
+
+.hero-content {
+  margin-top: auto;
+}
+
+.role-badge {
+  display: inline-block;
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  padding: 0.5rem 1rem;
+  font-weight: 700;
+  margin: 2rem 0;
+  transform: rotate(-2deg);
+}
+
+.bio {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  border-left: 4px solid var(--accent-color);
+  padding-left: 1.5rem;
+}
+
+/* Experience Section */
+.experience {
+  padding: 4rem 2rem;
+}
+
+.section-title {
+  border-bottom: 4px solid var(--text-color);
+  padding-bottom: 1rem;
+  margin-bottom: 4rem;
+}
+
+.job-item {
+  border-top: 1px solid var(--border-color);
+  padding: 3rem 0;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  transition: background-color 0.3s ease;
+}
+
+.job-item:hover {
+  /* background-color: #111; */
+}
+
+.job-item:hover .company {
+  color: var(--accent-color);
+}
+
+.year {
+  font-family: monospace;
+  color: #888;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.job-details .role {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.job-details .description {
+  color: #aaa;
+}
+
+/* Marquee */
+.philosophy {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+  padding: 2rem 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee {
+  display: inline-block;
+  animation: scroll 20s linear infinite;
+}
+
+.marquee span {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-right: 2rem;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Footer */
+footer {
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.email-btn {
+  display: inline-block;
+  font-size: 3vw;
+  margin: 3rem 0;
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 0.5rem;
+}
+
+.email-btn:hover {
+  color: var(--accent-color);
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 1.2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 18vw;
+  }
+
+  .job-item {
+    grid-template-columns: 1fr;
+  }
+
+  .cursor-follower {
+    display: none;
+  }
+
+  * {
+    cursor: auto;
+  }
+}
